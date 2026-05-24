@@ -1,0 +1,6 @@
+﻿failure_type,cases,provinces
+no neighbor/analog outbreak signal,18,4
+possible terrain/microclimate missing feature,18,4
+low host susceptibility/risk signal,4,2
+low weather-risk signal,3,2
+unobserved label context,1,1

@@ -4342,3 +4342,196 @@ Next direction:
 - Acquire or prepare province-level terrain/elevation table.
 - Audit terrain coverage and province-name matching.
 - Only after audit, run controlled terrain-feature association and ablation.
+
+## 2026-05-24 Step 9.14 North-Focused Diagnostic Analysis
+
+Goal:
+
+- Diagnose why North-region rice blast positives remain missed under the corrected-label forward-year split.
+- Focus on failure interpretation, not new model training.
+- Use corrected labels only, no BUS features, no old labels, and no fabricated terrain values.
+
+Dataset:
+
+- `experiments/outputs/region_temporal_sequence_dataset_updated_labels_2015_2022.csv`
+
+Relevant model/error sources:
+
+- `experiments/outputs/updated_2022_test_predictions.csv`
+- `experiments/outputs/temporal_model_forward_predictions.csv`
+- `experiments/outputs/analog_ablation_test_predictions.csv`
+- `experiments/outputs/analog_decision_region_performance.csv`
+- `experiments/outputs/analog_decision_policy_metrics.csv`
+- `experiments/outputs/province_top_analog_neighbors.csv`
+- `experiments/outputs/north_failure_analog_analysis.csv`
+
+Script:
+
+- `experiments/analyze_north_failures.py`
+
+Outputs:
+
+- `experiments/outputs/north_positive_case_table.csv`
+- `experiments/outputs/north_positive_vs_negative_feature_summary.csv`
+- `experiments/outputs/north_vs_northeast_positive_comparison.csv`
+- `experiments/outputs/north_seasonality_diagnostic.csv`
+- `experiments/outputs/north_province_failure_summary.csv`
+- `experiments/outputs/north_analog_failure_diagnostic.csv`
+- `experiments/outputs/north_label_observation_summary.csv`
+- `experiments/outputs/north_failure_type_summary.csv`
+- `experiments/outputs/north_diagnostic_recommendations.csv`
+
+North test 2022 positive cases:
+
+- Total North positive target cases: 18
+- Positive provinces:
+  - Lamphun: 8
+  - Nan: 7
+  - Phichit: 2
+  - Nakhon Sawan: 1
+- Every North positive case was missed by all available candidate models:
+  - DNN `core_no_BUS`
+  - DNN `core_plus_analog_history`
+  - RF `core_plus_all_analog`
+  - RF `core_plus_analog_history`
+  - Hybrid DNN + TCN 2-week
+
+North province failure summary:
+
+| province | test positives | train positives | test positive rate | train positive rate | missed by all models | top analog provinces |
+|---|---:|---:|---:|---:|---:|---|
+| Lamphun | 8 | 1 | 0.1509 | 0.0047 | 8 | Mae Hong Son, Chiang Mai, Kamphaeng Phet, Lampang, Nan |
+| Nan | 7 | 6 | 0.1321 | 0.0283 | 7 | Lamphun, Mae Hong Son, Chiang Mai, Lampang, Nong Khai |
+| Phichit | 2 | 3 | 0.0377 | 0.0142 | 2 | Phitsanulok, Phetchabun, Sukhothai, Nakhon Sawan, Uthai Thani |
+| Nakhon Sawan | 1 | 1 | 0.0189 | 0.0047 | 1 | Phetchabun, Kamphaeng Phet, Phichit, Phitsanulok, Uthai Thani |
+
+Interpretation:
+
+- Lamphun is the clearest regime-shift case:
+  - train positives: 1
+  - test 2022 positives: 8
+- Nan also increases strongly in 2022 relative to train history.
+- The missed North cases are concentrated in a small number of provinces rather than spread evenly across the region.
+
+North vs Northeast positive comparison:
+
+| feature | North positive mean | Northeast positive mean | North minus Northeast |
+|---|---:|---:|---:|
+| rainfall_sum | 29.61 | 36.78 | -7.17 |
+| leaf_wet_hours | 27.78 | 36.76 | -8.98 |
+| rolling_3w_leaf_wet_hours | 88.28 | 110.93 | -22.66 |
+| risk_score | 25.28 | 29.44 | -4.15 |
+| susceptibility_score | 0.5034 | 0.5575 | -0.0542 |
+| host_weighted_risk | 25.36 | 31.84 | -6.47 |
+| host_weighted_rolling_3w | 77.39 | 96.19 | -18.80 |
+| neighbor_prevweek_blast | 0.0000 | 0.1083 | -0.1083 |
+| regional_neighbor_pressure_2w | 0.0216 | 0.1199 | -0.0983 |
+| regional_wind_alignment_frequency | 0.0026 | 0.0270 | -0.0244 |
+| analog_prevweek_blast | 0.0000 | 0.2510 | -0.2510 |
+
+Interpretation:
+
+- North positives have weaker weather/moisture intensity than Northeast positives.
+- North positives also have lower host susceptibility and lower host-weighted risk.
+- The largest practical gap is outbreak-propagation signal:
+  - `neighbor_prevweek_blast` is zero for North positives.
+  - `analog_prevweek_blast` is zero for North positives.
+  - regional neighbor pressure is much lower than in Northeast positives.
+- This explains why analog history improves Northeast but does not transfer to North.
+
+North positive vs North negative interpretation:
+
+- Some moisture/risk pressure exists in North positives:
+  - `rolling_3w_leaf_wet_hours` is higher in positives than negatives.
+  - `neighbor_prevweek_risk` is higher in positives than negatives.
+  - analog leaf-wet pressure is also higher.
+- However, these signals are not strong enough to push model scores above governed thresholds.
+- The strongest analog-history signals are absent because prior-week analog/proximal outbreak labels are mostly zero.
+
+Seasonality:
+
+Test 2022 North positives:
+
+| period | positive rows | share of North positives |
+|---|---:|---:|
+| weeks 1-13 | 2 | 0.1111 |
+| weeks 14-26 | 2 | 0.1111 |
+| weeks 27-39 | 6 | 0.3333 |
+| weeks 40-53 | 8 | 0.4444 |
+
+Train 2017-2020 North positives:
+
+| period | positive rows | share of North train positives |
+|---|---:|---:|
+| weeks 1-13 | 38 | 0.2222 |
+| weeks 14-26 | 11 | 0.0643 |
+| weeks 27-39 | 52 | 0.3041 |
+| weeks 40-53 | 70 | 0.4094 |
+
+Interpretation:
+
+- North 2022 seasonality is not completely outside historical North seasonality.
+- Late-year positives are expected from train history.
+- The issue is more province-specific and signal-intensity specific than purely seasonal.
+
+Label/reporting context:
+
+| scope | rows | label observed rate | positives | positive rate |
+|---|---:|---:|---:|---:|
+| train 2017-2020 North | 3,604 | 0.5755 | 171 | 0.0474 |
+| train 2017-2020 Northeast | 4,232 | 0.5766 | 269 | 0.0636 |
+| validation 2021 North | 893 | 0.9429 | 113 | 0.1265 |
+| test 2022 North | 901 | 0.9434 | 18 | 0.0200 |
+| test 2022 Northeast | 1,060 | 0.9434 | 120 | 0.1132 |
+
+Interpretation:
+
+- North 2022 has good label observation coverage.
+- North 2022 has much lower prevalence than validation 2021 North and test 2022 Northeast.
+- The North failure is not simply missing labels in 2022.
+- The model is trying to detect sparse, low-prevalence positives with weaker propagation signals.
+
+Failure type summary:
+
+| failure type | cases | provinces |
+|---|---:|---:|
+| no neighbor/analog outbreak signal | 18 | 4 |
+| possible terrain/microclimate missing feature | 18 | 4 |
+| low host susceptibility/risk signal | 4 | 2 |
+| low weather-risk signal | 3 | 2 |
+| unobserved label context | 1 | 1 |
+
+Terrain hypothesis:
+
+- The current weather source has no direct elevation or terrain feature.
+- `sealevelpressure` should not be used as an elevation proxy.
+- North failures remain compatible with a missing terrain/microclimate explanation, but this cannot be tested from current weather data alone.
+- Terrain must be introduced from an external province-level or raster-derived terrain table.
+
+Diagnostic conclusion:
+
+- North failure is not solved by:
+  - analog history,
+  - temporal neural models,
+  - calibration,
+  - threshold governance.
+- North 2022 positives are concentrated in a few provinces, especially Lamphun and Nan.
+- These positives have weaker host/moisture/risk/spatial-propagation signatures than Northeast positives.
+- The main missing operational signal is prior outbreak pressure:
+  - no geographic neighbor previous-week blast signal,
+  - no analog previous-week blast signal.
+- Therefore, North likely requires a separate diagnostic path rather than simply adding analog features to the national model.
+
+Recommendations:
+
+- Add an external terrain/elevation table before testing terrain effects.
+- Do not treat analog history as a North solution.
+- Investigate North sub-regional seasonality and reporting density.
+- Keep Northeast analog-history monitoring separate from North diagnostics.
+- Prioritize terrain/microclimate features for the next North-specific analysis.
+
+Next direction:
+
+- Prepare `province_terrain_table.csv` from an external DEM or province-level GIS source.
+- Audit province-name matching and terrain coverage.
+- Then run a controlled terrain-feature association analysis before any model retraining.

@@ -1,0 +1,6 @@
+﻿recommendation,rationale,priority,ready_now
+Add external terrain/elevation table before terrain modeling.,Weather source audit found no direct elevation/terrain field and sea-level pressure is not a terrain proxy.,high,True
+Do not treat analog history as a North solution.,North positives remain missed and analog previous-week blast is often absent.,high,True
+Investigate North sub-regional seasonality and reporting density.,North 2022 positives may occur outside patterns learned from sparse train-year North positives.,high,True
+Keep Northeast analog-history mode separate from North diagnostics.,Analog history helps Northeast but does not transfer to North.,medium,True
+Acquire province terrain table with elevation_mean/min/max/range/std and terrain_roughness.,North failures plausibly involve microclimate/terrain not represented in current features.,high,False

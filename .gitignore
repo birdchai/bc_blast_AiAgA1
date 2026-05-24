@@ -42,6 +42,7 @@ experiments/*
 !experiments/forward_decision_governance.py
 !experiments/train_analog_feature_ablation.py
 !experiments/analog_history_decision_governance.py
+!experiments/analyze_north_failures.py
 
 # Compact updated-data outputs and governance summaries
 experiments/outputs/*
@@ -107,6 +108,16 @@ experiments/outputs/*
 !experiments/outputs/analog_decision_alert_tier_region_summary.csv
 !experiments/outputs/analog_decision_calibration_reliability.csv
 !experiments/outputs/analog_decision_thresholds.csv
+
+!experiments/outputs/north_positive_case_table.csv
+!experiments/outputs/north_positive_vs_negative_feature_summary.csv
+!experiments/outputs/north_vs_northeast_positive_comparison.csv
+!experiments/outputs/north_seasonality_diagnostic.csv
+!experiments/outputs/north_province_failure_summary.csv
+!experiments/outputs/north_analog_failure_diagnostic.csv
+!experiments/outputs/north_label_observation_summary.csv
+!experiments/outputs/north_failure_type_summary.csv
+!experiments/outputs/north_diagnostic_recommendations.csv
 
 # Keep raw and bulky generated data out of Git.
 data/
