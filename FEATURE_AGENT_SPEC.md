@@ -49,6 +49,7 @@ Responsibilities:
 - Define the feature hypothesis.
 - Classify the feature family.
 - Explain the expected epidemiological mechanism.
+- Evaluate rice blast biological and plant epidemiological plausibility before proposing a feature for validation.
 - Identify required input data.
 - Identify temporal and spatial scope.
 - Identify possible leakage risks.
@@ -71,6 +72,56 @@ Data needed: Province-level elevation summary from DEM/GIS.
 Leakage risk: Low if static and computed independently from outbreak labels.
 Status: future_data_needed.
 ```
+
+## Biological and Epidemiological Plausibility Layer
+
+Every proposed feature must pass a biological plausibility review before it is treated as a serious candidate. This layer prevents feature development from becoming metric-only and keeps the platform grounded in rice blast biology and plant epidemiology.
+
+The Feature Scientist Agent must evaluate whether the feature represents one or more rice blast disease processes:
+
+| disease process | evaluation question |
+|---|---|
+| infection window | Does the feature represent conditions during a plausible infection period? |
+| leaf wetness / dew duration | Does it capture surface moisture duration needed for infection? |
+| humidity suitability | Does it represent high-relative-humidity conditions favorable to pathogen activity? |
+| temperature suitability | Does it represent temperature ranges suitable for rice blast development? |
+| host susceptibility | Does it represent susceptible rice variety composition or host vulnerability? |
+| inoculum pressure | Does it represent nearby, regional, analog, or historical source pressure? |
+| spatial / regional outbreak pressure | Does it represent epidemic pressure at neighborhood or regional scale? |
+| wind-mediated dispersal hypothesis | Does it represent plausible wind-aided movement from source to target? |
+| sporulation timing / spore-release window | Does it represent biologically plausible sporulation or early-morning spore-release timing? |
+| temporal accumulation | Does it represent accumulated exposure or short-term epidemic memory? |
+| terrain / microclimate hypothesis | Does it represent static terrain effects on dew, humidity, airflow, or local microclimate? |
+| reporting / observation limitations | Does it help explain observation coverage, label sparsity, or reporting artifacts? |
+
+Required biological metadata:
+
+| field | description |
+|---|---|
+| disease_process_represented | Main rice blast biological or epidemiological process represented by the feature. |
+| epidemiological_role | How the feature participates in the disease system, such as suitability, host, inoculum, dispersal, temporal memory, microclimate, or observation context. |
+| biological_plausibility | High, medium, low, or rejected, with rationale. |
+| expected_direction | Expected association with outbreak risk, such as positive, negative, nonlinear, threshold, regional, or unknown. |
+| caveats | Biological, measurement, proxy, coverage, or interpretation caveats. |
+
+Examples:
+
+| feature | disease_process_represented | epidemiological_role | expected_direction |
+|---|---|---|---|
+| `leaf_wet_hours` | infection moisture window | moisture suitability / infection opportunity | positive up to biologically plausible range |
+| `spore_window_leaf_wet_hours` | sporulation / early morning dew hypothesis | spore-release-window moisture context | positive if early wetness supports sporulation/release |
+| `susceptibility_score` | host susceptibility | host vulnerability | positive |
+| `neighbor_prevweek_blast` | inoculum pressure | nearby source pressure using historical labels only | positive |
+| `wind_aligned_neighbor_blast` | directional dispersal hypothesis | wind-mediated source-to-target pressure | positive but regionally heterogeneous |
+| `analog_outbreak_frequency_train` | latent outbreak-regime memory | analog historical outbreak tendency | positive, not direct dispersal |
+| `terrain/elevation` | microclimate / dew / airflow hypothesis | static terrain context for humidity, dew, and airflow | regional / nonlinear |
+| `BUS` | external mechanistic disease-risk reference | independent weather-risk suitability benchmark | positive above critical threshold |
+
+Biological interpretation rule:
+
+- A feature with good metric performance but weak biological plausibility must remain `candidate_only` until further evidence explains the signal.
+- A feature with strong biological plausibility but weak current metrics may remain a research candidate, regional diagnostic feature, dashboard feature, or future-data-needed feature.
+- Biological plausibility does not override leakage risk. A biologically meaningful feature must still pass temporal safety and leakage audits.
 
 ### B. Feature Validation Agent
 
@@ -199,6 +250,11 @@ Every feature or feature group must maintain the following metadata:
 | ablation_result | Controlled model impact. |
 | regional_behavior | Region-specific benefit or instability. |
 | governance_status | Current lifecycle status. |
+| disease_process_represented | Rice blast biological or epidemiological process represented. |
+| epidemiological_role | Role in the disease system. |
+| biological_plausibility | High, medium, low, rejected, with rationale. |
+| expected_direction | Expected relationship with outbreak risk. |
+| caveats | Biological or measurement caveats. |
 | notes | Caveats, next action, or scientific interpretation. |
 
 ## Current Feature Governance Summary
@@ -226,11 +282,26 @@ Every feature or feature group must maintain the following metadata:
 A feature can become `accepted_core` when it:
 
 - has a clear biological rationale,
+- has a documented disease process represented,
 - has stable coverage,
-- does not create leakage,
+- passes leakage audit,
+- has stability or ablation evidence,
+- has an interpretable decision role,
 - improves or preserves performance without unacceptable operational cost,
 - remains useful across years and regions,
 - does not depend on a limited external data source.
+
+Minimum `accepted_core` requirements:
+
+- biological rationale,
+- leakage audit,
+- stability or ablation evidence,
+- interpretable decision role.
+
+Warning rule:
+
+- Good metric performance alone is insufficient for `accepted_core`.
+- Features with weak biological plausibility, unclear mechanism, or suspicious proxy behavior must remain `candidate_only`, `accepted_dashboard`, or `rejected` until further evidence supports their interpretation.
 
 ### Promote To Regional
 

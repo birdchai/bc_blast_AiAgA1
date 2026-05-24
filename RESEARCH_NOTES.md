@@ -4979,3 +4979,91 @@ Conclusion:
 - Step 9.16B confirms that the project lacks a usable local province boundary polygon.
 - Boundary acquisition is required before terrain/elevation extraction.
 - The next step should be boundary Data Scout / acquisition, not DEM processing.
+
+## 2026-05-24 Feature Agent Biology-Informed Governance Update
+
+Goal:
+
+- Update Feature Agent governance so feature development remains rice-blast-biology informed, not metric-only.
+- Ensure that feature creation, validation, ablation, and governance explicitly consider plant epidemiology.
+- No model training and no prediction-pipeline changes.
+
+Files updated:
+
+- `FEATURE_AGENT_SPEC.md`
+- `experiments/outputs/feature_registry_template.csv`
+- `experiments/outputs/feature_registry_current.csv`
+
+New section added:
+
+- `Biological and Epidemiological Plausibility Layer`
+
+Biological plausibility checks now required:
+
+| rice blast process | governance question |
+|---|---|
+| infection window | Does the feature represent plausible infection timing or suitability? |
+| leaf wetness / dew duration | Does it capture moisture duration relevant to infection? |
+| humidity suitability | Does it represent high-humidity conditions favorable to disease development? |
+| temperature suitability | Does it represent temperature suitability for rice blast? |
+| host susceptibility | Does it represent susceptible rice variety or host vulnerability? |
+| inoculum pressure | Does it represent source pressure from previous outbreaks? |
+| spatial / regional outbreak pressure | Does it represent broader epidemic context? |
+| wind-mediated dispersal hypothesis | Does it represent plausible directionally aligned source-to-target spread? |
+| sporulation timing / spore-release window | Does it represent early-morning or biologically plausible release windows? |
+| temporal accumulation | Does it represent accumulated exposure or short-term epidemic memory? |
+| terrain / microclimate hypothesis | Does it represent dew, airflow, humidity persistence, or topographic context? |
+| reporting / observation limitations | Does it help explain sparse or biased observation patterns? |
+
+New registry fields:
+
+- `disease_process_represented`
+- `epidemiological_role`
+- `biological_plausibility`
+- `expected_direction`
+- `caveats`
+
+Examples added to Feature Agent governance:
+
+| feature | biological interpretation |
+|---|---|
+| `leaf_wet_hours` | infection moisture window |
+| `spore_window_leaf_wet_hours` | sporulation / early morning dew hypothesis |
+| `susceptibility_score` | host susceptibility |
+| `neighbor_prevweek_blast` | inoculum pressure |
+| `wind_aligned_neighbor_blast` | directional dispersal hypothesis |
+| `analog_outbreak_frequency_train` | latent outbreak-regime memory |
+| `terrain/elevation` | microclimate / dew / airflow hypothesis |
+| `BUS` | external mechanistic disease-risk reference |
+
+Accepted-core governance update:
+
+- A feature cannot become `accepted_core` unless it has:
+  - biological rationale,
+  - documented disease process represented,
+  - leakage audit,
+  - stability or ablation evidence,
+  - interpretable decision role.
+
+Warning rule:
+
+- Good metric performance alone is insufficient for `accepted_core`.
+- Features with weak biological plausibility, unclear mechanism, or suspicious proxy behavior must remain `candidate_only`, `accepted_dashboard`, or `rejected` until further evidence supports interpretation.
+
+Registry update:
+
+- `feature_registry_template.csv` now includes the biological metadata fields.
+- `feature_registry_current.csv` now includes biology-informed annotations for active feature groups.
+- Examples:
+  - `leaf_wet_hours`: infection moisture window, high plausibility.
+  - `neighbor_prevweek_blast`: inoculum pressure, high plausibility, requires strict temporal leakage control.
+  - `wind_aligned_neighbor_blast`: directional dispersal hypothesis, medium-high plausibility, regionally heterogeneous.
+  - `analog_outbreak_frequency_train`: latent outbreak-regime memory, not direct dispersal.
+  - `elevation_mean`: microclimate / dew / airflow hypothesis, future data needed.
+  - `sealevelpressure_as_elevation`: rejected because sea-level pressure is not an elevation proxy.
+
+Conclusion:
+
+- Feature governance is now explicitly biology-informed.
+- Candidate features must be justified through rice blast mechanisms before they are promoted.
+- The platform is further aligned with computational plant epidemiology rather than metric-only machine learning.
