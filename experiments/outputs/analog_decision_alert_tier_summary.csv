@@ -1,0 +1,21 @@
+﻿model,feature_set,model_label,model_feature,alert_tier,rows,positive_rows,observed_positive_rate,mean_calibrated_score,false_positive_as_action,false_negative_as_low_watch
+dnn_no_class_weight,core_no_BUS,DNN core,dnn_no_class_weight__core_no_BUS,high_alert,37,21,0.5675675675675675,0.3975011449498702,16,0
+dnn_no_class_weight,core_no_BUS,DNN core,dnn_no_class_weight__core_no_BUS,low_risk,2609,48,0.018397853583748562,0.04670075407523513,0,48
+dnn_no_class_weight,core_no_BUS,DNN core,dnn_no_class_weight__core_no_BUS,warning,95,30,0.3157894736842105,0.21060685512296007,65,0
+dnn_no_class_weight,core_no_BUS,DNN core,dnn_no_class_weight__core_no_BUS,watch,1263,62,0.04908946951702296,0.06492105403522544,0,62
+dnn_no_class_weight,core_plus_analog_history,DNN analog history,dnn_no_class_weight__core_plus_analog_history,high_alert,59,30,0.5084745762711864,0.3872970696828894,29,0
+dnn_no_class_weight,core_plus_analog_history,DNN analog history,dnn_no_class_weight__core_plus_analog_history,low_risk,1735,16,0.009221902017291067,0.04922906264191766,0,16
+dnn_no_class_weight,core_plus_analog_history,DNN analog history,dnn_no_class_weight__core_plus_analog_history,warning,96,32,0.3333333333333333,0.21518313470765382,64,0
+dnn_no_class_weight,core_plus_analog_history,DNN analog history,dnn_no_class_weight__core_plus_analog_history,watch,2114,83,0.03926206244087039,0.059864491215894496,0,83
+random_forest,core_no_BUS,RF core,random_forest__core_no_BUS,high_alert,25,13,0.52,0.3563158064977906,12,0
+random_forest,core_no_BUS,RF core,random_forest__core_no_BUS,low_risk,2816,50,0.01775568181818182,0.03373573765700519,0,50
+random_forest,core_no_BUS,RF core,random_forest__core_no_BUS,warning,79,28,0.35443037974683544,0.2242201950107739,51,0
+random_forest,core_no_BUS,RF core,random_forest__core_no_BUS,watch,1084,70,0.06457564575645756,0.0753836289522853,0,70
+random_forest,core_plus_all_analog,RF all analog,random_forest__core_plus_all_analog,high_alert,47,28,0.5957446808510638,0.3926793262671111,19,0
+random_forest,core_plus_all_analog,RF all analog,random_forest__core_plus_all_analog,low_risk,2745,38,0.013843351548269581,0.03291704227297984,0,38
+random_forest,core_plus_all_analog,RF all analog,random_forest__core_plus_all_analog,warning,147,43,0.2925170068027211,0.1979265434448945,104,0
+random_forest,core_plus_all_analog,RF all analog,random_forest__core_plus_all_analog,watch,1065,52,0.048826291079812206,0.0740263814665774,0,52
+random_forest,core_plus_analog_history,RF analog history,random_forest__core_plus_analog_history,high_alert,50,31,0.62,0.3879325828474458,19,0
+random_forest,core_plus_analog_history,RF analog history,random_forest__core_plus_analog_history,low_risk,2750,38,0.013818181818181818,0.03248278880122559,0,38
+random_forest,core_plus_analog_history,RF analog history,random_forest__core_plus_analog_history,warning,144,40,0.2777777777777778,0.19421788639879656,104,0
+random_forest,core_plus_analog_history,RF analog history,random_forest__core_plus_analog_history,watch,1060,52,0.04905660377358491,0.07482187235845135,0,52

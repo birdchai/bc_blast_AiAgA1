@@ -3996,6 +3996,194 @@ Next direction:
 - Evaluate whether analog-history gains survive calibrated policy governance.
 - Continue separate North-focused diagnostics.
 
+## 2026-05-24 Step 9.13 Analog-History Decision Governance
+
+Goal:
+
+- Evaluate whether DNN no-class-weight + analog history remains useful after threshold and calibration governance.
+- Compare against the stable DNN `core_no_BUS` baseline and Random Forest analog candidates.
+- Use validation 2021 only for threshold selection and calibration.
+- Preserve test 2022 as held-out evaluation.
+
+Dataset:
+
+- `experiments/outputs/region_temporal_sequence_dataset_updated_labels_2015_2022.csv`
+
+Prediction source:
+
+- `experiments/outputs/analog_ablation_all_predictions.csv`
+
+Candidate model-feature sets:
+
+- DNN no-class-weight + `core_no_BUS`
+- DNN no-class-weight + `core_plus_analog_history`
+- Random Forest + `core_no_BUS`
+- Random Forest + `core_plus_analog_history`
+- Random Forest + `core_plus_all_analog` as ranking comparator
+
+Scripts:
+
+- `experiments/train_analog_feature_ablation.py`
+  - updated to export validation and test predictions in `analog_ablation_all_predictions.csv`
+- `experiments/analog_history_decision_governance.py`
+
+Outputs:
+
+- `experiments/outputs/analog_decision_policy_metrics.csv`
+- `experiments/outputs/analog_decision_model_comparison.csv`
+- `experiments/outputs/analog_decision_region_performance.csv`
+- `experiments/outputs/analog_decision_confusion_matrix.csv`
+- `experiments/outputs/analog_decision_alert_tier_summary.csv`
+- `experiments/outputs/analog_decision_alert_tier_region_summary.csv`
+- `experiments/outputs/analog_decision_calibration_reliability.csv`
+- `experiments/outputs/analog_decision_failure_cases.csv`
+- `experiments/outputs/analog_decision_thresholds.csv`
+- `experiments/outputs/analog_decision_calibrated_predictions.csv`
+
+Test 2022 policy comparison:
+
+| model | policy | threshold | precision | recall | F1 | ROC-AUC | PR-AUC | FP | FN |
+|---|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| RF all analog | balanced default | 0.54 | 0.3987 | 0.3913 | 0.3950 | 0.8284 | 0.3014 | 95 | 98 |
+| DNN analog history | balanced default | 0.26 | 0.4069 | 0.3665 | 0.3856 | 0.8029 | 0.2818 | 86 | 102 |
+| DNN analog history | global F1 | 0.19 | 0.3367 | 0.4161 | 0.3722 | 0.8029 | 0.2818 | 132 | 94 |
+| DNN analog history | Platt global F1 | 0.12 | 0.3350 | 0.4099 | 0.3687 | 0.8029 | 0.2818 | 131 | 95 |
+| RF analog history | balanced default | 0.58 | 0.4113 | 0.3168 | 0.3579 | 0.8326 | 0.2953 | 73 | 110 |
+| DNN core | Platt global F1 | 0.14 | 0.3667 | 0.3416 | 0.3537 | 0.7818 | 0.2904 | 95 | 106 |
+| DNN core | global F1 | 0.21 | 0.4118 | 0.3043 | 0.3500 | 0.7818 | 0.2904 | 70 | 112 |
+| RF core | global F1 | 0.52 | 0.3920 | 0.3043 | 0.3427 | 0.7886 | 0.2407 | 76 | 112 |
+
+Interpretation:
+
+- After governance, analog history still improves DNN decision behavior over DNN core.
+- DNN analog history balanced default improves over DNN core global F1:
+  - F1: 0.3500 -> 0.3856
+  - recall: 0.3043 -> 0.3665
+  - FN: 112 -> 102
+  - FP: 70 -> 86
+- DNN analog history global F1 improves recall further:
+  - recall: 0.4161
+  - FN: 94
+  - but FP rises to 132.
+- Platt calibration does not materially improve DNN analog history F1:
+  - uncalibrated global F1: 0.3722
+  - Platt global F1: 0.3687
+- Therefore, analog-history gain is mainly a threshold-policy effect, not a calibration gain.
+
+Random Forest interpretation:
+
+- RF all analog balanced default is the best overall F1 policy in this governance pass:
+  - F1: 0.3950
+  - ROC-AUC: 0.8284
+  - PR-AUC: 0.3014
+- RF analog history and RF all analog have strong ranking metrics.
+- However, RF global F1 analog policies tend to create many false positives.
+- RF analog is promising as an interpretable ranking/decision-support comparator, but should not replace DNN core without more policy analysis.
+
+Regional behavior: balanced default
+
+| model | region | positives | precision | recall | F1 | FP | FN |
+|---|---|---:|---:|---:|---:|---:|---:|
+| DNN core | Northeast | 120 | 0.4300 | 0.3583 | 0.3909 | 57 | 77 |
+| DNN analog history | Northeast | 120 | 0.4143 | 0.4833 | 0.4462 | 82 | 62 |
+| RF all analog | Northeast | 120 | 0.4126 | 0.4917 | 0.4487 | 84 | 61 |
+| RF analog history | Northeast | 120 | 0.4261 | 0.4083 | 0.4170 | 66 | 71 |
+| DNN core | North | 18 | 0.0000 | 0.0000 | 0.0000 | 0 | 18 |
+| DNN analog history | North | 18 | 0.0000 | 0.0000 | 0.0000 | 1 | 18 |
+| RF all analog | North | 18 | 0.0000 | 0.0000 | 0.0000 | 0 | 18 |
+| DNN core | East | 7 | 0.5000 | 0.2857 | 0.3636 | 2 | 5 |
+| DNN analog history | East | 7 | 0.5000 | 0.1429 | 0.2222 | 1 | 6 |
+| RF all analog | East | 7 | 0.3750 | 0.4286 | 0.4000 | 5 | 4 |
+
+Regional interpretation:
+
+- Analog history clearly improves Northeast recall/F1 under balanced policy.
+- DNN analog history Northeast:
+  - recall: 0.3583 -> 0.4833 compared with DNN core balanced default
+  - F1: 0.3909 -> 0.4462
+- RF all analog performs similarly well in Northeast:
+  - recall: 0.4917
+  - F1: 0.4487
+- North remains unsolved:
+  - every governed candidate still has North recall 0.
+  - analog history does not solve North at practical thresholds.
+- East is sparse and unstable:
+  - DNN analog history hurts East recall compared with DNN core.
+  - RF all analog improves East recall but with more false positives.
+
+High-precision and high-recall modes:
+
+- DNN analog history high-precision threshold 0.47:
+  - precision: 0.5714
+  - recall: 0.0994
+  - FP: 12
+  - FN: 145
+- DNN analog history high-recall threshold 0.01:
+  - recall: 0.8571
+  - FP: 1,636
+  - operationally too many false positives for field alerts.
+- RF analog history high-recall captures more outbreaks but creates even more false positives:
+  - recall: 0.9503
+  - FP: 2,281
+
+Alert-tier summary:
+
+| model | tier | rows | positives | observed positive rate | mean calibrated score |
+|---|---|---:|---:|---:|---:|
+| DNN core | low risk | 2,609 | 48 | 0.0184 | 0.0467 |
+| DNN core | watch | 1,263 | 62 | 0.0491 | 0.0649 |
+| DNN core | warning | 95 | 30 | 0.3158 | 0.2106 |
+| DNN core | high alert | 37 | 21 | 0.5676 | 0.3975 |
+| DNN analog history | low risk | 1,735 | 16 | 0.0092 | 0.0492 |
+| DNN analog history | watch | 2,114 | 83 | 0.0393 | 0.0599 |
+| DNN analog history | warning | 96 | 32 | 0.3333 | 0.2152 |
+| DNN analog history | high alert | 59 | 30 | 0.5085 | 0.3873 |
+| RF all analog | low risk | 2,745 | 38 | 0.0138 | 0.0329 |
+| RF all analog | watch | 1,065 | 52 | 0.0488 | 0.0740 |
+| RF all analog | warning | 147 | 43 | 0.2925 | 0.1979 |
+| RF all analog | high alert | 47 | 28 | 0.5957 | 0.3927 |
+| RF analog history | high alert | 50 | 31 | 0.6200 | 0.3879 |
+
+Alert-tier interpretation:
+
+- Analog history improves prioritization in alert tiers:
+  - DNN analog history low-risk tier has fewer positives than DNN core:
+    - 16 vs 48
+  - DNN analog history high-alert tier captures more positives:
+    - 30 vs 21
+- RF analog history has the highest high-alert observed positive rate:
+  - 62.0%
+- RF all analog also has strong high-alert separation:
+  - 59.6%
+- These are useful for dashboard/risk communication, even if binary default policy remains conservative.
+
+Decision governance conclusion:
+
+- Analog history remains useful after threshold governance.
+- DNN `core_plus_analog_history` should not automatically replace DNN `core_no_BUS` as the single default yet because:
+  - PR-AUC is lower than DNN core,
+  - false positives increase,
+  - East and North do not clearly benefit.
+- Recommended operational interpretation:
+  - stable default: DNN `core_no_BUS`
+  - Northeast monitoring / recall-sensitive mode: DNN `core_plus_analog_history`
+  - interpretable ranking comparator: RF `core_plus_all_analog` or RF `core_plus_analog_history`
+  - dashboard alert-tier candidate: RF analog history / RF all analog
+- North requires a separate diagnostic path; analog history does not solve it.
+
+Scientific conclusion:
+
+- Province analog history provides real epidemiological signal.
+- The signal is strongest for Northeast outbreak detection and alert prioritization.
+- Analog history is better treated as a governance feature or regional monitoring layer than as a universal nationwide replacement.
+- Calibration improves interpretability of tiers, but does not turn analog history into a clear final default.
+
+Next direction:
+
+- Step 9.14: North-focused diagnostic analysis.
+- Investigate terrain/elevation, label sparsity, sub-regional seasonality, and province-specific outbreak reporting patterns.
+- Keep DNN core and DNN analog history as parallel candidates.
+
 ## 2026-05-24 Weather Source Terrain / Elevation Metadata Audit
 
 Goal:

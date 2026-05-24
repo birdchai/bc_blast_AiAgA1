@@ -1,0 +1,90 @@
+﻿model,feature_set,model_label,model_feature,alert_tier,region,rows,positive_rows,observed_positive_rate
+dnn_no_class_weight,core_no_BUS,DNN core,dnn_no_class_weight__core_no_BUS,high_alert,Northeast,36,21,0.5833333333333334
+dnn_no_class_weight,core_no_BUS,DNN core,dnn_no_class_weight__core_no_BUS,high_alert,South,1,0,0.0
+dnn_no_class_weight,core_no_BUS,DNN core,dnn_no_class_weight__core_no_BUS,low_risk,Central,558,4,0.007168458781362007
+dnn_no_class_weight,core_no_BUS,DNN core,dnn_no_class_weight__core_no_BUS,low_risk,East,226,2,0.008849557522123894
+dnn_no_class_weight,core_no_BUS,DNN core,dnn_no_class_weight__core_no_BUS,low_risk,North,583,16,0.0274442538593482
+dnn_no_class_weight,core_no_BUS,DNN core,dnn_no_class_weight__core_no_BUS,low_risk,Northeast,388,22,0.05670103092783505
+dnn_no_class_weight,core_no_BUS,DNN core,dnn_no_class_weight__core_no_BUS,low_risk,South,650,2,0.003076923076923077
+dnn_no_class_weight,core_no_BUS,DNN core,dnn_no_class_weight__core_no_BUS,low_risk,West,204,2,0.00980392156862745
+dnn_no_class_weight,core_no_BUS,DNN core,dnn_no_class_weight__core_no_BUS,warning,East,5,2,0.4
+dnn_no_class_weight,core_no_BUS,DNN core,dnn_no_class_weight__core_no_BUS,warning,North,1,0,0.0
+dnn_no_class_weight,core_no_BUS,DNN core,dnn_no_class_weight__core_no_BUS,warning,Northeast,83,28,0.3373493975903614
+dnn_no_class_weight,core_no_BUS,DNN core,dnn_no_class_weight__core_no_BUS,warning,South,6,0,0.0
+dnn_no_class_weight,core_no_BUS,DNN core,dnn_no_class_weight__core_no_BUS,watch,Central,170,6,0.03529411764705882
+dnn_no_class_weight,core_no_BUS,DNN core,dnn_no_class_weight__core_no_BUS,watch,East,185,3,0.016216216216216217
+dnn_no_class_weight,core_no_BUS,DNN core,dnn_no_class_weight__core_no_BUS,watch,North,300,2,0.006666666666666667
+dnn_no_class_weight,core_no_BUS,DNN core,dnn_no_class_weight__core_no_BUS,watch,Northeast,533,49,0.09193245778611632
+dnn_no_class_weight,core_no_BUS,DNN core,dnn_no_class_weight__core_no_BUS,watch,South,71,2,0.028169014084507043
+dnn_no_class_weight,core_no_BUS,DNN core,dnn_no_class_weight__core_no_BUS,watch,West,4,0,0.0
+dnn_no_class_weight,core_plus_analog_history,DNN analog history,dnn_no_class_weight__core_plus_analog_history,high_alert,Northeast,59,30,0.5084745762711864
+dnn_no_class_weight,core_plus_analog_history,DNN analog history,dnn_no_class_weight__core_plus_analog_history,low_risk,Central,440,3,0.006818181818181818
+dnn_no_class_weight,core_plus_analog_history,DNN analog history,dnn_no_class_weight__core_plus_analog_history,low_risk,East,92,0,0.0
+dnn_no_class_weight,core_plus_analog_history,DNN analog history,dnn_no_class_weight__core_plus_analog_history,low_risk,North,311,11,0.03536977491961415
+dnn_no_class_weight,core_plus_analog_history,DNN analog history,dnn_no_class_weight__core_plus_analog_history,low_risk,Northeast,164,0,0.0
+dnn_no_class_weight,core_plus_analog_history,DNN analog history,dnn_no_class_weight__core_plus_analog_history,low_risk,South,538,0,0.0
+dnn_no_class_weight,core_plus_analog_history,DNN analog history,dnn_no_class_weight__core_plus_analog_history,low_risk,West,190,2,0.010526315789473684
+dnn_no_class_weight,core_plus_analog_history,DNN analog history,dnn_no_class_weight__core_plus_analog_history,warning,Central,2,0,0.0
+dnn_no_class_weight,core_plus_analog_history,DNN analog history,dnn_no_class_weight__core_plus_analog_history,warning,East,2,1,0.5
+dnn_no_class_weight,core_plus_analog_history,DNN analog history,dnn_no_class_weight__core_plus_analog_history,warning,North,2,0,0.0
+dnn_no_class_weight,core_plus_analog_history,DNN analog history,dnn_no_class_weight__core_plus_analog_history,warning,Northeast,88,31,0.3522727272727273
+dnn_no_class_weight,core_plus_analog_history,DNN analog history,dnn_no_class_weight__core_plus_analog_history,warning,South,2,0,0.0
+dnn_no_class_weight,core_plus_analog_history,DNN analog history,dnn_no_class_weight__core_plus_analog_history,watch,Central,286,7,0.024475524475524476
+dnn_no_class_weight,core_plus_analog_history,DNN analog history,dnn_no_class_weight__core_plus_analog_history,watch,East,322,6,0.018633540372670808
+dnn_no_class_weight,core_plus_analog_history,DNN analog history,dnn_no_class_weight__core_plus_analog_history,watch,North,571,7,0.012259194395796848
+dnn_no_class_weight,core_plus_analog_history,DNN analog history,dnn_no_class_weight__core_plus_analog_history,watch,Northeast,729,59,0.08093278463648834
+dnn_no_class_weight,core_plus_analog_history,DNN analog history,dnn_no_class_weight__core_plus_analog_history,watch,South,188,4,0.02127659574468085
+dnn_no_class_weight,core_plus_analog_history,DNN analog history,dnn_no_class_weight__core_plus_analog_history,watch,West,18,0,0.0
+random_forest,core_no_BUS,RF core,random_forest__core_no_BUS,high_alert,Northeast,25,13,0.52
+random_forest,core_no_BUS,RF core,random_forest__core_no_BUS,low_risk,Central,600,5,0.008333333333333333
+random_forest,core_no_BUS,RF core,random_forest__core_no_BUS,low_risk,East,271,3,0.01107011070110701
+random_forest,core_no_BUS,RF core,random_forest__core_no_BUS,low_risk,North,678,14,0.02064896755162242
+random_forest,core_no_BUS,RF core,random_forest__core_no_BUS,low_risk,Northeast,387,22,0.056847545219638244
+random_forest,core_no_BUS,RF core,random_forest__core_no_BUS,low_risk,South,679,4,0.005891016200294551
+random_forest,core_no_BUS,RF core,random_forest__core_no_BUS,low_risk,West,201,2,0.009950248756218905
+random_forest,core_no_BUS,RF core,random_forest__core_no_BUS,warning,Central,5,0,0.0
+random_forest,core_no_BUS,RF core,random_forest__core_no_BUS,warning,East,7,3,0.42857142857142855
+random_forest,core_no_BUS,RF core,random_forest__core_no_BUS,warning,Northeast,66,25,0.3787878787878788
+random_forest,core_no_BUS,RF core,random_forest__core_no_BUS,warning,South,1,0,0.0
+random_forest,core_no_BUS,RF core,random_forest__core_no_BUS,watch,Central,123,5,0.04065040650406504
+random_forest,core_no_BUS,RF core,random_forest__core_no_BUS,watch,East,138,1,0.007246376811594203
+random_forest,core_no_BUS,RF core,random_forest__core_no_BUS,watch,North,206,4,0.019417475728155338
+random_forest,core_no_BUS,RF core,random_forest__core_no_BUS,watch,Northeast,562,60,0.10676156583629894
+random_forest,core_no_BUS,RF core,random_forest__core_no_BUS,watch,South,48,0,0.0
+random_forest,core_no_BUS,RF core,random_forest__core_no_BUS,watch,West,7,0,0.0
+random_forest,core_plus_all_analog,RF all analog,random_forest__core_plus_all_analog,high_alert,Northeast,47,28,0.5957446808510638
+random_forest,core_plus_all_analog,RF all analog,random_forest__core_plus_all_analog,low_risk,Central,639,5,0.00782472613458529
+random_forest,core_plus_all_analog,RF all analog,random_forest__core_plus_all_analog,low_risk,East,247,3,0.012145748987854251
+random_forest,core_plus_all_analog,RF all analog,random_forest__core_plus_all_analog,low_risk,North,583,12,0.02058319039451115
+random_forest,core_plus_all_analog,RF all analog,random_forest__core_plus_all_analog,low_risk,Northeast,418,14,0.03349282296650718
+random_forest,core_plus_all_analog,RF all analog,random_forest__core_plus_all_analog,low_risk,South,653,2,0.0030627871362940277
+random_forest,core_plus_all_analog,RF all analog,random_forest__core_plus_all_analog,low_risk,West,205,2,0.00975609756097561
+random_forest,core_plus_all_analog,RF all analog,random_forest__core_plus_all_analog,warning,Central,9,2,0.2222222222222222
+random_forest,core_plus_all_analog,RF all analog,random_forest__core_plus_all_analog,warning,East,12,3,0.25
+random_forest,core_plus_all_analog,RF all analog,random_forest__core_plus_all_analog,warning,North,1,0,0.0
+random_forest,core_plus_all_analog,RF all analog,random_forest__core_plus_all_analog,warning,Northeast,122,38,0.3114754098360656
+random_forest,core_plus_all_analog,RF all analog,random_forest__core_plus_all_analog,warning,South,3,0,0.0
+random_forest,core_plus_all_analog,RF all analog,random_forest__core_plus_all_analog,watch,Central,80,3,0.0375
+random_forest,core_plus_all_analog,RF all analog,random_forest__core_plus_all_analog,watch,East,157,1,0.006369426751592357
+random_forest,core_plus_all_analog,RF all analog,random_forest__core_plus_all_analog,watch,North,300,6,0.02
+random_forest,core_plus_all_analog,RF all analog,random_forest__core_plus_all_analog,watch,Northeast,453,40,0.08830022075055188
+random_forest,core_plus_all_analog,RF all analog,random_forest__core_plus_all_analog,watch,South,72,2,0.027777777777777776
+random_forest,core_plus_all_analog,RF all analog,random_forest__core_plus_all_analog,watch,West,3,0,0.0
+random_forest,core_plus_analog_history,RF analog history,random_forest__core_plus_analog_history,high_alert,Northeast,50,31,0.62
+random_forest,core_plus_analog_history,RF analog history,random_forest__core_plus_analog_history,low_risk,Central,646,6,0.009287925696594427
+random_forest,core_plus_analog_history,RF analog history,random_forest__core_plus_analog_history,low_risk,East,242,2,0.008264462809917356
+random_forest,core_plus_analog_history,RF analog history,random_forest__core_plus_analog_history,low_risk,North,585,13,0.022222222222222223
+random_forest,core_plus_analog_history,RF analog history,random_forest__core_plus_analog_history,low_risk,Northeast,415,13,0.03132530120481928
+random_forest,core_plus_analog_history,RF analog history,random_forest__core_plus_analog_history,low_risk,South,656,2,0.003048780487804878
+random_forest,core_plus_analog_history,RF analog history,random_forest__core_plus_analog_history,low_risk,West,206,2,0.009708737864077669
+random_forest,core_plus_analog_history,RF analog history,random_forest__core_plus_analog_history,warning,Central,6,1,0.16666666666666666
+random_forest,core_plus_analog_history,RF analog history,random_forest__core_plus_analog_history,warning,East,11,3,0.2727272727272727
+random_forest,core_plus_analog_history,RF analog history,random_forest__core_plus_analog_history,warning,North,2,0,0.0
+random_forest,core_plus_analog_history,RF analog history,random_forest__core_plus_analog_history,warning,Northeast,122,36,0.29508196721311475
+random_forest,core_plus_analog_history,RF analog history,random_forest__core_plus_analog_history,warning,South,3,0,0.0
+random_forest,core_plus_analog_history,RF analog history,random_forest__core_plus_analog_history,watch,Central,76,3,0.039473684210526314
+random_forest,core_plus_analog_history,RF analog history,random_forest__core_plus_analog_history,watch,East,163,2,0.012269938650306749
+random_forest,core_plus_analog_history,RF analog history,random_forest__core_plus_analog_history,watch,North,297,5,0.016835016835016835
+random_forest,core_plus_analog_history,RF analog history,random_forest__core_plus_analog_history,watch,Northeast,453,40,0.08830022075055188
+random_forest,core_plus_analog_history,RF analog history,random_forest__core_plus_analog_history,watch,South,69,2,0.028985507246376812
+random_forest,core_plus_analog_history,RF analog history,random_forest__core_plus_analog_history,watch,West,2,0,0.0

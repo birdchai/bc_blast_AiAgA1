@@ -41,6 +41,7 @@ experiments/*
 !experiments/train_temporal_forward_models.py
 !experiments/forward_decision_governance.py
 !experiments/train_analog_feature_ablation.py
+!experiments/analog_history_decision_governance.py
 
 # Compact updated-data outputs and governance summaries
 experiments/outputs/*
@@ -97,6 +98,15 @@ experiments/outputs/*
 !experiments/outputs/weather_hourly_metadata_sample_values.csv
 !experiments/outputs/weather_source_metadata_file_inventory.csv
 !experiments/outputs/province_terrain_table_template.csv
+
+!experiments/outputs/analog_decision_policy_metrics.csv
+!experiments/outputs/analog_decision_model_comparison.csv
+!experiments/outputs/analog_decision_region_performance.csv
+!experiments/outputs/analog_decision_confusion_matrix.csv
+!experiments/outputs/analog_decision_alert_tier_summary.csv
+!experiments/outputs/analog_decision_alert_tier_region_summary.csv
+!experiments/outputs/analog_decision_calibration_reliability.csv
+!experiments/outputs/analog_decision_thresholds.csv
 
 # Keep raw and bulky generated data out of Git.
 data/

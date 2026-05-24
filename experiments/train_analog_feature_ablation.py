@@ -600,6 +600,7 @@ def main() -> None:
         "analog_ablation_feature_importance.csv": importances.sort_values(
             ["feature_set", "model", "importance"], ascending=[True, True, False]
         ),
+        "analog_ablation_all_predictions.csv": predictions,
         "analog_ablation_test_predictions.csv": predictions[predictions["split"] == "test"].copy(),
         "analog_ablation_failure_cases.csv": failures,
         "analog_ablation_feature_manifest.csv": manifest,
