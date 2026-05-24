@@ -119,6 +119,9 @@ experiments/outputs/*
 !experiments/outputs/north_failure_type_summary.csv
 !experiments/outputs/north_diagnostic_recommendations.csv
 
+!experiments/outputs/feature_registry_template.csv
+!experiments/outputs/feature_registry_current.csv
+
 # Keep raw and bulky generated data out of Git.
 data/
 updated data/

@@ -4535,3 +4535,154 @@ Next direction:
 - Prepare `province_terrain_table.csv` from an external DEM or province-level GIS source.
 - Audit province-name matching and terrain coverage.
 - Then run a controlled terrain-feature association analysis before any model retraining.
+
+## 2026-05-24 Step 9.15 Feature Agent Specification and Feature Lifecycle Governance
+
+Goal:
+
+- Formalize a Feature Agent system for managing feature discovery, validation, ablation, governance, and missing-data escalation.
+- Keep the rice blast AI research platform reproducible, explainable, and thesis-oriented before adding more feature complexity.
+- Define how future candidate features move from biological hypothesis to governed use.
+
+Context:
+
+- The project now contains many feature families:
+  - mechanistic weather,
+  - humidity and leaf wetness,
+  - temporal accumulation,
+  - host susceptibility,
+  - spatial pressure,
+  - wind alignment,
+  - spore-window features,
+  - BUS external reference,
+  - province analog history,
+  - analog pressure and moisture,
+  - future terrain/elevation candidates.
+- Recent findings show that feature governance is necessary:
+  - `core_no_BUS` remains the stable nationwide feature baseline.
+  - analog history improves Northeast recall/F1 but increases false positives.
+  - BUS is useful as an external reference but should not be a required nationwide dependency.
+  - all-analog feature expansion can improve ranking but is not safe as the default.
+  - North remains unresolved and may require terrain or microclimate data.
+  - updated `weather_hourly` has no direct terrain/elevation fields.
+
+Documents created:
+
+- `FEATURE_AGENT_SPEC.md`
+- `DATA_SCOUT_AGENT_SPEC.md`
+
+Registry outputs:
+
+- `experiments/outputs/feature_registry_template.csv`
+- `experiments/outputs/feature_registry_current.csv`
+
+Feature Agent roles:
+
+| agent | responsibility |
+|---|---|
+| Feature Scientist Agent | propose biologically meaningful features, define hypotheses, mechanisms, data needs, and leakage risks |
+| Feature Validation Agent | run feature-effect, stability, regional association, missingness, coverage, and redundancy checks |
+| Feature Ablation Agent | test feature sets in controlled experiments against baseline models and evaluate FP/FN tradeoffs |
+| Feature Governance Agent | assign feature status and decide whether a feature is core, regional, dashboard, reference, rejected, or future-data-needed |
+| Data Scout Agent | activate when useful features cannot be built from existing data and evaluate external data sources before integration |
+
+Feature lifecycle statuses:
+
+- `proposed`
+- `data_available`
+- `data_missing`
+- `audited`
+- `validated`
+- `ablated`
+- `governed`
+- `accepted_core`
+- `accepted_regional`
+- `accepted_dashboard`
+- `accepted_reference`
+- `rejected`
+- `future_data_needed`
+
+Required feature metadata:
+
+- `feature_name`
+- `feature_family`
+- `hypothesis`
+- `biological_rationale`
+- `data_source`
+- `temporal_scope`
+- `spatial_scope`
+- `leakage_risk`
+- `missingness`
+- `validation_result`
+- `ablation_result`
+- `regional_behavior`
+- `governance_status`
+- `notes`
+
+Initial governance decisions:
+
+| feature family | preliminary status | interpretation |
+|---|---|---|
+| core weather / moisture | `accepted_core` | stable mechanistic baseline |
+| leaf wetness | `accepted_core` | biologically important infection proxy |
+| temporal rolling risk | `accepted_core` | short-term memory is useful |
+| host susceptibility | `accepted_core` | supported by feature importance and biological rationale |
+| spatial / regional pressure | `accepted_core` | strong corrected-label signal |
+| wind alignment | `accepted_core` with regional interpretation | useful but heterogeneous |
+| spore-window features | `accepted_core` or `candidate_only` | biologically informed but still monitored |
+| BUS | `accepted_reference` | external mechanistic benchmark, not national dependency |
+| analog history | `accepted_regional` | useful for Northeast monitoring, not universal default |
+| analog pressure / moisture | `candidate_only` | weaker than analog history |
+| all-analog feature expansion | `candidate_only` / not default | can raise false positives |
+| terrain/elevation | `future_data_needed` | official missing-data candidate for North diagnostics |
+| sea-level pressure as elevation proxy | `rejected` | scientifically inappropriate because pressure is sea-level adjusted |
+
+Data Scout Agent:
+
+- Defined as the escalation mechanism for features that are scientifically plausible but absent from current data.
+- Must evaluate source quality, license, cost, resolution, coverage, and reproducibility.
+- Must propose data source options before download or integration.
+- Must not download or integrate external datasets without approval.
+
+First official Data Scout case:
+
+- Missing data: province-level terrain/elevation.
+- Reason: North failures remain unresolved, and terrain/microclimate may explain low-signal positives.
+- Candidate sources:
+  - SRTM DEM
+  - Copernicus DEM
+  - ASTER GDEM
+  - Thai government GIS / DEM sources
+  - commercial DEM if public sources are insufficient
+- Expected integration file:
+  - `province_terrain_table.csv`
+
+Feature registry:
+
+- `feature_registry_template.csv` defines the required registry columns.
+- `feature_registry_current.csv` records current governance status for:
+  - weather/moisture features,
+  - leaf wetness,
+  - temporal rolling features,
+  - host susceptibility,
+  - regional/spatial pressure,
+  - wind alignment,
+  - spore-window features,
+  - BUS reference features,
+  - analog history,
+  - analog pressure,
+  - terrain/elevation candidates,
+  - rejected sea-level-pressure terrain proxy.
+
+Conclusion:
+
+- Step 9.15 converts feature development from ad hoc experimentation into a governed scientific lifecycle.
+- Future features should not enter the model only because they are available.
+- Every feature must pass hypothesis definition, data audit, validation, ablation, and governance decision.
+- Terrain/elevation is now the first official missing-data scouting case.
+
+Next direction:
+
+- Use the Data Scout Agent workflow to evaluate terrain/elevation sources.
+- Prepare a province-level terrain table only after source approval.
+- Audit terrain coverage before any terrain-feature modeling.
