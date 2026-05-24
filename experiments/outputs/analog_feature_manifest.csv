@@ -1,0 +1,7 @@
+feature,definition,temporal_safety
+analog_prevweek_blast,Similarity-weighted mean blast_any among top-5 analog provinces from previous week.,Uses analog sets learned from train 2017-2020 and previous-week labels only.
+analog_prevweek_risk,Similarity-weighted mean risk_score among top-5 analog provinces from previous week.,Uses previous-week weather risk only.
+analog_2w_pressure,Similarity-weighted mean host_weighted_rolling_2w among top-5 analog provinces in the current week.,Rolling feature is precomputed from historical weeks.
+analog_host_pressure,Similarity-weighted mean host_weighted_risk among top-5 analog provinces in the current week.,"Uses current-week host/weather state, not future labels."
+analog_leaf_wet_pressure,Similarity-weighted mean leaf_wet_hours among top-5 analog provinces in the current week.,"Uses current-week weather state, not future labels."
+analog_outbreak_frequency_train,Similarity-weighted train-year blast_t_plus_1 frequency among top-5 analog provinces.,Computed from train years 2017-2020 only.

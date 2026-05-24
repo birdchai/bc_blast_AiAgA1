@@ -3634,3 +3634,180 @@ Next direction:
 - Step 9.11: province similarity / analog analysis.
 - Investigate whether difficult provinces, especially North and sparse regions, need similarity-based borrowing from epidemiologically similar provinces.
 - Keep DNN no-class-weight, Random Forest, and Hybrid DNN + TCN 2w as candidate models for future governance comparisons.
+
+## 2026-05-24 Step 9.11 Province Similarity / Analog Epidemiology Analysis
+
+Goal:
+
+- Analyze whether provinces with similar epidemiological, environmental, host, and outbreak profiles can support rice blast forecasting beyond geographic adjacency alone.
+- Investigate difficult regions, especially North, before adding new model complexity.
+- Treat this as analog discovery, not a new forecasting model.
+
+Dataset:
+
+- `experiments/outputs/region_temporal_sequence_dataset_updated_labels_2015_2022.csv`
+
+Similarity construction policy:
+
+- Similarity profiles were built from train years only:
+  - 2017-2020
+- Validation 2021 and test 2022 were used only for inspection/evaluation.
+- 2022 outbreak labels were not used to construct province analog sets.
+
+Script:
+
+- `experiments/analyze_province_similarity.py`
+
+Outputs:
+
+- `experiments/outputs/province_similarity_matrix_combined.csv`
+- `experiments/outputs/province_similarity_matrix_weather.csv`
+- `experiments/outputs/province_similarity_matrix_host.csv`
+- `experiments/outputs/province_similarity_matrix_pressure.csv`
+- `experiments/outputs/province_similarity_matrix_outbreak_history.csv`
+- `experiments/outputs/province_top_analog_neighbors.csv`
+- `experiments/outputs/province_analog_vs_geographic_neighbors.csv`
+- `experiments/outputs/province_similarity_cluster_summary.csv`
+- `experiments/outputs/analog_feature_effects_validation_2021.csv`
+- `experiments/outputs/analog_feature_effects_test_2022.csv`
+- `experiments/outputs/north_failure_analog_analysis.csv`
+- `experiments/outputs/analog_feature_manifest.csv`
+- `experiments/outputs/province_similarity_profile_manifest.csv`
+
+Profile groups:
+
+- Weather / moisture:
+  - temperature, humidity, rainfall, leaf wetness, regional leaf wet accumulation
+- Host / POV:
+  - susceptibility score, host-weighted risk, POV area, variety count
+- Spatial / regional pressure:
+  - neighbor blast/risk pressure, regional pressure, regional wind alignment
+- Outbreak history:
+  - train-year blast frequency, target frequency, monthly and seasonal outbreak pattern
+
+Similarity method:
+
+- Province profiles were standardized using train-year data only.
+- Similarity combined:
+  - cosine similarity
+  - Euclidean distance converted to similarity
+- Combined epidemiological similarity is the average of weather, host, pressure, and outbreak-history similarity.
+
+Analog vs geographic comparison:
+
+| metric | value |
+|---|---:|
+| provinces | 77 |
+| mean top-5 analog/geographic overlap rate | 0.4182 |
+| mean analog distance | 179.2 km |
+| mean same-region analog rate | 0.8312 |
+| mean cross-region analog rate | 0.1688 |
+
+Interpretation:
+
+- Analog neighbors are not identical to geographic neighbors.
+- On average, only about 42% of top-5 analog provinces overlap with top-5 nearest geographic neighbors.
+- Most analogs remain in the same region, but meaningful cross-region analogs exist.
+- This supports the hypothesis that province similarity contains epidemiological structure beyond pure distance adjacency.
+
+Validation 2021 analog feature effects:
+
+| feature | nationwide disease mean | nationwide no-disease mean | effect diff | correlation |
+|---|---:|---:|---:|---:|
+| analog_prevweek_blast | 0.1525 | 0.0668 | 0.0857 | 0.1642 |
+| analog_outbreak_frequency_train | 0.0512 | 0.0294 | 0.0218 | 0.1697 |
+| analog_leaf_wet_pressure | 25.2242 | 25.8965 | -0.6723 | -0.0081 |
+| analog_host_pressure | 23.4295 | 24.1040 | -0.6745 | -0.0108 |
+
+Validation interpretation:
+
+- In 2021, analog outbreak-history signals were more useful than analog weather/moisture pressure.
+- `analog_prevweek_blast` and `analog_outbreak_frequency_train` showed positive nationwide association with `blast_t_plus_1`.
+- Analog moisture and host pressure did not show stable nationwide positive association in 2021.
+
+Test 2022 analog feature effects:
+
+| feature | nationwide disease mean | nationwide no-disease mean | effect diff | correlation |
+|---|---:|---:|---:|---:|
+| analog_2w_pressure | 61.7120 | 53.2915 | 8.4204 | 0.0537 |
+| analog_leaf_wet_pressure | 37.5069 | 29.4285 | 8.0784 | 0.0705 |
+| analog_regional_leaf_wet_pressure | 93.0839 | 86.9002 | 6.1838 | 0.0214 |
+| analog_host_pressure | 30.7761 | 26.6884 | 4.0877 | 0.0492 |
+| analog_prevweek_risk | 29.4644 | 26.2626 | 3.2018 | 0.0398 |
+| analog_prevweek_blast | 0.1871 | 0.0338 | 0.1533 | 0.2552 |
+| analog_outbreak_frequency_train | 0.0755 | 0.0291 | 0.0463 | 0.2647 |
+
+Test interpretation:
+
+- In 2022, analog features showed clearer positive association with corrected outbreak labels.
+- The strongest nationwide correlations were:
+  - `analog_outbreak_frequency_train`: 0.2647
+  - `analog_prevweek_blast`: 0.2552
+- This suggests analog outbreak memory may be a useful epidemiological signal.
+- Analog moisture/host pressure also had positive effect differences, but weaker correlations.
+
+Regional findings:
+
+- Northeast 2022 had strong analog signal:
+  - `analog_leaf_wet_pressure` correlation: 0.1965
+  - `analog_2w_pressure` correlation: 0.1757
+  - `analog_host_pressure` correlation: 0.1648
+  - `analog_prevweek_risk` correlation: 0.1583
+- North 2022 remained weak:
+  - `analog_prevweek_blast` effect diff was negative.
+  - `analog_outbreak_frequency_train` effect diff was negative.
+  - moisture analog features had small positive differences but very weak correlations.
+
+North failure analysis:
+
+- North false negatives from the DNN no-class-weight global F1 policy were inspected.
+- Several missed North outbreak rows had:
+  - `analog_prevweek_blast = 0`
+  - very low model scores
+  - modest or high analog moisture/risk pressure but little analog outbreak-history support
+- Example pattern:
+  - Lamphun missed weeks had top analogs mostly within North:
+    - Mae Hong Son, Chiang Mai, Kamphaeng Phet, Lampang, Nan
+  - analog previous-week blast was 0 across inspected failures.
+- Interpretation:
+  - North failures are not simply due to missing geographic adjacency.
+  - Analog provinces often did not provide prior-week outbreak signals.
+  - North may require different features, better label density, field reporting context, or sub-regional seasonality treatment.
+
+Cluster findings:
+
+- KMeans clustering was explored with k = 4, 6, and 8.
+- The k = 6 solution produced interpretable groups:
+  - high outbreak-frequency Northeast-like cluster,
+  - low outbreak central/western cluster,
+  - high leaf-wet South cluster,
+  - mixed North/East/Northeast analog cluster,
+  - moderate Northeast/North analog cluster,
+  - small high outbreak-frequency mixed cluster.
+- Clusters should not be treated as final model classes yet.
+- They are useful for hypothesis generation and province analog grouping.
+
+Scientific interpretation:
+
+- Province similarity is epidemiologically meaningful and partially distinct from geographic adjacency.
+- Analog outbreak history and analog previous-week blast contain measurable signal, especially in 2022.
+- Analog moisture/host pressure appears region-dependent rather than uniformly useful nationwide.
+- Similarity-based analog pressure may help future spatial modeling, but it does not immediately solve North.
+
+Decision:
+
+- Do not replace existing spatial features yet.
+- Do not train a new model yet.
+- Preserve analog features as candidate features for a controlled future experiment.
+- Use analog clusters to guide province-level diagnostics and region-specific modeling hypotheses.
+
+Next direction:
+
+- Step 9.12: controlled analog-feature ablation.
+- Compare:
+  - core_no_BUS baseline,
+  - core_no_BUS + analog outbreak-history features,
+  - core_no_BUS + analog pressure/moisture features,
+  - core_no_BUS + geographic neighbor pressure.
+- Keep train 2017-2020, validation 2021, test 2022.
+- Do not use 2022 labels to learn analog sets.

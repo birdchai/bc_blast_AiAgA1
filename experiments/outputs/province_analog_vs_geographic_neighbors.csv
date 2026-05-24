@@ -1,0 +1,78 @@
+province,top5_analog_provinces,top5_geographic_neighbors,analog_geo_overlap_count,analog_geo_overlap_rate,mean_analog_distance_km,same_region_rate,cross_region_rate
+Amnat Charoen,Nakhon Phanom|Nong Khai|Roi Et|Trat|Khon Kaen,Mukdahan|Roi Et|Si Sa Ket|Ubon Ratchathani|Yasothon,1,0.2,255.54891049419052,0.8,0.19999999999999996
+Ang Thong,Pathum Thani|Saraburi|Nonthaburi|Bangkok|Samut Prakarn,Lop Buri|Phra Nakhon Si Ayutthaya|Saraburi|Sing Buri|Suphan Buri,1,0.2,82.72551235412675,1.0,0.0
+Bangkok,Nonthaburi|Samut Sakhon|Pathum Thani|Saraburi|Samut Prakarn,Nakhon Pathom|Nonthaburi|Pathum Thani|Samut Prakarn|Samut Sakhon,4,0.8,41.70370728869229,1.0,0.0
+Bueng Kan,Nong Bua Lam Phu|Sakon Nakhon|Maha Sarakham|Mukdahan|Udon Thani,Kalasin|Nakhon Phanom|Nong Khai|Sakon Nakhon|Udon Thani,2,0.4,167.0007520473882,1.0,0.0
+Buri Ram,Nakhon Ratchasima|Si Sa Ket|Khon Kaen|Ubon Ratchathani|Surin,Maha Sarakham|Nakhon Ratchasima|Roi Et|Si Sa Ket|Surin,3,0.6,139.4874246837342,1.0,0.0
+Chachoengsao,Chon Buri|Nakhon Nayok|Rayong|Nakhon Pathom|Phichit,Bangkok|Chon Buri|Nakhon Nayok|Prachin Buri|Samut Prakarn,2,0.4,126.0089215091893,0.6,0.4
+Chai Nat,Sing Buri|Prachuap Khiri Khan|Samut Songkhram|Pathum Thani|Phetchaburi,Ang Thong|Nakhon Sawan|Sing Buri|Suphan Buri|Uthai Thani,1,0.2,194.29359193946442,0.6,0.4
+Chaiyaphum,Yasothon|Kalasin|Udon Thani|Roi Et|Khon Kaen,Khon Kaen|Maha Sarakham|Nakhon Ratchasima|Nong Bua Lam Phu|Phetchabun,1,0.2,182.8974165058379,1.0,0.0
+Chanthaburi,Sa kaeo|Trat|Prachin Buri|Nakhon Nayok|Chachoengsao,Chachoengsao|Chon Buri|Rayong|Sa kaeo|Trat,3,0.6,141.2580056623911,1.0,0.0
+Chiang Mai,Lamphun|Mae Hong Son|Kamphaeng Phet|Nan|Lampang,Lampang|Lamphun|Mae Hong Son|Phayao|Phrae,3,0.6,143.0795228314234,1.0,0.0
+Chiang Rai,Phayao|Buri Ram|Nakhon Ratchasima|Khon Kaen|Si Sa Ket,Chiang Mai|Lampang|Nan|Phayao|Phrae,1,0.2,500.2789569305477,0.2,0.8
+Chon Buri,Chachoengsao|Rayong|Nakhon Nayok|Nakhon Pathom|Samut Prakarn,Bangkok|Chachoengsao|Rayong|Samut Prakarn|Samut Sakhon,3,0.6,85.58197085088882,0.6,0.4
+Chumphon,Surat Thani|Pattani|Phang-nga|Phuket|Krabi,Nakhon Si Thammarat|Phang-nga|Prachuap Khiri Khan|Ranong|Surat Thani,2,0.4,269.522504973691,1.0,0.0
+Kalasin,Udon Thani|Chaiyaphum|Yasothon|Roi Et|Nakhon Phanom,Khon Kaen|Maha Sarakham|Mukdahan|Roi Et|Sakon Nakhon,1,0.2,123.93363748696001,1.0,0.0
+Kamphaeng Phet,Phetchabun|Nakhon Sawan|Mae Hong Son|Lamphun|Roi Et,Nakhon Sawan|Phichit|Phitsanulok|Sukhothai|Tak,1,0.2,249.0691131738181,0.8,0.19999999999999996
+Kanchanaburi,Phetchaburi|Prachuap Khiri Khan|Samut Sakhon|Samut Prakarn|Chai Nat,Nakhon Pathom|Ratchaburi|Samut Sakhon|Samut Songkhram|Suphan Buri,1,0.2,156.50043456162976,0.4,0.6
+Khon Kaen,Udon Thani|Si Sa Ket|Maha Sarakham|Buri Ram|Surin,Chaiyaphum|Kalasin|Maha Sarakham|Nong Bua Lam Phu|Udon Thani,2,0.4,160.14729472209785,1.0,0.0
+Krabi,Surat Thani|Narathiwat|Ranong|Satun|Phang-nga,Nakhon Si Thammarat|Phang-nga|Phatthalung|Phuket|Trang,1,0.2,198.78228254382685,1.0,0.0
+Lampang,Lamphun|Phrae|Nan|Uttaradit|Chiang Mai,Chiang Mai|Lamphun|Phayao|Phrae|Uttaradit,4,0.8,94.82333208195148,1.0,0.0
+Lamphun,Mae Hong Son|Chiang Mai|Kamphaeng Phet|Lampang|Nan,Chiang Mai|Lampang|Mae Hong Son|Phayao|Phrae,3,0.6,130.6860651571802,1.0,0.0
+Loei,Nong Bua Lam Phu|Nan|Phrae|Nong Khai|Sakon Nakhon,Nong Bua Lam Phu|Nong Khai|Phetchabun|Udon Thani|Uttaradit,2,0.4,162.14443301705592,0.6,0.4
+Lop Buri,Sing Buri|Chai Nat|Kanchanaburi|Saraburi|Samut Sakhon,Ang Thong|Chai Nat|Phra Nakhon Si Ayutthaya|Saraburi|Sing Buri,3,0.6,104.91684509322651,0.8,0.19999999999999996
+Mae Hong Son,Lamphun|Chiang Mai|Kamphaeng Phet|Roi Et|Nong Khai,Chiang Mai|Lampang|Lamphun|Phayao|Phrae,2,0.4,341.0838476272106,0.6,0.4
+Maha Sarakham,Khon Kaen|Si Sa Ket|Ubon Ratchathani|Surin|Udon Thani,Buri Ram|Kalasin|Khon Kaen|Roi Et|Yasothon,1,0.2,148.85959227990952,1.0,0.0
+Mukdahan,Chiang Mai|Sakon Nakhon|Phitsanulok|Lampang|Bueng Kan,Amnat Charoen|Kalasin|Nakhon Phanom|Roi Et|Yasothon,0,0.0,400.442409706431,0.4,0.6
+Nakhon Nayok,Phetchaburi|Pathum Thani|Samut Prakarn|Samut Sakhon|Saraburi,Chachoengsao|Pathum Thani|Phra Nakhon Si Ayutthaya|Prachin Buri|Saraburi,2,0.4,97.4657967529992,0.0,1.0
+Nakhon Pathom,Ang Thong|Saraburi|Bangkok|Nonthaburi|Phra Nakhon Si Ayutthaya,Bangkok|Nonthaburi|Ratchaburi|Samut Sakhon|Samut Songkhram,2,0.4,70.25612838282044,1.0,0.0
+Nakhon Phanom,Amnat Charoen|Nong Khai|Roi Et|Trat|Kamphaeng Phet,Amnat Charoen|Bueng Kan|Kalasin|Mukdahan|Sakon Nakhon,1,0.2,332.6744369100367,0.6,0.4
+Nakhon Ratchasima,Buri Ram|Si Sa Ket|Khon Kaen|Ubon Ratchathani|Surin,Buri Ram|Chaiyaphum|Khon Kaen|Maha Sarakham|Prachin Buri,2,0.4,185.08367415202673,1.0,0.0
+Nakhon Sawan,Phetchabun|Kamphaeng Phet|Phichit|Phitsanulok|Uthai Thani,Chai Nat|Kamphaeng Phet|Phichit|Sing Buri|Uthai Thani,3,0.6,94.02192128971015,1.0,0.0
+Nakhon Si Thammarat,Phatthalung|Songkhla|Pattani|Trang|Yala,Krabi|Phatthalung|Songkhla|Surat Thani|Trang,3,0.6,171.28714307042213,1.0,0.0
+Nan,Lamphun|Mae Hong Son|Chiang Mai|Lampang|Nong Khai,Chiang Rai|Lampang|Phayao|Phrae|Uttaradit,1,0.2,215.42680982657816,0.8,0.19999999999999996
+Narathiwat,Trang|Satun|Pattani|Ranong|Phang-nga,Pattani|Phatthalung|Satun|Songkhla|Yala,2,0.4,316.56592285996817,1.0,0.0
+Nong Bua Lam Phu,Udon Thani|Sakon Nakhon|Surin|Khon Kaen|Maha Sarakham,Chaiyaphum|Khon Kaen|Loei|Nong Khai|Udon Thani,2,0.4,155.22259175853569,1.0,0.0
+Nong Khai,Nakhon Phanom|Amnat Charoen|Roi Et|Mae Hong Son|Trat,Bueng Kan|Loei|Nong Bua Lam Phu|Sakon Nakhon|Udon Thani,0,0.0,378.993615931146,0.6,0.4
+Nonthaburi,Bangkok|Pathum Thani|Saraburi|Samut Prakarn|Samut Sakhon,Bangkok|Nakhon Pathom|Pathum Thani|Samut Prakarn|Samut Sakhon,4,0.8,42.95571496984282,1.0,0.0
+Pathum Thani,Samut Prakarn|Nonthaburi|Samut Sakhon|Phetchaburi|Saraburi,Bangkok|Nakhon Nayok|Nonthaburi|Phra Nakhon Si Ayutthaya|Samut Prakarn,2,0.4,68.60007805154827,0.8,0.19999999999999996
+Pattani,Yala|Phang-nga|Narathiwat|Trang|Chumphon,Narathiwat|Phatthalung|Satun|Songkhla|Yala,2,0.4,238.84100425246743,1.0,0.0
+Phang-nga,Pattani|Narathiwat|Phuket|Krabi|Trang,Krabi|Nakhon Si Thammarat|Phuket|Ranong|Surat Thani,2,0.4,250.02053082296098,1.0,0.0
+Phatthalung,Narathiwat|Krabi|Surat Thani|Trang|Satun,Krabi|Nakhon Si Thammarat|Satun|Songkhla|Trang,3,0.6,146.2097592024626,1.0,0.0
+Phayao,Chiang Rai|Khon Kaen|Buri Ram|Si Sa Ket|Nakhon Ratchasima,Chiang Mai|Chiang Rai|Lampang|Nan|Phrae,1,0.2,448.9390155431162,0.2,0.8
+Phetchabun,Kamphaeng Phet|Nakhon Sawan|Phitsanulok|Roi Et|Phichit,Chaiyaphum|Loei|Nakhon Sawan|Phichit|Phitsanulok,3,0.6,149.45060407067257,0.8,0.19999999999999996
+Phetchaburi,Samut Prakarn|Prachuap Khiri Khan|Pathum Thani|Kanchanaburi|Samut Sakhon,Nakhon Pathom|Ratchaburi|Samut Prakarn|Samut Sakhon|Samut Songkhram,2,0.4,116.78628984776424,0.4,0.6
+Phichit,Phitsanulok|Phetchabun|Sukhothai|Nakhon Sawan|Uthai Thani,Kamphaeng Phet|Nakhon Sawan|Phetchabun|Phitsanulok|Uthai Thani,4,0.8,89.34259383587123,1.0,0.0
+Phitsanulok,Phichit|Phetchabun|Nakhon Sawan|Sukhothai|Uttaradit,Kamphaeng Phet|Phetchabun|Phichit|Sukhothai|Uttaradit,4,0.8,91.94809382401442,1.0,0.0
+Phra Nakhon Si Ayutthaya,Saraburi|Ang Thong|Nonthaburi|Pathum Thani|Nakhon Pathom,Ang Thong|Nonthaburi|Pathum Thani|Saraburi|Suphan Buri,4,0.8,47.54888179182933,1.0,0.0
+Phrae,Lampang|Uttaradit|Nan|Loei|Uthai Thani,Lampang|Lamphun|Nan|Sukhothai|Uttaradit,3,0.6,146.63157232037867,0.8,0.19999999999999996
+Phuket,Phang-nga|Pattani|Chumphon|Narathiwat|Satun,Krabi|Nakhon Si Thammarat|Phang-nga|Surat Thani|Trang,1,0.2,268.4886576972341,1.0,0.0
+Prachin Buri,Sa kaeo|Chanthaburi|Bueng Kan|Chachoengsao|Nong Bua Lam Phu,Chachoengsao|Nakhon Nayok|Pathum Thani|Sa kaeo|Saraburi,2,0.4,237.4384640205874,0.6,0.4
+Prachuap Khiri Khan,Phetchaburi|Chai Nat|Kanchanaburi|Samut Songkhram|Pathum Thani,Chumphon|Phetchaburi|Ratchaburi|Samut Sakhon|Samut Songkhram,2,0.4,239.5901319120394,0.4,0.6
+Ranong,Satun|Narathiwat|Krabi|Trang|Phang-nga,Chumphon|Krabi|Nakhon Si Thammarat|Phang-nga|Surat Thani,2,0.4,306.5638789009069,1.0,0.0
+Ratchaburi,Samut Songkhram|Prachuap Khiri Khan|Chai Nat|Suphan Buri|Phetchaburi,Nakhon Pathom|Nonthaburi|Phetchaburi|Samut Sakhon|Samut Songkhram,2,0.4,112.23197496992425,0.4,0.6
+Rayong,Chon Buri|Chachoengsao|Nakhon Nayok|Chiang Mai|Samut Prakarn,Chachoengsao|Chanthaburi|Chon Buri|Prachin Buri|Samut Prakarn,3,0.6,234.90613881237954,0.6,0.4
+Roi Et,Amnat Charoen|Nakhon Phanom|Nong Khai|Yasothon|Phetchabun,Amnat Charoen|Kalasin|Maha Sarakham|Mukdahan|Yasothon,2,0.4,170.7417669519343,0.8,0.19999999999999996
+Sa kaeo,Chanthaburi|Prachin Buri|Trat|Si Sa Ket|Surin,Chachoengsao|Chanthaburi|Nakhon Nayok|Prachin Buri|Rayong,2,0.4,168.27788698280943,0.6,0.4
+Sakon Nakhon,Nong Bua Lam Phu|Udon Thani|Surin|Yasothon|Maha Sarakham,Bueng Kan|Kalasin|Nakhon Phanom|Nong Khai|Udon Thani,1,0.2,178.0445948477693,1.0,0.0
+Samut Prakarn,Pathum Thani|Samut Sakhon|Phetchaburi|Nonthaburi|Bangkok,Bangkok|Chachoengsao|Nonthaburi|Pathum Thani|Samut Sakhon,4,0.8,51.605454723924574,0.8,0.19999999999999996
+Samut Sakhon,Samut Prakarn|Pathum Thani|Bangkok|Phetchaburi|Nonthaburi,Bangkok|Nakhon Pathom|Nonthaburi|Ratchaburi|Samut Songkhram,2,0.4,53.680431489041226,0.8,0.19999999999999996
+Samut Songkhram,Chai Nat|Prachuap Khiri Khan|Samut Sakhon|Pathum Thani|Chumphon,Nakhon Pathom|Nonthaburi|Phetchaburi|Ratchaburi|Samut Sakhon,1,0.2,170.74437505941768,0.6,0.4
+Saraburi,Pathum Thani|Nonthaburi|Bangkok|Ang Thong|Samut Sakhon,Ang Thong|Lop Buri|Nakhon Nayok|Pathum Thani|Phra Nakhon Si Ayutthaya,2,0.4,86.32845244121395,1.0,0.0
+Satun,Narathiwat|Ranong|Trang|Krabi|Surat Thani,Krabi|Phatthalung|Songkhla|Trang|Yala,2,0.4,229.10361661515375,1.0,0.0
+Si Sa Ket,Ubon Ratchathani|Khon Kaen|Buri Ram|Surin|Nakhon Ratchasima,Amnat Charoen|Roi Et|Surin|Ubon Ratchathani|Yasothon,2,0.4,154.3168336172414,1.0,0.0
+Sing Buri,Chai Nat|Bangkok|Pathum Thani|Saraburi|Lop Buri,Ang Thong|Chai Nat|Lop Buri|Phra Nakhon Si Ayutthaya|Suphan Buri,2,0.4,76.76542349607986,1.0,0.0
+Songkhla,Nakhon Si Thammarat|Surat Thani|Phatthalung|Krabi|Satun,Pattani|Phatthalung|Satun|Trang|Yala,2,0.4,157.90205082708752,1.0,0.0
+Sukhothai,Uttaradit|Phichit|Phitsanulok|Kamphaeng Phet|Phetchabun,Kamphaeng Phet|Phichit|Phitsanulok|Tak|Uttaradit,4,0.8,104.00924991264193,1.0,0.0
+Suphan Buri,Chai Nat|Saraburi|Phra Nakhon Si Ayutthaya|Nakhon Pathom|Sing Buri,Ang Thong|Chai Nat|Kanchanaburi|Phra Nakhon Si Ayutthaya|Sing Buri,3,0.6,69.8181276655225,1.0,0.0
+Surat Thani,Chumphon|Krabi|Narathiwat|Satun|Trang,Chumphon|Krabi|Nakhon Si Thammarat|Phang-nga|Ranong,2,0.4,234.18987275810977,1.0,0.0
+Surin,Udon Thani|Si Sa Ket|Khon Kaen|Sakon Nakhon|Maha Sarakham,Buri Ram|Maha Sarakham|Roi Et|Si Sa Ket|Yasothon,2,0.4,191.07870513745326,1.0,0.0
+Tak,Lampang|Uthai Thani|Phetchabun|Phrae|Maha Sarakham,Kamphaeng Phet|Lamphun|Phichit|Phitsanulok|Sukhothai,0,0.0,259.9036642102257,0.8,0.19999999999999996
+Trang,Narathiwat|Satun|Pattani|Phang-nga|Ranong,Krabi|Nakhon Si Thammarat|Phatthalung|Satun|Songkhla,1,0.2,212.04375460476086,1.0,0.0
+Trat,Amnat Charoen|Nakhon Phanom|Nong Khai|Chanthaburi|Nakhon Nayok,Chachoengsao|Chanthaburi|Chon Buri|Rayong|Sa kaeo,1,0.2,418.4974525535141,0.4,0.6
+Ubon Ratchathani,Si Sa Ket|Buri Ram|Maha Sarakham|Khon Kaen|Surin,Amnat Charoen|Mukdahan|Si Sa Ket|Surin|Yasothon,2,0.4,190.84210712666635,1.0,0.0
+Udon Thani,Khon Kaen|Nong Bua Lam Phu|Sakon Nakhon|Surin|Kalasin,Bueng Kan|Kalasin|Nong Bua Lam Phu|Nong Khai|Sakon Nakhon,3,0.6,138.95190989755469,1.0,0.0
+Uthai Thani,Phetchabun|Phichit|Nakhon Sawan|Suphan Buri|Kamphaeng Phet,Ang Thong|Chai Nat|Nakhon Sawan|Sing Buri|Suphan Buri,2,0.4,109.83098483007957,0.8,0.19999999999999996
+Uttaradit,Sukhothai|Lampang|Phitsanulok|Phrae|Phetchabun,Lampang|Loei|Phitsanulok|Phrae|Sukhothai,4,0.8,103.06205687441266,1.0,0.0
+Yala,Pattani|Narathiwat|Phang-nga|Trang|Chumphon,Narathiwat|Pattani|Phatthalung|Satun|Songkhla,2,0.4,246.48029875268531,1.0,0.0
+Yasothon,Chaiyaphum|Surin|Sakon Nakhon|Udon Thani|Roi Et,Amnat Charoen|Mukdahan|Roi Et|Si Sa Ket|Ubon Ratchathani,1,0.2,168.1424952476345,1.0,0.0
