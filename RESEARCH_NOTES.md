@@ -4686,3 +4686,152 @@ Next direction:
 - Use the Data Scout Agent workflow to evaluate terrain/elevation sources.
 - Prepare a province-level terrain table only after source approval.
 - Audit terrain coverage before any terrain-feature modeling.
+
+## 2026-05-24 Step 9.16 Data Scout Terrain/Elevation Source Evaluation
+
+Goal:
+
+- Use the Data Scout Agent workflow to evaluate terrain/elevation sources for unresolved North-region failures.
+- Identify the best first dataset for creating a province-level terrain table for Thailand.
+- Do not download raster data, merge terrain features, modify the prediction pipeline, or train models.
+
+Context:
+
+- Step 9.14 showed that North positives remain missed by all major candidate models.
+- Step 9.15 formalized the Data Scout Agent and made terrain/elevation the first official missing-data case.
+- Updated `weather_hourly` has no direct elevation or terrain fields.
+- `sealevelpressure` is sea-level adjusted and must not be used as an elevation proxy.
+
+Outputs:
+
+- `experiments/outputs/data_scout_terrain_sources.csv`
+- `experiments/outputs/province_terrain_table_schema.csv`
+- `data_scout_terrain_recommendation.md`
+
+Candidate sources evaluated:
+
+| source | provider | resolution | preliminary role |
+|---|---|---:|---|
+| SRTM 30m / SRTMGL1 | NASA / USGS / JPL-Caltech | ~30m | recommended first source |
+| Copernicus DEM GLO-30 | Copernicus / ESA | 30m | recommended fallback / validation source |
+| Copernicus DEM GLO-90 | Copernicus / ESA | 90m | lower-burden backup |
+| ASTER GDEM v3 | NASA / METI | 30m | secondary comparison source |
+| Thai government GIS / DEM | Thai agencies | unknown | scout further if official national coverage is found |
+| Commercial DEM / GIS | commercial providers | variable | not needed now |
+
+Recommended first dataset:
+
+- SRTM 30m / NASA-USGS SRTMGL1.
+
+Rationale:
+
+- Free and widely used.
+- Available through Google Earth Engine as `USGS/SRTMGL1_003`.
+- Reproducible for thesis/publication workflows.
+- Sufficient for province-level terrain summaries.
+- Avoids large local raster downloads for the first pass.
+- Suitable for testing whether static terrain context helps explain North failures.
+
+Recommended fallback dataset:
+
+- Copernicus DEM GLO-30.
+
+Rationale:
+
+- Also 30m.
+- Newer and high quality.
+- Useful for checking whether SRTM-derived province terrain rankings are robust.
+- Must be interpreted as a Digital Surface Model because it includes surface features such as vegetation, buildings, and infrastructure.
+
+ASTER GDEM v3 interpretation:
+
+- Useful as a secondary comparison source.
+- Not recommended as the first source because it can contain stereo-optical artifacts and requires more quality-control attention.
+
+Thai government source interpretation:
+
+- Potentially valuable if an official nationwide DEM is available.
+- Not selected as first source because coverage, licensing, access method, and reproducibility are not yet confirmed.
+- Should remain a Data Scout follow-up path.
+
+Commercial source interpretation:
+
+- Paid DEM/GIS products are not needed now.
+- Free/open 30m DEM sources are sufficient for province-level first-pass terrain diagnostics.
+- Commercial data may reduce reproducibility and complicate publication or thesis sharing.
+
+Google Earth Engine decision:
+
+- Recommended for the first pass.
+
+Reasons:
+
+- No need to download large raster datasets locally.
+- Supports province-level zonal statistics.
+- Can compute slope and terrain derivatives.
+- Can export a compact `province_terrain_table.csv`.
+
+Local raster download decision:
+
+- Not recommended now.
+- Consider local raster processing only if Earth Engine access is unavailable, boundary upload fails, or sub-provincial analysis becomes necessary.
+
+Province terrain table schema:
+
+| column | meaning |
+|---|---|
+| province | project-standard English province name |
+| elevation_mean | province mean elevation in meters |
+| elevation_min | province minimum elevation in meters |
+| elevation_max | province maximum elevation in meters |
+| elevation_range | elevation_max minus elevation_min |
+| elevation_std | within-province elevation standard deviation |
+| terrain_roughness | ruggedness or local elevation variability index |
+| slope_mean | mean slope |
+| slope_std | within-province slope standard deviation |
+| mountainous_area_ratio | share of province classified as mountainous by documented threshold |
+| lowland_area_ratio | share of province classified as lowland by documented threshold |
+| source | DEM source |
+| source_resolution | DEM spatial resolution |
+| processing_method | zonal-statistics and terrain-derivative method |
+| notes | caveats and processing notes |
+
+Recommended first-pass workflow:
+
+1. Obtain Thailand province boundary polygons.
+2. Load SRTM 30m in Google Earth Engine.
+3. Clip or reduce DEM by province polygons.
+4. Compute elevation mean, min, max, range, and standard deviation.
+5. Compute slope from DEM.
+6. Compute slope mean and slope standard deviation.
+7. Compute terrain roughness or ruggedness.
+8. Compute mountainous and lowland area ratios using pre-defined thresholds.
+9. Export `province_terrain_table.csv`.
+10. Audit province-name matching against project province names.
+11. Audit missingness and plausible value ranges.
+12. Run terrain association analysis before any model training.
+
+Decision summary:
+
+| question | decision |
+|---|---|
+| recommended first dataset | SRTM 30m / NASA-USGS SRTMGL1 |
+| recommended fallback dataset | Copernicus DEM GLO-30 |
+| paid dataset needed now | No |
+| Google Earth Engine recommended | Yes |
+| local raster download recommended now | No |
+| can proceed with province-level table first | Yes |
+
+Scientific interpretation:
+
+- Terrain/elevation should be treated as static province metadata.
+- Terrain is not hourly weather and should not be merged as a time-varying weather variable.
+- Terrain should first be tested as explanatory context for North failures.
+- Any terrain feature must pass audit, association analysis, and controlled ablation before being promoted to the core model.
+
+Conclusion:
+
+- The Data Scout recommendation is to start with SRTM 30m through Google Earth Engine.
+- Copernicus GLO-30 should be retained as a validation/fallback source.
+- Paid data is unnecessary for the current province-level diagnostic stage.
+- The next implementation step should be terrain table creation and audit, not model training.
