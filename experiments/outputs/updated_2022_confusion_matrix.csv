@@ -1,0 +1,13 @@
+﻿model,feature_set,split,threshold,true_negative,false_positive,false_negative,true_positive
+random_forest_core_no_BUS,core_no_BUS,train,0.49999999999999994,14472,893,87,556
+random_forest_core_no_BUS,core_no_BUS,validation,0.49999999999999994,3091,549,148,160
+random_forest_core_no_BUS,core_no_BUS,test,0.49999999999999994,3753,90,109,52
+xgboost_core_no_BUS,core_no_BUS,train,0.65,14502,863,115,528
+xgboost_core_no_BUS,core_no_BUS,validation,0.65,3103,537,122,186
+xgboost_core_no_BUS,core_no_BUS,test,0.65,3699,144,109,52
+dnn_no_class_weight_core_no_BUS,core_no_BUS,train,0.2,14929,436,273,370
+dnn_no_class_weight_core_no_BUS,core_no_BUS,validation,0.2,3414,226,193,115
+dnn_no_class_weight_core_no_BUS,core_no_BUS,test,0.2,3764,79,110,51
+dnn_class_weight_core_no_BUS,core_no_BUS,train,0.7999999999999999,14819,546,187,456
+dnn_class_weight_core_no_BUS,core_no_BUS,validation,0.7999999999999999,3385,255,177,131
+dnn_class_weight_core_no_BUS,core_no_BUS,test,0.7999999999999999,3699,144,102,59

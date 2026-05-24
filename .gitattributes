@@ -1,0 +1,6 @@
+# Keep text outputs stable across Windows/Linux collaborators.
+*.py text eol=lf
+*.md text eol=lf
+*.csv text eol=lf
+*.txt text eol=lf
+*.json text eol=lf

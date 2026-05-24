@@ -1,0 +1,17 @@
+﻿model,model_label,sequence_length,alert_tier,rows,positive_rows,observed_positive_rate,mean_calibrated_score,false_positive_as_action,false_negative_as_low_watch
+dnn_class_weight_core_no_BUS,DNN class weighted,0,high_alert,19,10,0.5263157894736842,0.31082684928375226,9,0
+dnn_class_weight_core_no_BUS,DNN class weighted,0,low_risk,2772,55,0.01984126984126984,0.029292624957336477,0,55
+dnn_class_weight_core_no_BUS,DNN class weighted,0,warning,397,73,0.18387909319899245,0.21496389911514768,324,0
+dnn_class_weight_core_no_BUS,DNN class weighted,0,watch,816,23,0.028186274509803922,0.08616160305640212,0,23
+dnn_no_class_weight_core_no_BUS,DNN no class weight,0,high_alert,37,21,0.5675675675675675,0.39750115647425094,16,0
+dnn_no_class_weight_core_no_BUS,DNN no class weight,0,low_risk,2609,48,0.018397853583748562,0.04670075458131021,0,48
+dnn_no_class_weight_core_no_BUS,DNN no class weight,0,warning,95,30,0.3157894736842105,0.21060685387101247,65,0
+dnn_no_class_weight_core_no_BUS,DNN no class weight,0,watch,1263,62,0.04908946951702296,0.06492105422170802,0,62
+hybrid_dnn_tcn,Hybrid DNN TCN 2w,2,high_alert,21,9,0.42857142857142855,0.3096682701571837,12,0
+hybrid_dnn_tcn,Hybrid DNN TCN 2w,2,low_risk,2797,51,0.018233821952091528,0.026116763500774184,0,51
+hybrid_dnn_tcn,Hybrid DNN TCN 2w,2,warning,360,71,0.19722222222222222,0.22160669431155533,289,0
+hybrid_dnn_tcn,Hybrid DNN TCN 2w,2,watch,749,29,0.03871829105473965,0.08615898789274669,0,29
+random_forest_core_no_BUS,Random Forest,0,high_alert,25,13,0.52,0.35631580649779054,12,0
+random_forest_core_no_BUS,Random Forest,0,low_risk,2816,50,0.01775568181818182,0.03373573765700513,0,50
+random_forest_core_no_BUS,Random Forest,0,warning,79,28,0.35443037974683544,0.22422019501077387,51,0
+random_forest_core_no_BUS,Random Forest,0,watch,1084,70,0.06457564575645756,0.07538362895228529,0,70

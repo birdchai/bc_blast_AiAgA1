@@ -1,0 +1,2 @@
+﻿matched_monthly_keys,old_only_monthly_keys,updated_only_monthly_keys,keys_with_row_diff,keys_with_numeric_diff,max_temp_mean_abs_diff,max_humidity_mean_abs_diff,max_precip_mean_abs_diff
+192,0,0,0,0,7.105427357601002e-15,2.842170943040401e-14,2.220446049250313e-16

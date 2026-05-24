@@ -1,0 +1,71 @@
+﻿model,model_label,sequence_length,alert_tier,region,rows,positive_rows,observed_positive_rate
+dnn_class_weight_core_no_BUS,DNN class weighted,0,high_alert,Northeast,19,10,0.5263157894736842
+dnn_class_weight_core_no_BUS,DNN class weighted,0,low_risk,Central,581,5,0.008605851979345954
+dnn_class_weight_core_no_BUS,DNN class weighted,0,low_risk,East,261,1,0.0038314176245210726
+dnn_class_weight_core_no_BUS,DNN class weighted,0,low_risk,North,568,18,0.03169014084507042
+dnn_class_weight_core_no_BUS,DNN class weighted,0,low_risk,Northeast,516,27,0.05232558139534884
+dnn_class_weight_core_no_BUS,DNN class weighted,0,low_risk,South,638,2,0.003134796238244514
+dnn_class_weight_core_no_BUS,DNN class weighted,0,low_risk,West,208,2,0.009615384615384616
+dnn_class_weight_core_no_BUS,DNN class weighted,0,warning,Central,43,4,0.09302325581395349
+dnn_class_weight_core_no_BUS,DNN class weighted,0,warning,East,17,3,0.17647058823529413
+dnn_class_weight_core_no_BUS,DNN class weighted,0,warning,North,72,0,0.0
+dnn_class_weight_core_no_BUS,DNN class weighted,0,warning,Northeast,239,65,0.2719665271966527
+dnn_class_weight_core_no_BUS,DNN class weighted,0,warning,South,26,1,0.038461538461538464
+dnn_class_weight_core_no_BUS,DNN class weighted,0,watch,Central,104,1,0.009615384615384616
+dnn_class_weight_core_no_BUS,DNN class weighted,0,watch,East,138,3,0.021739130434782608
+dnn_class_weight_core_no_BUS,DNN class weighted,0,watch,North,244,0,0.0
+dnn_class_weight_core_no_BUS,DNN class weighted,0,watch,Northeast,266,18,0.06766917293233082
+dnn_class_weight_core_no_BUS,DNN class weighted,0,watch,South,64,1,0.015625
+dnn_no_class_weight_core_no_BUS,DNN no class weight,0,high_alert,Northeast,36,21,0.5833333333333334
+dnn_no_class_weight_core_no_BUS,DNN no class weight,0,high_alert,South,1,0,0.0
+dnn_no_class_weight_core_no_BUS,DNN no class weight,0,low_risk,Central,558,4,0.007168458781362007
+dnn_no_class_weight_core_no_BUS,DNN no class weight,0,low_risk,East,226,2,0.008849557522123894
+dnn_no_class_weight_core_no_BUS,DNN no class weight,0,low_risk,North,583,16,0.0274442538593482
+dnn_no_class_weight_core_no_BUS,DNN no class weight,0,low_risk,Northeast,388,22,0.05670103092783505
+dnn_no_class_weight_core_no_BUS,DNN no class weight,0,low_risk,South,650,2,0.003076923076923077
+dnn_no_class_weight_core_no_BUS,DNN no class weight,0,low_risk,West,204,2,0.00980392156862745
+dnn_no_class_weight_core_no_BUS,DNN no class weight,0,warning,East,5,2,0.4
+dnn_no_class_weight_core_no_BUS,DNN no class weight,0,warning,North,1,0,0.0
+dnn_no_class_weight_core_no_BUS,DNN no class weight,0,warning,Northeast,83,28,0.3373493975903614
+dnn_no_class_weight_core_no_BUS,DNN no class weight,0,warning,South,6,0,0.0
+dnn_no_class_weight_core_no_BUS,DNN no class weight,0,watch,Central,170,6,0.03529411764705882
+dnn_no_class_weight_core_no_BUS,DNN no class weight,0,watch,East,185,3,0.016216216216216217
+dnn_no_class_weight_core_no_BUS,DNN no class weight,0,watch,North,300,2,0.006666666666666667
+dnn_no_class_weight_core_no_BUS,DNN no class weight,0,watch,Northeast,533,49,0.09193245778611632
+dnn_no_class_weight_core_no_BUS,DNN no class weight,0,watch,South,71,2,0.028169014084507043
+dnn_no_class_weight_core_no_BUS,DNN no class weight,0,watch,West,4,0,0.0
+hybrid_dnn_tcn,Hybrid DNN TCN 2w,2,high_alert,Central,1,0,0.0
+hybrid_dnn_tcn,Hybrid DNN TCN 2w,2,high_alert,Northeast,20,9,0.45
+hybrid_dnn_tcn,Hybrid DNN TCN 2w,2,low_risk,Central,581,5,0.008605851979345954
+hybrid_dnn_tcn,Hybrid DNN TCN 2w,2,low_risk,East,251,1,0.00398406374501992
+hybrid_dnn_tcn,Hybrid DNN TCN 2w,2,low_risk,North,607,18,0.029654036243822075
+hybrid_dnn_tcn,Hybrid DNN TCN 2w,2,low_risk,Northeast,506,24,0.04743083003952569
+hybrid_dnn_tcn,Hybrid DNN TCN 2w,2,low_risk,South,648,1,0.0015432098765432098
+hybrid_dnn_tcn,Hybrid DNN TCN 2w,2,low_risk,West,204,2,0.00980392156862745
+hybrid_dnn_tcn,Hybrid DNN TCN 2w,2,warning,Central,25,1,0.04
+hybrid_dnn_tcn,Hybrid DNN TCN 2w,2,warning,East,22,2,0.09090909090909091
+hybrid_dnn_tcn,Hybrid DNN TCN 2w,2,warning,North,44,0,0.0
+hybrid_dnn_tcn,Hybrid DNN TCN 2w,2,warning,Northeast,243,67,0.2757201646090535
+hybrid_dnn_tcn,Hybrid DNN TCN 2w,2,warning,South,26,1,0.038461538461538464
+hybrid_dnn_tcn,Hybrid DNN TCN 2w,2,watch,Central,107,4,0.037383177570093455
+hybrid_dnn_tcn,Hybrid DNN TCN 2w,2,watch,East,135,3,0.022222222222222223
+hybrid_dnn_tcn,Hybrid DNN TCN 2w,2,watch,North,216,0,0.0
+hybrid_dnn_tcn,Hybrid DNN TCN 2w,2,watch,Northeast,251,20,0.0796812749003984
+hybrid_dnn_tcn,Hybrid DNN TCN 2w,2,watch,South,40,2,0.05
+random_forest_core_no_BUS,Random Forest,0,high_alert,Northeast,25,13,0.52
+random_forest_core_no_BUS,Random Forest,0,low_risk,Central,600,5,0.008333333333333333
+random_forest_core_no_BUS,Random Forest,0,low_risk,East,271,3,0.01107011070110701
+random_forest_core_no_BUS,Random Forest,0,low_risk,North,678,14,0.02064896755162242
+random_forest_core_no_BUS,Random Forest,0,low_risk,Northeast,387,22,0.056847545219638244
+random_forest_core_no_BUS,Random Forest,0,low_risk,South,679,4,0.005891016200294551
+random_forest_core_no_BUS,Random Forest,0,low_risk,West,201,2,0.009950248756218905
+random_forest_core_no_BUS,Random Forest,0,warning,Central,5,0,0.0
+random_forest_core_no_BUS,Random Forest,0,warning,East,7,3,0.42857142857142855
+random_forest_core_no_BUS,Random Forest,0,warning,Northeast,66,25,0.3787878787878788
+random_forest_core_no_BUS,Random Forest,0,warning,South,1,0,0.0
+random_forest_core_no_BUS,Random Forest,0,watch,Central,123,5,0.04065040650406504
+random_forest_core_no_BUS,Random Forest,0,watch,East,138,1,0.007246376811594203
+random_forest_core_no_BUS,Random Forest,0,watch,North,206,4,0.019417475728155338
+random_forest_core_no_BUS,Random Forest,0,watch,Northeast,562,60,0.10676156583629894
+random_forest_core_no_BUS,Random Forest,0,watch,South,48,0,0.0
+random_forest_core_no_BUS,Random Forest,0,watch,West,7,0,0.0

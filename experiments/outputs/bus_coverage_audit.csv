@@ -1,0 +1,673 @@
+﻿grouping,rows,bus_rows,bus_missing_rows,bus_missing_rate,bus_critical_weeks,target_known_rows,target_positive_rows,bus_rows_with_target,bus_rows_target_positive,current_label_positive_in_bus_rows,year,region,province
+overall,28503,1567,26936,0.9450233308774515,129,23960,952,1562,228,227,,,
+year,4081,0,4081,1.0,0,0,0,0,0,0,2015.0,,
+year,4081,0,4081,1.0,0,4004,1,0,0,0,2016.0,,
+year,4077,0,4077,1.0,0,4000,32,0,0,0,2017.0,,
+year,4077,0,4077,1.0,0,4000,28,0,0,0,2018.0,,
+year,4081,0,4081,1.0,0,4004,116,0,0,0,2019.0,,
+year,4081,299,3782,0.9267336437147758,35,4004,467,299,100,99,2020.0,,
+year,4025,1268,2757,0.6849689440993789,94,3948,308,1263,128,128,2021.0,,
+region,5174,354,4820,0.9315809818322381,6,4348,49,351,5,6,,Central,
+region,2960,117,2843,0.960472972972973,12,2488,107,117,26,26,,East,
+region,6299,430,5869,0.9317351960628671,64,5296,285,429,65,64,,North,
+region,7404,444,6960,0.940032414910859,16,6224,377,444,115,114,,Northeast,
+region,5194,166,5028,0.9680400462071621,22,4368,115,166,10,10,,South,
+region,1472,56,1416,0.9619565217391305,9,1236,19,55,7,7,,West,
+province,371,0,371,1.0,0,312,0,0,0,0,,,Amnat Charoen
+province,371,0,371,1.0,0,312,3,0,0,0,,,Ang Thong
+province,371,0,371,1.0,0,312,1,0,0,0,,,Bangkok
+province,359,0,359,1.0,0,300,31,0,0,0,,,Bueng Kan
+province,371,0,371,1.0,0,312,25,0,0,0,,,Buri Ram
+province,371,77,294,0.7924528301886793,7,312,32,77,26,26,,,Chachoengsao
+province,367,63,304,0.8283378746594006,5,308,0,62,0,0,,,Chai Nat
+province,367,0,367,1.0,0,308,7,0,0,0,,,Chaiyaphum
+province,371,0,371,1.0,0,312,25,0,0,0,,,Chanthaburi
+province,371,75,296,0.7978436657681941,8,312,2,75,0,0,,,Chiang Mai
+province,371,75,296,0.7978436657681941,36,312,17,75,16,16,,,Chiang Rai
+province,371,0,371,1.0,0,312,16,0,0,0,,,Chon Buri
+province,371,0,371,1.0,0,312,0,0,0,0,,,Chumphon
+province,371,0,371,1.0,0,312,8,0,0,0,,,Kalasin
+province,371,0,371,1.0,0,312,0,0,0,0,,,Kamphaeng Phet
+province,367,0,367,1.0,0,308,0,0,0,0,,,Kanchanaburi
+province,371,70,301,0.8113207547169812,0,312,23,70,17,17,,,Khon Kaen
+province,371,54,317,0.8544474393530997,14,312,0,54,0,0,,,Krabi
+province,371,0,371,1.0,0,312,23,0,0,0,,,Lampang
+province,371,55,316,0.8517520215633423,9,312,6,55,5,5,,,Lamphun
+province,371,0,371,1.0,0,312,6,0,0,0,,,Loei
+province,367,63,304,0.8283378746594006,0,308,3,62,3,3,,,Lop Buri
+province,371,0,371,1.0,0,312,0,0,0,0,,,Mae Hong Son
+province,371,0,371,1.0,0,312,33,0,0,0,,,Maha Sarakham
+province,371,0,371,1.0,0,312,17,0,0,0,,,Mukdahan
+province,371,40,331,0.8921832884097035,5,312,0,40,0,0,,,Nakhon Nayok
+province,371,59,312,0.8409703504043127,0,312,13,59,2,3,,,Nakhon Pathom
+province,371,0,371,1.0,0,312,0,0,0,0,,,Nakhon Phanom
+province,371,71,300,0.8086253369272237,0,312,34,71,27,27,,,Nakhon Ratchasima
+province,367,53,314,0.8555858310626703,3,308,1,52,0,0,,,Nakhon Sawan
+province,371,53,318,0.8571428571428571,8,312,28,53,9,9,,,Nakhon Si Thammarat
+province,371,0,371,1.0,0,312,31,0,0,0,,,Nan
+province,371,0,371,1.0,0,312,0,0,0,0,,,Narathiwat
+province,371,0,371,1.0,0,312,16,0,0,0,,,Nong Bua Lam Phu
+province,371,0,371,1.0,0,312,0,0,0,0,,,Nong Khai
+province,371,0,371,1.0,0,312,1,0,0,0,,,Nonthaburi
+province,371,66,305,0.8221024258760108,1,312,0,66,0,0,,,Pathum Thani
+province,371,0,371,1.0,0,312,22,0,0,0,,,Pattani
+province,371,0,371,1.0,0,312,0,0,0,0,,,Phang-nga
+province,371,59,312,0.8409703504043127,0,312,3,59,1,1,,,Phatthalung
+province,371,68,303,0.816711590296496,0,312,30,68,24,23,,,Phayao
+province,371,0,371,1.0,0,312,0,0,0,0,,,Phetchabun
+province,371,0,371,1.0,0,312,9,0,0,0,,,Phetchaburi
+province,371,0,371,1.0,0,312,3,0,0,0,,,Phichit
+province,371,51,320,0.862533692722372,0,312,5,51,0,0,,,Phitsanulok
+province,371,58,313,0.8436657681940701,0,312,15,58,0,0,,,Phra Nakhon Si Ayutthaya
+province,371,53,318,0.8571428571428571,8,312,51,53,20,20,,,Phrae
+province,371,0,371,1.0,0,312,0,0,0,0,,,Phuket
+province,367,0,367,1.0,0,308,16,0,0,0,,,Prachin Buri
+province,367,0,367,1.0,0,308,0,0,0,0,,,Prachuap Khiri Khan
+province,371,0,371,1.0,0,312,0,0,0,0,,,Ranong
+province,367,56,311,0.8474114441416893,9,308,10,55,7,7,,,Ratchaburi
+province,371,0,371,1.0,0,312,7,0,0,0,,,Rayong
+province,371,72,299,0.8059299191374663,2,312,0,72,0,0,,,Roi Et
+province,367,0,367,1.0,0,308,11,0,0,0,,,Sa kaeo
+province,371,55,316,0.8517520215633423,0,312,31,55,14,14,,,Sakon Nakhon
+province,371,0,371,1.0,0,312,0,0,0,0,,,Samut Prakarn
+province,371,0,371,1.0,0,312,0,0,0,0,,,Samut Sakhon
+province,367,0,367,1.0,0,308,0,0,0,0,,,Samut Songkhram
+province,371,0,371,1.0,0,312,1,0,0,0,,,Saraburi
+province,371,0,371,1.0,0,312,0,0,0,0,,,Satun
+province,371,0,371,1.0,0,312,21,0,0,0,,,Si Sa Ket
+province,367,45,322,0.8773841961852861,0,308,1,44,0,0,,,Sing Buri
+province,371,0,371,1.0,0,312,61,0,0,0,,,Songkhla
+province,371,0,371,1.0,0,312,10,0,0,0,,,Sukhothai
+province,367,0,367,1.0,0,308,11,0,0,0,,,Suphan Buri
+province,371,0,371,1.0,0,312,0,0,0,0,,,Surat Thani
+province,371,0,371,1.0,0,312,24,0,0,0,,,Surin
+province,371,0,371,1.0,0,312,50,0,0,0,,,Tak
+province,371,0,371,1.0,0,312,0,0,0,0,,,Trang
+province,371,0,371,1.0,0,312,0,0,0,0,,,Trat
+province,371,72,299,0.8059299191374663,14,312,57,72,36,36,,,Ubon Ratchathani
+province,371,104,267,0.7196765498652291,0,312,21,104,21,20,,,Udon Thani
+province,367,0,367,1.0,0,308,47,0,0,0,,,Uthai Thani
+province,371,0,371,1.0,0,312,9,0,0,0,,,Uttaradit
+province,371,0,371,1.0,0,312,1,0,0,0,,,Yala
+province,371,0,371,1.0,0,312,23,0,0,0,,,Yasothon
+year_region,742,0,742,1.0,0,0,0,0,0,0,2015.0,Central,
+year_region,424,0,424,1.0,0,0,0,0,0,0,2015.0,East,
+year_region,901,0,901,1.0,0,0,0,0,0,0,2015.0,North,
+year_region,1060,0,1060,1.0,0,0,0,0,0,0,2015.0,Northeast,
+year_region,742,0,742,1.0,0,0,0,0,0,0,2015.0,South,
+year_region,212,0,212,1.0,0,0,0,0,0,0,2015.0,West,
+year_region,742,0,742,1.0,0,728,0,0,0,0,2016.0,Central,
+year_region,424,0,424,1.0,0,416,0,0,0,0,2016.0,East,
+year_region,901,0,901,1.0,0,884,1,0,0,0,2016.0,North,
+year_region,1060,0,1060,1.0,0,1040,0,0,0,0,2016.0,Northeast,
+year_region,742,0,742,1.0,0,728,0,0,0,0,2016.0,South,
+year_region,212,0,212,1.0,0,208,0,0,0,0,2016.0,West,
+year_region,742,0,742,1.0,0,728,5,0,0,0,2017.0,Central,
+year_region,424,0,424,1.0,0,416,2,0,0,0,2017.0,East,
+year_region,901,0,901,1.0,0,884,13,0,0,0,2017.0,North,
+year_region,1056,0,1056,1.0,0,1036,12,0,0,0,2017.0,Northeast,
+year_region,742,0,742,1.0,0,728,0,0,0,0,2017.0,South,
+year_region,212,0,212,1.0,0,208,0,0,0,0,2017.0,West,
+year_region,742,0,742,1.0,0,728,1,0,0,0,2018.0,Central,
+year_region,424,0,424,1.0,0,416,8,0,0,0,2018.0,East,
+year_region,901,0,901,1.0,0,884,7,0,0,0,2018.0,North,
+year_region,1056,0,1056,1.0,0,1036,12,0,0,0,2018.0,Northeast,
+year_region,742,0,742,1.0,0,728,0,0,0,0,2018.0,South,
+year_region,212,0,212,1.0,0,208,0,0,0,0,2018.0,West,
+year_region,742,0,742,1.0,0,728,4,0,0,0,2019.0,Central,
+year_region,424,0,424,1.0,0,416,7,0,0,0,2019.0,East,
+year_region,901,0,901,1.0,0,884,43,0,0,0,2019.0,North,
+year_region,1060,0,1060,1.0,0,1040,34,0,0,0,2019.0,Northeast,
+year_region,742,0,742,1.0,0,728,28,0,0,0,2019.0,South,
+year_region,212,0,212,1.0,0,208,0,0,0,0,2019.0,West,
+year_region,742,55,687,0.9258760107816711,5,728,38,55,5,6,2020.0,Central,
+year_region,424,25,399,0.9410377358490566,2,416,65,25,16,16,2020.0,East,
+year_region,901,70,831,0.9223085460599334,22,884,108,70,22,21,2020.0,North,
+year_region,1060,132,928,0.8754716981132076,3,1040,211,132,52,51,2020.0,Northeast,
+year_region,742,10,732,0.9865229110512129,1,728,38,10,1,1,2020.0,South,
+year_region,212,7,205,0.9669811320754716,2,208,7,7,4,4,2020.0,West,
+year_region,722,299,423,0.5858725761772853,1,708,1,296,0,0,2021.0,Central,
+year_region,416,92,324,0.7788461538461539,10,408,25,92,10,10,2021.0,East,
+year_region,893,360,533,0.5968645016797313,42,876,113,359,43,43,2021.0,North,
+year_region,1052,312,740,0.7034220532319392,13,1032,108,312,63,63,2021.0,Northeast,
+year_region,742,156,586,0.7897574123989218,21,728,49,156,9,9,2021.0,South,
+year_region,200,49,151,0.755,7,196,12,48,3,3,2021.0,West,
+year_province,53,0,53,1.0,0,0,0,0,0,0,2015.0,,Amnat Charoen
+year_province,53,0,53,1.0,0,0,0,0,0,0,2015.0,,Ang Thong
+year_province,53,0,53,1.0,0,0,0,0,0,0,2015.0,,Bangkok
+year_province,53,0,53,1.0,0,0,0,0,0,0,2015.0,,Bueng Kan
+year_province,53,0,53,1.0,0,0,0,0,0,0,2015.0,,Buri Ram
+year_province,53,0,53,1.0,0,0,0,0,0,0,2015.0,,Chachoengsao
+year_province,53,0,53,1.0,0,0,0,0,0,0,2015.0,,Chai Nat
+year_province,53,0,53,1.0,0,0,0,0,0,0,2015.0,,Chaiyaphum
+year_province,53,0,53,1.0,0,0,0,0,0,0,2015.0,,Chanthaburi
+year_province,53,0,53,1.0,0,0,0,0,0,0,2015.0,,Chiang Mai
+year_province,53,0,53,1.0,0,0,0,0,0,0,2015.0,,Chiang Rai
+year_province,53,0,53,1.0,0,0,0,0,0,0,2015.0,,Chon Buri
+year_province,53,0,53,1.0,0,0,0,0,0,0,2015.0,,Chumphon
+year_province,53,0,53,1.0,0,0,0,0,0,0,2015.0,,Kalasin
+year_province,53,0,53,1.0,0,0,0,0,0,0,2015.0,,Kamphaeng Phet
+year_province,53,0,53,1.0,0,0,0,0,0,0,2015.0,,Kanchanaburi
+year_province,53,0,53,1.0,0,0,0,0,0,0,2015.0,,Khon Kaen
+year_province,53,0,53,1.0,0,0,0,0,0,0,2015.0,,Krabi
+year_province,53,0,53,1.0,0,0,0,0,0,0,2015.0,,Lampang
+year_province,53,0,53,1.0,0,0,0,0,0,0,2015.0,,Lamphun
+year_province,53,0,53,1.0,0,0,0,0,0,0,2015.0,,Loei
+year_province,53,0,53,1.0,0,0,0,0,0,0,2015.0,,Lop Buri
+year_province,53,0,53,1.0,0,0,0,0,0,0,2015.0,,Mae Hong Son
+year_province,53,0,53,1.0,0,0,0,0,0,0,2015.0,,Maha Sarakham
+year_province,53,0,53,1.0,0,0,0,0,0,0,2015.0,,Mukdahan
+year_province,53,0,53,1.0,0,0,0,0,0,0,2015.0,,Nakhon Nayok
+year_province,53,0,53,1.0,0,0,0,0,0,0,2015.0,,Nakhon Pathom
+year_province,53,0,53,1.0,0,0,0,0,0,0,2015.0,,Nakhon Phanom
+year_province,53,0,53,1.0,0,0,0,0,0,0,2015.0,,Nakhon Ratchasima
+year_province,53,0,53,1.0,0,0,0,0,0,0,2015.0,,Nakhon Sawan
+year_province,53,0,53,1.0,0,0,0,0,0,0,2015.0,,Nakhon Si Thammarat
+year_province,53,0,53,1.0,0,0,0,0,0,0,2015.0,,Nan
+year_province,53,0,53,1.0,0,0,0,0,0,0,2015.0,,Narathiwat
+year_province,53,0,53,1.0,0,0,0,0,0,0,2015.0,,Nong Bua Lam Phu
+year_province,53,0,53,1.0,0,0,0,0,0,0,2015.0,,Nong Khai
+year_province,53,0,53,1.0,0,0,0,0,0,0,2015.0,,Nonthaburi
+year_province,53,0,53,1.0,0,0,0,0,0,0,2015.0,,Pathum Thani
+year_province,53,0,53,1.0,0,0,0,0,0,0,2015.0,,Pattani
+year_province,53,0,53,1.0,0,0,0,0,0,0,2015.0,,Phang-nga
+year_province,53,0,53,1.0,0,0,0,0,0,0,2015.0,,Phatthalung
+year_province,53,0,53,1.0,0,0,0,0,0,0,2015.0,,Phayao
+year_province,53,0,53,1.0,0,0,0,0,0,0,2015.0,,Phetchabun
+year_province,53,0,53,1.0,0,0,0,0,0,0,2015.0,,Phetchaburi
+year_province,53,0,53,1.0,0,0,0,0,0,0,2015.0,,Phichit
+year_province,53,0,53,1.0,0,0,0,0,0,0,2015.0,,Phitsanulok
+year_province,53,0,53,1.0,0,0,0,0,0,0,2015.0,,Phra Nakhon Si Ayutthaya
+year_province,53,0,53,1.0,0,0,0,0,0,0,2015.0,,Phrae
+year_province,53,0,53,1.0,0,0,0,0,0,0,2015.0,,Phuket
+year_province,53,0,53,1.0,0,0,0,0,0,0,2015.0,,Prachin Buri
+year_province,53,0,53,1.0,0,0,0,0,0,0,2015.0,,Prachuap Khiri Khan
+year_province,53,0,53,1.0,0,0,0,0,0,0,2015.0,,Ranong
+year_province,53,0,53,1.0,0,0,0,0,0,0,2015.0,,Ratchaburi
+year_province,53,0,53,1.0,0,0,0,0,0,0,2015.0,,Rayong
+year_province,53,0,53,1.0,0,0,0,0,0,0,2015.0,,Roi Et
+year_province,53,0,53,1.0,0,0,0,0,0,0,2015.0,,Sa kaeo
+year_province,53,0,53,1.0,0,0,0,0,0,0,2015.0,,Sakon Nakhon
+year_province,53,0,53,1.0,0,0,0,0,0,0,2015.0,,Samut Prakarn
+year_province,53,0,53,1.0,0,0,0,0,0,0,2015.0,,Samut Sakhon
+year_province,53,0,53,1.0,0,0,0,0,0,0,2015.0,,Samut Songkhram
+year_province,53,0,53,1.0,0,0,0,0,0,0,2015.0,,Saraburi
+year_province,53,0,53,1.0,0,0,0,0,0,0,2015.0,,Satun
+year_province,53,0,53,1.0,0,0,0,0,0,0,2015.0,,Si Sa Ket
+year_province,53,0,53,1.0,0,0,0,0,0,0,2015.0,,Sing Buri
+year_province,53,0,53,1.0,0,0,0,0,0,0,2015.0,,Songkhla
+year_province,53,0,53,1.0,0,0,0,0,0,0,2015.0,,Sukhothai
+year_province,53,0,53,1.0,0,0,0,0,0,0,2015.0,,Suphan Buri
+year_province,53,0,53,1.0,0,0,0,0,0,0,2015.0,,Surat Thani
+year_province,53,0,53,1.0,0,0,0,0,0,0,2015.0,,Surin
+year_province,53,0,53,1.0,0,0,0,0,0,0,2015.0,,Tak
+year_province,53,0,53,1.0,0,0,0,0,0,0,2015.0,,Trang
+year_province,53,0,53,1.0,0,0,0,0,0,0,2015.0,,Trat
+year_province,53,0,53,1.0,0,0,0,0,0,0,2015.0,,Ubon Ratchathani
+year_province,53,0,53,1.0,0,0,0,0,0,0,2015.0,,Udon Thani
+year_province,53,0,53,1.0,0,0,0,0,0,0,2015.0,,Uthai Thani
+year_province,53,0,53,1.0,0,0,0,0,0,0,2015.0,,Uttaradit
+year_province,53,0,53,1.0,0,0,0,0,0,0,2015.0,,Yala
+year_province,53,0,53,1.0,0,0,0,0,0,0,2015.0,,Yasothon
+year_province,53,0,53,1.0,0,52,0,0,0,0,2016.0,,Amnat Charoen
+year_province,53,0,53,1.0,0,52,0,0,0,0,2016.0,,Ang Thong
+year_province,53,0,53,1.0,0,52,0,0,0,0,2016.0,,Bangkok
+year_province,53,0,53,1.0,0,52,0,0,0,0,2016.0,,Bueng Kan
+year_province,53,0,53,1.0,0,52,0,0,0,0,2016.0,,Buri Ram
+year_province,53,0,53,1.0,0,52,0,0,0,0,2016.0,,Chachoengsao
+year_province,53,0,53,1.0,0,52,0,0,0,0,2016.0,,Chai Nat
+year_province,53,0,53,1.0,0,52,0,0,0,0,2016.0,,Chaiyaphum
+year_province,53,0,53,1.0,0,52,0,0,0,0,2016.0,,Chanthaburi
+year_province,53,0,53,1.0,0,52,0,0,0,0,2016.0,,Chiang Mai
+year_province,53,0,53,1.0,0,52,0,0,0,0,2016.0,,Chiang Rai
+year_province,53,0,53,1.0,0,52,0,0,0,0,2016.0,,Chon Buri
+year_province,53,0,53,1.0,0,52,0,0,0,0,2016.0,,Chumphon
+year_province,53,0,53,1.0,0,52,0,0,0,0,2016.0,,Kalasin
+year_province,53,0,53,1.0,0,52,0,0,0,0,2016.0,,Kamphaeng Phet
+year_province,53,0,53,1.0,0,52,0,0,0,0,2016.0,,Kanchanaburi
+year_province,53,0,53,1.0,0,52,0,0,0,0,2016.0,,Khon Kaen
+year_province,53,0,53,1.0,0,52,0,0,0,0,2016.0,,Krabi
+year_province,53,0,53,1.0,0,52,0,0,0,0,2016.0,,Lampang
+year_province,53,0,53,1.0,0,52,0,0,0,0,2016.0,,Lamphun
+year_province,53,0,53,1.0,0,52,0,0,0,0,2016.0,,Loei
+year_province,53,0,53,1.0,0,52,0,0,0,0,2016.0,,Lop Buri
+year_province,53,0,53,1.0,0,52,0,0,0,0,2016.0,,Mae Hong Son
+year_province,53,0,53,1.0,0,52,0,0,0,0,2016.0,,Maha Sarakham
+year_province,53,0,53,1.0,0,52,0,0,0,0,2016.0,,Mukdahan
+year_province,53,0,53,1.0,0,52,0,0,0,0,2016.0,,Nakhon Nayok
+year_province,53,0,53,1.0,0,52,0,0,0,0,2016.0,,Nakhon Pathom
+year_province,53,0,53,1.0,0,52,0,0,0,0,2016.0,,Nakhon Phanom
+year_province,53,0,53,1.0,0,52,0,0,0,0,2016.0,,Nakhon Ratchasima
+year_province,53,0,53,1.0,0,52,0,0,0,0,2016.0,,Nakhon Sawan
+year_province,53,0,53,1.0,0,52,0,0,0,0,2016.0,,Nakhon Si Thammarat
+year_province,53,0,53,1.0,0,52,0,0,0,0,2016.0,,Nan
+year_province,53,0,53,1.0,0,52,0,0,0,0,2016.0,,Narathiwat
+year_province,53,0,53,1.0,0,52,0,0,0,0,2016.0,,Nong Bua Lam Phu
+year_province,53,0,53,1.0,0,52,0,0,0,0,2016.0,,Nong Khai
+year_province,53,0,53,1.0,0,52,0,0,0,0,2016.0,,Nonthaburi
+year_province,53,0,53,1.0,0,52,0,0,0,0,2016.0,,Pathum Thani
+year_province,53,0,53,1.0,0,52,0,0,0,0,2016.0,,Pattani
+year_province,53,0,53,1.0,0,52,0,0,0,0,2016.0,,Phang-nga
+year_province,53,0,53,1.0,0,52,0,0,0,0,2016.0,,Phatthalung
+year_province,53,0,53,1.0,0,52,0,0,0,0,2016.0,,Phayao
+year_province,53,0,53,1.0,0,52,0,0,0,0,2016.0,,Phetchabun
+year_province,53,0,53,1.0,0,52,0,0,0,0,2016.0,,Phetchaburi
+year_province,53,0,53,1.0,0,52,0,0,0,0,2016.0,,Phichit
+year_province,53,0,53,1.0,0,52,0,0,0,0,2016.0,,Phitsanulok
+year_province,53,0,53,1.0,0,52,0,0,0,0,2016.0,,Phra Nakhon Si Ayutthaya
+year_province,53,0,53,1.0,0,52,0,0,0,0,2016.0,,Phrae
+year_province,53,0,53,1.0,0,52,0,0,0,0,2016.0,,Phuket
+year_province,53,0,53,1.0,0,52,0,0,0,0,2016.0,,Prachin Buri
+year_province,53,0,53,1.0,0,52,0,0,0,0,2016.0,,Prachuap Khiri Khan
+year_province,53,0,53,1.0,0,52,0,0,0,0,2016.0,,Ranong
+year_province,53,0,53,1.0,0,52,0,0,0,0,2016.0,,Ratchaburi
+year_province,53,0,53,1.0,0,52,0,0,0,0,2016.0,,Rayong
+year_province,53,0,53,1.0,0,52,0,0,0,0,2016.0,,Roi Et
+year_province,53,0,53,1.0,0,52,0,0,0,0,2016.0,,Sa kaeo
+year_province,53,0,53,1.0,0,52,0,0,0,0,2016.0,,Sakon Nakhon
+year_province,53,0,53,1.0,0,52,0,0,0,0,2016.0,,Samut Prakarn
+year_province,53,0,53,1.0,0,52,0,0,0,0,2016.0,,Samut Sakhon
+year_province,53,0,53,1.0,0,52,0,0,0,0,2016.0,,Samut Songkhram
+year_province,53,0,53,1.0,0,52,0,0,0,0,2016.0,,Saraburi
+year_province,53,0,53,1.0,0,52,0,0,0,0,2016.0,,Satun
+year_province,53,0,53,1.0,0,52,0,0,0,0,2016.0,,Si Sa Ket
+year_province,53,0,53,1.0,0,52,0,0,0,0,2016.0,,Sing Buri
+year_province,53,0,53,1.0,0,52,0,0,0,0,2016.0,,Songkhla
+year_province,53,0,53,1.0,0,52,1,0,0,0,2016.0,,Sukhothai
+year_province,53,0,53,1.0,0,52,0,0,0,0,2016.0,,Suphan Buri
+year_province,53,0,53,1.0,0,52,0,0,0,0,2016.0,,Surat Thani
+year_province,53,0,53,1.0,0,52,0,0,0,0,2016.0,,Surin
+year_province,53,0,53,1.0,0,52,0,0,0,0,2016.0,,Tak
+year_province,53,0,53,1.0,0,52,0,0,0,0,2016.0,,Trang
+year_province,53,0,53,1.0,0,52,0,0,0,0,2016.0,,Trat
+year_province,53,0,53,1.0,0,52,0,0,0,0,2016.0,,Ubon Ratchathani
+year_province,53,0,53,1.0,0,52,0,0,0,0,2016.0,,Udon Thani
+year_province,53,0,53,1.0,0,52,0,0,0,0,2016.0,,Uthai Thani
+year_province,53,0,53,1.0,0,52,0,0,0,0,2016.0,,Uttaradit
+year_province,53,0,53,1.0,0,52,0,0,0,0,2016.0,,Yala
+year_province,53,0,53,1.0,0,52,0,0,0,0,2016.0,,Yasothon
+year_province,53,0,53,1.0,0,52,0,0,0,0,2017.0,,Amnat Charoen
+year_province,53,0,53,1.0,0,52,0,0,0,0,2017.0,,Ang Thong
+year_province,53,0,53,1.0,0,52,1,0,0,0,2017.0,,Bangkok
+year_province,49,0,49,1.0,0,48,2,0,0,0,2017.0,,Bueng Kan
+year_province,53,0,53,1.0,0,52,1,0,0,0,2017.0,,Buri Ram
+year_province,53,0,53,1.0,0,52,0,0,0,0,2017.0,,Chachoengsao
+year_province,53,0,53,1.0,0,52,0,0,0,0,2017.0,,Chai Nat
+year_province,53,0,53,1.0,0,52,0,0,0,0,2017.0,,Chaiyaphum
+year_province,53,0,53,1.0,0,52,0,0,0,0,2017.0,,Chanthaburi
+year_province,53,0,53,1.0,0,52,0,0,0,0,2017.0,,Chiang Mai
+year_province,53,0,53,1.0,0,52,0,0,0,0,2017.0,,Chiang Rai
+year_province,53,0,53,1.0,0,52,0,0,0,0,2017.0,,Chon Buri
+year_province,53,0,53,1.0,0,52,0,0,0,0,2017.0,,Chumphon
+year_province,53,0,53,1.0,0,52,0,0,0,0,2017.0,,Kalasin
+year_province,53,0,53,1.0,0,52,0,0,0,0,2017.0,,Kamphaeng Phet
+year_province,53,0,53,1.0,0,52,0,0,0,0,2017.0,,Kanchanaburi
+year_province,53,0,53,1.0,0,52,0,0,0,0,2017.0,,Khon Kaen
+year_province,53,0,53,1.0,0,52,0,0,0,0,2017.0,,Krabi
+year_province,53,0,53,1.0,0,52,2,0,0,0,2017.0,,Lampang
+year_province,53,0,53,1.0,0,52,0,0,0,0,2017.0,,Lamphun
+year_province,53,0,53,1.0,0,52,0,0,0,0,2017.0,,Loei
+year_province,53,0,53,1.0,0,52,0,0,0,0,2017.0,,Lop Buri
+year_province,53,0,53,1.0,0,52,0,0,0,0,2017.0,,Mae Hong Son
+year_province,53,0,53,1.0,0,52,0,0,0,0,2017.0,,Maha Sarakham
+year_province,53,0,53,1.0,0,52,3,0,0,0,2017.0,,Mukdahan
+year_province,53,0,53,1.0,0,52,0,0,0,0,2017.0,,Nakhon Nayok
+year_province,53,0,53,1.0,0,52,1,0,0,0,2017.0,,Nakhon Pathom
+year_province,53,0,53,1.0,0,52,0,0,0,0,2017.0,,Nakhon Phanom
+year_province,53,0,53,1.0,0,52,0,0,0,0,2017.0,,Nakhon Ratchasima
+year_province,53,0,53,1.0,0,52,0,0,0,0,2017.0,,Nakhon Sawan
+year_province,53,0,53,1.0,0,52,0,0,0,0,2017.0,,Nakhon Si Thammarat
+year_province,53,0,53,1.0,0,52,0,0,0,0,2017.0,,Nan
+year_province,53,0,53,1.0,0,52,0,0,0,0,2017.0,,Narathiwat
+year_province,53,0,53,1.0,0,52,0,0,0,0,2017.0,,Nong Bua Lam Phu
+year_province,53,0,53,1.0,0,52,0,0,0,0,2017.0,,Nong Khai
+year_province,53,0,53,1.0,0,52,1,0,0,0,2017.0,,Nonthaburi
+year_province,53,0,53,1.0,0,52,0,0,0,0,2017.0,,Pathum Thani
+year_province,53,0,53,1.0,0,52,0,0,0,0,2017.0,,Pattani
+year_province,53,0,53,1.0,0,52,0,0,0,0,2017.0,,Phang-nga
+year_province,53,0,53,1.0,0,52,0,0,0,0,2017.0,,Phatthalung
+year_province,53,0,53,1.0,0,52,0,0,0,0,2017.0,,Phayao
+year_province,53,0,53,1.0,0,52,0,0,0,0,2017.0,,Phetchabun
+year_province,53,0,53,1.0,0,52,0,0,0,0,2017.0,,Phetchaburi
+year_province,53,0,53,1.0,0,52,3,0,0,0,2017.0,,Phichit
+year_province,53,0,53,1.0,0,52,1,0,0,0,2017.0,,Phitsanulok
+year_province,53,0,53,1.0,0,52,1,0,0,0,2017.0,,Phra Nakhon Si Ayutthaya
+year_province,53,0,53,1.0,0,52,1,0,0,0,2017.0,,Phrae
+year_province,53,0,53,1.0,0,52,0,0,0,0,2017.0,,Phuket
+year_province,53,0,53,1.0,0,52,2,0,0,0,2017.0,,Prachin Buri
+year_province,53,0,53,1.0,0,52,0,0,0,0,2017.0,,Prachuap Khiri Khan
+year_province,53,0,53,1.0,0,52,0,0,0,0,2017.0,,Ranong
+year_province,53,0,53,1.0,0,52,0,0,0,0,2017.0,,Ratchaburi
+year_province,53,0,53,1.0,0,52,0,0,0,0,2017.0,,Rayong
+year_province,53,0,53,1.0,0,52,0,0,0,0,2017.0,,Roi Et
+year_province,53,0,53,1.0,0,52,0,0,0,0,2017.0,,Sa kaeo
+year_province,53,0,53,1.0,0,52,1,0,0,0,2017.0,,Sakon Nakhon
+year_province,53,0,53,1.0,0,52,0,0,0,0,2017.0,,Samut Prakarn
+year_province,53,0,53,1.0,0,52,0,0,0,0,2017.0,,Samut Sakhon
+year_province,53,0,53,1.0,0,52,0,0,0,0,2017.0,,Samut Songkhram
+year_province,53,0,53,1.0,0,52,0,0,0,0,2017.0,,Saraburi
+year_province,53,0,53,1.0,0,52,0,0,0,0,2017.0,,Satun
+year_province,53,0,53,1.0,0,52,1,0,0,0,2017.0,,Si Sa Ket
+year_province,53,0,53,1.0,0,52,0,0,0,0,2017.0,,Sing Buri
+year_province,53,0,53,1.0,0,52,0,0,0,0,2017.0,,Songkhla
+year_province,53,0,53,1.0,0,52,0,0,0,0,2017.0,,Sukhothai
+year_province,53,0,53,1.0,0,52,1,0,0,0,2017.0,,Suphan Buri
+year_province,53,0,53,1.0,0,52,0,0,0,0,2017.0,,Surat Thani
+year_province,53,0,53,1.0,0,52,1,0,0,0,2017.0,,Surin
+year_province,53,0,53,1.0,0,52,1,0,0,0,2017.0,,Tak
+year_province,53,0,53,1.0,0,52,0,0,0,0,2017.0,,Trang
+year_province,53,0,53,1.0,0,52,0,0,0,0,2017.0,,Trat
+year_province,53,0,53,1.0,0,52,3,0,0,0,2017.0,,Ubon Ratchathani
+year_province,53,0,53,1.0,0,52,0,0,0,0,2017.0,,Udon Thani
+year_province,53,0,53,1.0,0,52,5,0,0,0,2017.0,,Uthai Thani
+year_province,53,0,53,1.0,0,52,0,0,0,0,2017.0,,Uttaradit
+year_province,53,0,53,1.0,0,52,0,0,0,0,2017.0,,Yala
+year_province,53,0,53,1.0,0,52,0,0,0,0,2017.0,,Yasothon
+year_province,53,0,53,1.0,0,52,0,0,0,0,2018.0,,Amnat Charoen
+year_province,53,0,53,1.0,0,52,0,0,0,0,2018.0,,Ang Thong
+year_province,53,0,53,1.0,0,52,0,0,0,0,2018.0,,Bangkok
+year_province,49,0,49,1.0,0,48,0,0,0,0,2018.0,,Bueng Kan
+year_province,53,0,53,1.0,0,52,0,0,0,0,2018.0,,Buri Ram
+year_province,53,0,53,1.0,0,52,0,0,0,0,2018.0,,Chachoengsao
+year_province,53,0,53,1.0,0,52,0,0,0,0,2018.0,,Chai Nat
+year_province,53,0,53,1.0,0,52,0,0,0,0,2018.0,,Chaiyaphum
+year_province,53,0,53,1.0,0,52,0,0,0,0,2018.0,,Chanthaburi
+year_province,53,0,53,1.0,0,52,2,0,0,0,2018.0,,Chiang Mai
+year_province,53,0,53,1.0,0,52,1,0,0,0,2018.0,,Chiang Rai
+year_province,53,0,53,1.0,0,52,0,0,0,0,2018.0,,Chon Buri
+year_province,53,0,53,1.0,0,52,0,0,0,0,2018.0,,Chumphon
+year_province,53,0,53,1.0,0,52,0,0,0,0,2018.0,,Kalasin
+year_province,53,0,53,1.0,0,52,0,0,0,0,2018.0,,Kamphaeng Phet
+year_province,53,0,53,1.0,0,52,0,0,0,0,2018.0,,Kanchanaburi
+year_province,53,0,53,1.0,0,52,0,0,0,0,2018.0,,Khon Kaen
+year_province,53,0,53,1.0,0,52,0,0,0,0,2018.0,,Krabi
+year_province,53,0,53,1.0,0,52,0,0,0,0,2018.0,,Lampang
+year_province,53,0,53,1.0,0,52,0,0,0,0,2018.0,,Lamphun
+year_province,53,0,53,1.0,0,52,0,0,0,0,2018.0,,Loei
+year_province,53,0,53,1.0,0,52,0,0,0,0,2018.0,,Lop Buri
+year_province,53,0,53,1.0,0,52,0,0,0,0,2018.0,,Mae Hong Son
+year_province,53,0,53,1.0,0,52,0,0,0,0,2018.0,,Maha Sarakham
+year_province,53,0,53,1.0,0,52,0,0,0,0,2018.0,,Mukdahan
+year_province,53,0,53,1.0,0,52,0,0,0,0,2018.0,,Nakhon Nayok
+year_province,53,0,53,1.0,0,52,0,0,0,0,2018.0,,Nakhon Pathom
+year_province,53,0,53,1.0,0,52,0,0,0,0,2018.0,,Nakhon Phanom
+year_province,53,0,53,1.0,0,52,0,0,0,0,2018.0,,Nakhon Ratchasima
+year_province,53,0,53,1.0,0,52,1,0,0,0,2018.0,,Nakhon Sawan
+year_province,53,0,53,1.0,0,52,0,0,0,0,2018.0,,Nakhon Si Thammarat
+year_province,53,0,53,1.0,0,52,0,0,0,0,2018.0,,Nan
+year_province,53,0,53,1.0,0,52,0,0,0,0,2018.0,,Narathiwat
+year_province,53,0,53,1.0,0,52,0,0,0,0,2018.0,,Nong Bua Lam Phu
+year_province,53,0,53,1.0,0,52,0,0,0,0,2018.0,,Nong Khai
+year_province,53,0,53,1.0,0,52,0,0,0,0,2018.0,,Nonthaburi
+year_province,53,0,53,1.0,0,52,0,0,0,0,2018.0,,Pathum Thani
+year_province,53,0,53,1.0,0,52,0,0,0,0,2018.0,,Pattani
+year_province,53,0,53,1.0,0,52,0,0,0,0,2018.0,,Phang-nga
+year_province,53,0,53,1.0,0,52,0,0,0,0,2018.0,,Phatthalung
+year_province,53,0,53,1.0,0,52,0,0,0,0,2018.0,,Phayao
+year_province,53,0,53,1.0,0,52,0,0,0,0,2018.0,,Phetchabun
+year_province,53,0,53,1.0,0,52,0,0,0,0,2018.0,,Phetchaburi
+year_province,53,0,53,1.0,0,52,0,0,0,0,2018.0,,Phichit
+year_province,53,0,53,1.0,0,52,0,0,0,0,2018.0,,Phitsanulok
+year_province,53,0,53,1.0,0,52,0,0,0,0,2018.0,,Phra Nakhon Si Ayutthaya
+year_province,53,0,53,1.0,0,52,0,0,0,0,2018.0,,Phrae
+year_province,53,0,53,1.0,0,52,0,0,0,0,2018.0,,Phuket
+year_province,53,0,53,1.0,0,52,1,0,0,0,2018.0,,Prachin Buri
+year_province,53,0,53,1.0,0,52,0,0,0,0,2018.0,,Prachuap Khiri Khan
+year_province,53,0,53,1.0,0,52,0,0,0,0,2018.0,,Ranong
+year_province,53,0,53,1.0,0,52,0,0,0,0,2018.0,,Ratchaburi
+year_province,53,0,53,1.0,0,52,7,0,0,0,2018.0,,Rayong
+year_province,53,0,53,1.0,0,52,0,0,0,0,2018.0,,Roi Et
+year_province,53,0,53,1.0,0,52,0,0,0,0,2018.0,,Sa kaeo
+year_province,53,0,53,1.0,0,52,0,0,0,0,2018.0,,Sakon Nakhon
+year_province,53,0,53,1.0,0,52,0,0,0,0,2018.0,,Samut Prakarn
+year_province,53,0,53,1.0,0,52,0,0,0,0,2018.0,,Samut Sakhon
+year_province,53,0,53,1.0,0,52,0,0,0,0,2018.0,,Samut Songkhram
+year_province,53,0,53,1.0,0,52,1,0,0,0,2018.0,,Saraburi
+year_province,53,0,53,1.0,0,52,0,0,0,0,2018.0,,Satun
+year_province,53,0,53,1.0,0,52,5,0,0,0,2018.0,,Si Sa Ket
+year_province,53,0,53,1.0,0,52,0,0,0,0,2018.0,,Sing Buri
+year_province,53,0,53,1.0,0,52,0,0,0,0,2018.0,,Songkhla
+year_province,53,0,53,1.0,0,52,2,0,0,0,2018.0,,Sukhothai
+year_province,53,0,53,1.0,0,52,0,0,0,0,2018.0,,Suphan Buri
+year_province,53,0,53,1.0,0,52,0,0,0,0,2018.0,,Surat Thani
+year_province,53,0,53,1.0,0,52,2,0,0,0,2018.0,,Surin
+year_province,53,0,53,1.0,0,52,1,0,0,0,2018.0,,Tak
+year_province,53,0,53,1.0,0,52,0,0,0,0,2018.0,,Trang
+year_province,53,0,53,1.0,0,52,0,0,0,0,2018.0,,Trat
+year_province,53,0,53,1.0,0,52,3,0,0,0,2018.0,,Ubon Ratchathani
+year_province,53,0,53,1.0,0,52,0,0,0,0,2018.0,,Udon Thani
+year_province,53,0,53,1.0,0,52,0,0,0,0,2018.0,,Uthai Thani
+year_province,53,0,53,1.0,0,52,0,0,0,0,2018.0,,Uttaradit
+year_province,53,0,53,1.0,0,52,0,0,0,0,2018.0,,Yala
+year_province,53,0,53,1.0,0,52,2,0,0,0,2018.0,,Yasothon
+year_province,53,0,53,1.0,0,52,0,0,0,0,2019.0,,Amnat Charoen
+year_province,53,0,53,1.0,0,52,3,0,0,0,2019.0,,Ang Thong
+year_province,53,0,53,1.0,0,52,0,0,0,0,2019.0,,Bangkok
+year_province,53,0,53,1.0,0,52,0,0,0,0,2019.0,,Bueng Kan
+year_province,53,0,53,1.0,0,52,0,0,0,0,2019.0,,Buri Ram
+year_province,53,0,53,1.0,0,52,0,0,0,0,2019.0,,Chachoengsao
+year_province,53,0,53,1.0,0,52,0,0,0,0,2019.0,,Chai Nat
+year_province,53,0,53,1.0,0,52,7,0,0,0,2019.0,,Chaiyaphum
+year_province,53,0,53,1.0,0,52,5,0,0,0,2019.0,,Chanthaburi
+year_province,53,0,53,1.0,0,52,0,0,0,0,2019.0,,Chiang Mai
+year_province,53,0,53,1.0,0,52,0,0,0,0,2019.0,,Chiang Rai
+year_province,53,0,53,1.0,0,52,0,0,0,0,2019.0,,Chon Buri
+year_province,53,0,53,1.0,0,52,0,0,0,0,2019.0,,Chumphon
+year_province,53,0,53,1.0,0,52,6,0,0,0,2019.0,,Kalasin
+year_province,53,0,53,1.0,0,52,0,0,0,0,2019.0,,Kamphaeng Phet
+year_province,53,0,53,1.0,0,52,0,0,0,0,2019.0,,Kanchanaburi
+year_province,53,0,53,1.0,0,52,0,0,0,0,2019.0,,Khon Kaen
+year_province,53,0,53,1.0,0,52,0,0,0,0,2019.0,,Krabi
+year_province,53,0,53,1.0,0,52,4,0,0,0,2019.0,,Lampang
+year_province,53,0,53,1.0,0,52,1,0,0,0,2019.0,,Lamphun
+year_province,53,0,53,1.0,0,52,0,0,0,0,2019.0,,Loei
+year_province,53,0,53,1.0,0,52,0,0,0,0,2019.0,,Lop Buri
+year_province,53,0,53,1.0,0,52,0,0,0,0,2019.0,,Mae Hong Son
+year_province,53,0,53,1.0,0,52,6,0,0,0,2019.0,,Maha Sarakham
+year_province,53,0,53,1.0,0,52,2,0,0,0,2019.0,,Mukdahan
+year_province,53,0,53,1.0,0,52,0,0,0,0,2019.0,,Nakhon Nayok
+year_province,53,0,53,1.0,0,52,0,0,0,0,2019.0,,Nakhon Pathom
+year_province,53,0,53,1.0,0,52,0,0,0,0,2019.0,,Nakhon Phanom
+year_province,53,0,53,1.0,0,52,0,0,0,0,2019.0,,Nakhon Ratchasima
+year_province,53,0,53,1.0,0,52,0,0,0,0,2019.0,,Nakhon Sawan
+year_province,53,0,53,1.0,0,52,4,0,0,0,2019.0,,Nakhon Si Thammarat
+year_province,53,0,53,1.0,0,52,0,0,0,0,2019.0,,Nan
+year_province,53,0,53,1.0,0,52,0,0,0,0,2019.0,,Narathiwat
+year_province,53,0,53,1.0,0,52,0,0,0,0,2019.0,,Nong Bua Lam Phu
+year_province,53,0,53,1.0,0,52,0,0,0,0,2019.0,,Nong Khai
+year_province,53,0,53,1.0,0,52,0,0,0,0,2019.0,,Nonthaburi
+year_province,53,0,53,1.0,0,52,0,0,0,0,2019.0,,Pathum Thani
+year_province,53,0,53,1.0,0,52,0,0,0,0,2019.0,,Pattani
+year_province,53,0,53,1.0,0,52,0,0,0,0,2019.0,,Phang-nga
+year_province,53,0,53,1.0,0,52,0,0,0,0,2019.0,,Phatthalung
+year_province,53,0,53,1.0,0,52,0,0,0,0,2019.0,,Phayao
+year_province,53,0,53,1.0,0,52,0,0,0,0,2019.0,,Phetchabun
+year_province,53,0,53,1.0,0,52,0,0,0,0,2019.0,,Phetchaburi
+year_province,53,0,53,1.0,0,52,0,0,0,0,2019.0,,Phichit
+year_province,53,0,53,1.0,0,52,0,0,0,0,2019.0,,Phitsanulok
+year_province,53,0,53,1.0,0,52,0,0,0,0,2019.0,,Phra Nakhon Si Ayutthaya
+year_province,53,0,53,1.0,0,52,11,0,0,0,2019.0,,Phrae
+year_province,53,0,53,1.0,0,52,0,0,0,0,2019.0,,Phuket
+year_province,53,0,53,1.0,0,52,2,0,0,0,2019.0,,Prachin Buri
+year_province,53,0,53,1.0,0,52,0,0,0,0,2019.0,,Prachuap Khiri Khan
+year_province,53,0,53,1.0,0,52,0,0,0,0,2019.0,,Ranong
+year_province,53,0,53,1.0,0,52,0,0,0,0,2019.0,,Ratchaburi
+year_province,53,0,53,1.0,0,52,0,0,0,0,2019.0,,Rayong
+year_province,53,0,53,1.0,0,52,0,0,0,0,2019.0,,Roi Et
+year_province,53,0,53,1.0,0,52,0,0,0,0,2019.0,,Sa kaeo
+year_province,53,0,53,1.0,0,52,0,0,0,0,2019.0,,Sakon Nakhon
+year_province,53,0,53,1.0,0,52,0,0,0,0,2019.0,,Samut Prakarn
+year_province,53,0,53,1.0,0,52,0,0,0,0,2019.0,,Samut Sakhon
+year_province,53,0,53,1.0,0,52,0,0,0,0,2019.0,,Samut Songkhram
+year_province,53,0,53,1.0,0,52,0,0,0,0,2019.0,,Saraburi
+year_province,53,0,53,1.0,0,52,0,0,0,0,2019.0,,Satun
+year_province,53,0,53,1.0,0,52,6,0,0,0,2019.0,,Si Sa Ket
+year_province,53,0,53,1.0,0,52,1,0,0,0,2019.0,,Sing Buri
+year_province,53,0,53,1.0,0,52,24,0,0,0,2019.0,,Songkhla
+year_province,53,0,53,1.0,0,52,5,0,0,0,2019.0,,Sukhothai
+year_province,53,0,53,1.0,0,52,0,0,0,0,2019.0,,Suphan Buri
+year_province,53,0,53,1.0,0,52,0,0,0,0,2019.0,,Surat Thani
+year_province,53,0,53,1.0,0,52,7,0,0,0,2019.0,,Surin
+year_province,53,0,53,1.0,0,52,22,0,0,0,2019.0,,Tak
+year_province,53,0,53,1.0,0,52,0,0,0,0,2019.0,,Trang
+year_province,53,0,53,1.0,0,52,0,0,0,0,2019.0,,Trat
+year_province,53,0,53,1.0,0,52,0,0,0,0,2019.0,,Ubon Ratchathani
+year_province,53,0,53,1.0,0,52,0,0,0,0,2019.0,,Udon Thani
+year_province,53,0,53,1.0,0,52,0,0,0,0,2019.0,,Uthai Thani
+year_province,53,0,53,1.0,0,52,0,0,0,0,2019.0,,Uttaradit
+year_province,53,0,53,1.0,0,52,0,0,0,0,2019.0,,Yala
+year_province,53,0,53,1.0,0,52,0,0,0,0,2019.0,,Yasothon
+year_province,53,0,53,1.0,0,52,0,0,0,0,2020.0,,Amnat Charoen
+year_province,53,0,53,1.0,0,52,0,0,0,0,2020.0,,Ang Thong
+year_province,53,0,53,1.0,0,52,0,0,0,0,2020.0,,Bangkok
+year_province,53,0,53,1.0,0,52,22,0,0,0,2020.0,,Bueng Kan
+year_province,53,0,53,1.0,0,52,16,0,0,0,2020.0,,Buri Ram
+year_province,53,25,28,0.5283018867924528,2,52,22,25,16,16,2020.0,,Chachoengsao
+year_province,53,14,39,0.7358490566037735,5,52,0,14,0,0,2020.0,,Chai Nat
+year_province,53,0,53,1.0,0,52,0,0,0,0,2020.0,,Chaiyaphum
+year_province,53,0,53,1.0,0,52,7,0,0,0,2020.0,,Chanthaburi
+year_province,53,23,30,0.5660377358490566,8,52,0,23,0,0,2020.0,,Chiang Mai
+year_province,53,23,30,0.5660377358490566,11,52,12,23,12,12,2020.0,,Chiang Rai
+year_province,53,0,53,1.0,0,52,14,0,0,0,2020.0,,Chon Buri
+year_province,53,0,53,1.0,0,52,0,0,0,0,2020.0,,Chumphon
+year_province,53,0,53,1.0,0,52,2,0,0,0,2020.0,,Kalasin
+year_province,53,0,53,1.0,0,52,0,0,0,0,2020.0,,Kamphaeng Phet
+year_province,53,0,53,1.0,0,52,0,0,0,0,2020.0,,Kanchanaburi
+year_province,53,18,35,0.660377358490566,0,52,15,18,9,9,2020.0,,Khon Kaen
+year_province,53,2,51,0.9622641509433962,1,52,0,2,0,0,2020.0,,Krabi
+year_province,53,0,53,1.0,0,52,14,0,0,0,2020.0,,Lampang
+year_province,53,3,50,0.9433962264150944,2,52,0,3,0,0,2020.0,,Lamphun
+year_province,53,0,53,1.0,0,52,6,0,0,0,2020.0,,Loei
+year_province,53,14,39,0.7358490566037735,0,52,3,14,3,3,2020.0,,Lop Buri
+year_province,53,0,53,1.0,0,52,0,0,0,0,2020.0,,Mae Hong Son
+year_province,53,0,53,1.0,0,52,21,0,0,0,2020.0,,Maha Sarakham
+year_province,53,0,53,1.0,0,52,7,0,0,0,2020.0,,Mukdahan
+year_province,53,0,53,1.0,0,52,0,0,0,0,2020.0,,Nakhon Nayok
+year_province,53,7,46,0.8679245283018868,0,52,12,7,2,3,2020.0,,Nakhon Pathom
+year_province,53,0,53,1.0,0,52,0,0,0,0,2020.0,,Nakhon Phanom
+year_province,53,19,34,0.6415094339622641,0,52,20,19,13,13,2020.0,,Nakhon Ratchasima
+year_province,53,4,49,0.9245283018867925,0,52,0,4,0,0,2020.0,,Nakhon Sawan
+year_province,53,1,52,0.9811320754716981,0,52,15,1,0,0,2020.0,,Nakhon Si Thammarat
+year_province,53,0,53,1.0,0,52,6,0,0,0,2020.0,,Nan
+year_province,53,0,53,1.0,0,52,0,0,0,0,2020.0,,Narathiwat
+year_province,53,0,53,1.0,0,52,16,0,0,0,2020.0,,Nong Bua Lam Phu
+year_province,53,0,53,1.0,0,52,0,0,0,0,2020.0,,Nong Khai
+year_province,53,0,53,1.0,0,52,0,0,0,0,2020.0,,Nonthaburi
+year_province,53,14,39,0.7358490566037735,0,52,0,14,0,0,2020.0,,Pathum Thani
+year_province,53,0,53,1.0,0,52,0,0,0,0,2020.0,,Pattani
+year_province,53,0,53,1.0,0,52,0,0,0,0,2020.0,,Phang-nga
+year_province,53,7,46,0.8679245283018868,0,52,3,7,1,1,2020.0,,Phatthalung
+year_province,53,16,37,0.6981132075471698,0,52,15,16,9,8,2020.0,,Phayao
+year_province,53,0,53,1.0,0,52,0,0,0,0,2020.0,,Phetchabun
+year_province,53,0,53,1.0,0,52,0,0,0,0,2020.0,,Phetchaburi
+year_province,53,0,53,1.0,0,52,0,0,0,0,2020.0,,Phichit
+year_province,53,0,53,1.0,0,52,4,0,0,0,2020.0,,Phitsanulok
+year_province,53,6,47,0.8867924528301887,0,52,14,6,0,0,2020.0,,Phra Nakhon Si Ayutthaya
+year_province,53,1,52,0.9811320754716981,1,52,20,1,1,1,2020.0,,Phrae
+year_province,53,0,53,1.0,0,52,0,0,0,0,2020.0,,Phuket
+year_province,53,0,53,1.0,0,52,11,0,0,0,2020.0,,Prachin Buri
+year_province,53,0,53,1.0,0,52,0,0,0,0,2020.0,,Prachuap Khiri Khan
+year_province,53,0,53,1.0,0,52,0,0,0,0,2020.0,,Ranong
+year_province,53,7,46,0.8679245283018868,2,52,7,7,4,4,2020.0,,Ratchaburi
+year_province,53,0,53,1.0,0,52,0,0,0,0,2020.0,,Rayong
+year_province,53,20,33,0.6226415094339622,2,52,0,20,0,0,2020.0,,Roi Et
+year_province,53,0,53,1.0,0,52,11,0,0,0,2020.0,,Sa kaeo
+year_province,53,3,50,0.9433962264150944,0,52,19,3,3,3,2020.0,,Sakon Nakhon
+year_province,53,0,53,1.0,0,52,0,0,0,0,2020.0,,Samut Prakarn
+year_province,53,0,53,1.0,0,52,0,0,0,0,2020.0,,Samut Sakhon
+year_province,53,0,53,1.0,0,52,0,0,0,0,2020.0,,Samut Songkhram
+year_province,53,0,53,1.0,0,52,0,0,0,0,2020.0,,Saraburi
+year_province,53,0,53,1.0,0,52,0,0,0,0,2020.0,,Satun
+year_province,53,0,53,1.0,0,52,6,0,0,0,2020.0,,Si Sa Ket
+year_province,53,0,53,1.0,0,52,0,0,0,0,2020.0,,Sing Buri
+year_province,53,0,53,1.0,0,52,19,0,0,0,2020.0,,Songkhla
+year_province,53,0,53,1.0,0,52,2,0,0,0,2020.0,,Sukhothai
+year_province,53,0,53,1.0,0,52,9,0,0,0,2020.0,,Suphan Buri
+year_province,53,0,53,1.0,0,52,0,0,0,0,2020.0,,Surat Thani
+year_province,53,0,53,1.0,0,52,10,0,0,0,2020.0,,Surin
+year_province,53,0,53,1.0,0,52,19,0,0,0,2020.0,,Tak
+year_province,53,0,53,1.0,0,52,0,0,0,0,2020.0,,Trang
+year_province,53,0,53,1.0,0,52,0,0,0,0,2020.0,,Trat
+year_province,53,20,33,0.6226415094339622,1,52,29,20,14,14,2020.0,,Ubon Ratchathani
+year_province,53,52,1,0.018867924528301886,0,52,13,52,13,12,2020.0,,Udon Thani
+year_province,53,0,53,1.0,0,52,7,0,0,0,2020.0,,Uthai Thani
+year_province,53,0,53,1.0,0,52,9,0,0,0,2020.0,,Uttaradit
+year_province,53,0,53,1.0,0,52,1,0,0,0,2020.0,,Yala
+year_province,53,0,53,1.0,0,52,9,0,0,0,2020.0,,Yasothon
+year_province,53,0,53,1.0,0,52,0,0,0,0,2021.0,,Amnat Charoen
+year_province,53,0,53,1.0,0,52,0,0,0,0,2021.0,,Ang Thong
+year_province,53,0,53,1.0,0,52,0,0,0,0,2021.0,,Bangkok
+year_province,49,0,49,1.0,0,48,7,0,0,0,2021.0,,Bueng Kan
+year_province,53,0,53,1.0,0,52,8,0,0,0,2021.0,,Buri Ram
+year_province,53,52,1,0.018867924528301886,5,52,10,52,10,10,2021.0,,Chachoengsao
+year_province,49,49,0,0.0,0,48,0,48,0,0,2021.0,,Chai Nat
+year_province,49,0,49,1.0,0,48,0,0,0,0,2021.0,,Chaiyaphum
+year_province,53,0,53,1.0,0,52,13,0,0,0,2021.0,,Chanthaburi
+year_province,53,52,1,0.018867924528301886,0,52,0,52,0,0,2021.0,,Chiang Mai
+year_province,53,52,1,0.018867924528301886,25,52,4,52,4,4,2021.0,,Chiang Rai
+year_province,53,0,53,1.0,0,52,2,0,0,0,2021.0,,Chon Buri
+year_province,53,0,53,1.0,0,52,0,0,0,0,2021.0,,Chumphon
+year_province,53,0,53,1.0,0,52,0,0,0,0,2021.0,,Kalasin
+year_province,53,0,53,1.0,0,52,0,0,0,0,2021.0,,Kamphaeng Phet
+year_province,49,0,49,1.0,0,48,0,0,0,0,2021.0,,Kanchanaburi
+year_province,53,52,1,0.018867924528301886,0,52,8,52,8,8,2021.0,,Khon Kaen
+year_province,53,52,1,0.018867924528301886,13,52,0,52,0,0,2021.0,,Krabi
+year_province,53,0,53,1.0,0,52,3,0,0,0,2021.0,,Lampang
+year_province,53,52,1,0.018867924528301886,7,52,5,52,5,5,2021.0,,Lamphun
+year_province,53,0,53,1.0,0,52,0,0,0,0,2021.0,,Loei
+year_province,49,49,0,0.0,0,48,0,48,0,0,2021.0,,Lop Buri
+year_province,53,0,53,1.0,0,52,0,0,0,0,2021.0,,Mae Hong Son
+year_province,53,0,53,1.0,0,52,6,0,0,0,2021.0,,Maha Sarakham
+year_province,53,0,53,1.0,0,52,5,0,0,0,2021.0,,Mukdahan
+year_province,53,40,13,0.24528301886792453,5,52,0,40,0,0,2021.0,,Nakhon Nayok
+year_province,53,52,1,0.018867924528301886,0,52,0,52,0,0,2021.0,,Nakhon Pathom
+year_province,53,0,53,1.0,0,52,0,0,0,0,2021.0,,Nakhon Phanom
+year_province,53,52,1,0.018867924528301886,0,52,14,52,14,14,2021.0,,Nakhon Ratchasima
+year_province,49,49,0,0.0,3,48,0,48,0,0,2021.0,,Nakhon Sawan
+year_province,53,52,1,0.018867924528301886,8,52,9,52,9,9,2021.0,,Nakhon Si Thammarat
+year_province,53,0,53,1.0,0,52,25,0,0,0,2021.0,,Nan
+year_province,53,0,53,1.0,0,52,0,0,0,0,2021.0,,Narathiwat
+year_province,53,0,53,1.0,0,52,0,0,0,0,2021.0,,Nong Bua Lam Phu
+year_province,53,0,53,1.0,0,52,0,0,0,0,2021.0,,Nong Khai
+year_province,53,0,53,1.0,0,52,0,0,0,0,2021.0,,Nonthaburi
+year_province,53,52,1,0.018867924528301886,1,52,0,52,0,0,2021.0,,Pathum Thani
+year_province,53,0,53,1.0,0,52,22,0,0,0,2021.0,,Pattani
+year_province,53,0,53,1.0,0,52,0,0,0,0,2021.0,,Phang-nga
+year_province,53,52,1,0.018867924528301886,0,52,0,52,0,0,2021.0,,Phatthalung
+year_province,53,52,1,0.018867924528301886,0,52,15,52,15,15,2021.0,,Phayao
+year_province,53,0,53,1.0,0,52,0,0,0,0,2021.0,,Phetchabun
+year_province,53,0,53,1.0,0,52,9,0,0,0,2021.0,,Phetchaburi
+year_province,53,0,53,1.0,0,52,0,0,0,0,2021.0,,Phichit
+year_province,53,51,2,0.03773584905660377,0,52,0,51,0,0,2021.0,,Phitsanulok
+year_province,53,52,1,0.018867924528301886,0,52,0,52,0,0,2021.0,,Phra Nakhon Si Ayutthaya
+year_province,53,52,1,0.018867924528301886,7,52,19,52,19,19,2021.0,,Phrae
+year_province,53,0,53,1.0,0,52,0,0,0,0,2021.0,,Phuket
+year_province,49,0,49,1.0,0,48,0,0,0,0,2021.0,,Prachin Buri
+year_province,49,0,49,1.0,0,48,0,0,0,0,2021.0,,Prachuap Khiri Khan
+year_province,53,0,53,1.0,0,52,0,0,0,0,2021.0,,Ranong
+year_province,49,49,0,0.0,7,48,3,48,3,3,2021.0,,Ratchaburi
+year_province,53,0,53,1.0,0,52,0,0,0,0,2021.0,,Rayong
+year_province,53,52,1,0.018867924528301886,0,52,0,52,0,0,2021.0,,Roi Et
+year_province,49,0,49,1.0,0,48,0,0,0,0,2021.0,,Sa kaeo
+year_province,53,52,1,0.018867924528301886,0,52,11,52,11,11,2021.0,,Sakon Nakhon
+year_province,53,0,53,1.0,0,52,0,0,0,0,2021.0,,Samut Prakarn
+year_province,53,0,53,1.0,0,52,0,0,0,0,2021.0,,Samut Sakhon
+year_province,49,0,49,1.0,0,48,0,0,0,0,2021.0,,Samut Songkhram
+year_province,53,0,53,1.0,0,52,0,0,0,0,2021.0,,Saraburi
+year_province,53,0,53,1.0,0,52,0,0,0,0,2021.0,,Satun
+year_province,53,0,53,1.0,0,52,3,0,0,0,2021.0,,Si Sa Ket
+year_province,49,45,4,0.08163265306122448,0,48,0,44,0,0,2021.0,,Sing Buri
+year_province,53,0,53,1.0,0,52,18,0,0,0,2021.0,,Songkhla
+year_province,53,0,53,1.0,0,52,0,0,0,0,2021.0,,Sukhothai
+year_province,49,0,49,1.0,0,48,1,0,0,0,2021.0,,Suphan Buri
+year_province,53,0,53,1.0,0,52,0,0,0,0,2021.0,,Surat Thani
+year_province,53,0,53,1.0,0,52,4,0,0,0,2021.0,,Surin
+year_province,53,0,53,1.0,0,52,7,0,0,0,2021.0,,Tak
+year_province,53,0,53,1.0,0,52,0,0,0,0,2021.0,,Trang
+year_province,53,0,53,1.0,0,52,0,0,0,0,2021.0,,Trat
+year_province,53,52,1,0.018867924528301886,13,52,22,52,22,22,2021.0,,Ubon Ratchathani
+year_province,53,52,1,0.018867924528301886,0,52,8,52,8,8,2021.0,,Udon Thani
+year_province,49,0,49,1.0,0,48,35,0,0,0,2021.0,,Uthai Thani
+year_province,53,0,53,1.0,0,52,0,0,0,0,2021.0,,Uttaradit
+year_province,53,0,53,1.0,0,52,0,0,0,0,2021.0,,Yala
+year_province,53,0,53,1.0,0,52,12,0,0,0,2021.0,,Yasothon

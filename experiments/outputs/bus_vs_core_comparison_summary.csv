@@ -1,0 +1,5 @@
+﻿model,comparison,f1_delta,precision_delta,recall_delta,pr_auc_delta,interpretation_scope
+xgboost,core_plus_BUS_minus_core_no_BUS,-0.02322015334063529,-0.044096728307254585,-0.015625,-0.011389763959773536,exploratory_bus_covered_2020_to_2021
+xgboost,BUS_plus_host_spatial_minus_BUS_only,-0.008454450460720103,0.02707551105548603,-0.2578125,0.03465658025817819,exploratory_bus_covered_2020_to_2021
+logistic_class_weighted,core_plus_BUS_minus_core_no_BUS,0.006340480117280556,0.014713070681396045,-0.015625,-0.01339828079526359,exploratory_bus_covered_2020_to_2021
+logistic_class_weighted,BUS_plus_host_spatial_minus_BUS_only,0.04261318904682154,0.05142314990512334,-0.1328125,0.11526072673013643,exploratory_bus_covered_2020_to_2021

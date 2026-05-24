@@ -1,0 +1,6 @@
+﻿item,value,interpretation
+bus_year_coverage,2020|2021,BUS rows in updated 2015-2021 sequence are available only for these years.
+standard_train_2017_2019_bus_rows,0,"Standard corrected-label train split has no BUS-covered rows, so final BUS model training is not valid yet."
+exploratory_train_2020_rows,299,"Used only for exploratory feasibility, not final performance."
+exploratory_test_2021_rows,1263,"Held out from exploratory 2020 training, but still not a final nationwide split."
+dnn_policy,skipped,DNN skipped because BUS coverage has no 2017-2019 training rows and only one BUS-covered training year.

@@ -1,0 +1,102 @@
+# Track this repository from the updated-data research phase onward.
+# Raw data stays local; reproducible logic, documentation, and compact
+# governance outputs are tracked.
+
+# Ignore everything by default, then allowlist project files below.
+*
+
+# Git controls
+!.gitignore
+!.gitattributes
+
+# Research documentation
+!*.md
+!docs/
+!docs/**/*.md
+
+# Source code
+!main.py
+!agents/
+!agents/**/*.py
+!tools/
+!tools/**/*.py
+!workflows/
+!workflows/**/*.py
+
+# Updated-data phase experiment scripts
+!experiments/
+experiments/*
+!experiments/outputs/
+!experiments/audit_updated_data.py
+!experiments/audit_updated_data_content.py
+!experiments/compare_updated_core_data.py
+!experiments/compare_updated_blast_labels.py
+!experiments/rebuild_updated_sequence_dataset.py
+!experiments/rebuild_updated_sequence_dataset_2022.py
+!experiments/analyze_bus_benchmark.py
+!experiments/train_updated_label_core_baselines.py
+!experiments/train_updated_2022_forward_baselines.py
+!experiments/train_temporal_forward_models.py
+!experiments/forward_decision_governance.py
+
+# Compact updated-data outputs and governance summaries
+experiments/outputs/*
+
+!experiments/outputs/updated_*summary*.csv
+!experiments/outputs/updated_*metrics*.csv
+!experiments/outputs/updated_*comparison*.csv
+!experiments/outputs/updated_*manifest*.csv
+!experiments/outputs/updated_*importance*.csv
+!experiments/outputs/updated_*performance*.csv
+!experiments/outputs/updated_*confusion_matrix.csv
+!experiments/outputs/updated_*split_summary.csv
+!experiments/outputs/updated_*feature_integrity_summary.csv
+!experiments/outputs/updated_*label_distribution_summary.csv
+
+!experiments/outputs/bus_*summary*.csv
+!experiments/outputs/bus_*metrics*.csv
+!experiments/outputs/bus_*audit.csv
+!experiments/outputs/bus_*manifest*.csv
+!experiments/outputs/bus_*comparison*.csv
+
+!experiments/outputs/temporal_model_forward_metrics.csv
+!experiments/outputs/temporal_model_forward_manifest.csv
+!experiments/outputs/temporal_model_forward_region_performance.csv
+!experiments/outputs/temporal_model_forward_training_history.csv
+
+!experiments/outputs/forward_*metrics.csv
+!experiments/outputs/forward_*thresholds.csv
+!experiments/outputs/forward_*summary.csv
+!experiments/outputs/forward_*performance.csv
+!experiments/outputs/forward_*comparison.csv
+!experiments/outputs/forward_*confusion_matrix.csv
+!experiments/outputs/forward_calibration_reliability_summary.csv
+
+# Keep raw and bulky generated data out of Git.
+data/
+updated data/
+experiments/outputs/*dataset*.csv
+experiments/outputs/*predictions*.csv
+experiments/outputs/*all_predictions*.csv
+experiments/outputs/*failure_cases*.csv
+experiments/outputs/*false_positive*.csv
+experiments/outputs/*false_negative*.csv
+
+# Runtime/cache artifacts
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# Model and binary artifacts
+*.keras
+*.h5
+*.pkl
+*.joblib
+*.pt
+*.pth
+
+# Local reports / scratch exports
+report_*.txt
