@@ -1,0 +1,30 @@
+file_path,file_type,file_size,likely_boundary_source,readable,geometry_type_if_readable,feature_count_if_readable,crs_if_readable,candidate_name_columns,notes
+data/thailand_province_name.csv,.csv,1592,"project province-name metadata, not boundary geometry",True,none,77,,province_name|province_thai,CSV has province/name metadata but no geometry column
+experiments/outputs/decision_policy_province_summary.csv,.csv,110088,local boundary-like candidate,True,none,200,,province,CSV has province/name metadata but no geometry column
+experiments/outputs/feature_registry_current.csv,.csv,10765,local boundary-like candidate,True,none,34,,feature_name,CSV has province/name metadata but no geometry column
+experiments/outputs/feature_registry_template.csv,.csv,180,local boundary-like candidate,True,none,0,,feature_name,CSV has province/name metadata but no geometry column
+experiments/outputs/hybrid_lstm_province_error_summary.csv,.csv,11746,local boundary-like candidate,True,none,77,,province,CSV has province/name metadata but no geometry column
+experiments/outputs/north_province_failure_summary.csv,.csv,2927,local boundary-like candidate,True,none,17,,province|top5_analog_provinces,CSV has province/name metadata but no geometry column
+experiments/outputs/province_analog_vs_geographic_neighbors.csv,.csv,12006,local boundary-like candidate,True,none,77,,province|top5_analog_provinces,CSV has province/name metadata but no geometry column
+experiments/outputs/province_boundary_inventory.csv,.csv,4917,local boundary-like candidate,True,tabular_geometry_candidate,25,,candidate_name_columns,CSV has possible geometry columns: geometry_type_if_readable
+experiments/outputs/province_boundary_name_match_audit.csv,.csv,8674,local boundary-like candidate,True,none,77,,project_province|boundary_province_raw|normalized_project_name|normalized_boundary_name,CSV has province/name metadata but no geometry column
+experiments/outputs/province_boundary_unmatched_boundary_names.csv,.csv,100,local boundary-like candidate,True,none,0,,boundary_province_raw|normalized_boundary_name|candidate_name_column,CSV has province/name metadata but no geometry column
+experiments/outputs/province_boundary_unmatched_project_names.csv,.csv,5906,local boundary-like candidate,True,none,77,,project_province|normalized_project_name,CSV has province/name metadata but no geometry column
+experiments/outputs/province_centroids_from_pov.csv,.csv,2858,local boundary-like candidate,True,none,77,,province,CSV has province/name metadata but no geometry column
+experiments/outputs/province_distances.csv,.csv,237987,local boundary-like candidate,True,none,200,,province|neighbor_province,CSV has province/name metadata but no geometry column
+experiments/outputs/province_region_mapping.csv,.csv,1478,local boundary-like candidate,True,none,77,,province,CSV has province/name metadata but no geometry column
+experiments/outputs/province_similarity_cluster_summary.csv,.csv,4305,local boundary-like candidate,True,none,18,,province_count|provinces,CSV has province/name metadata but no geometry column
+experiments/outputs/province_similarity_matrix_combined.csv,.csv,115337,local boundary-like candidate,True,none,77,,province|Sukhothai|Uthai Thani,CSV has province/name metadata but no geometry column
+experiments/outputs/province_similarity_matrix_host.csv,.csv,115510,local boundary-like candidate,True,none,77,,province|Sukhothai|Uthai Thani,CSV has province/name metadata but no geometry column
+experiments/outputs/province_similarity_matrix_outbreak_history.csv,.csv,104678,local boundary-like candidate,True,none,77,,province|Sukhothai|Uthai Thani,CSV has province/name metadata but no geometry column
+experiments/outputs/province_similarity_matrix_pressure.csv,.csv,115565,local boundary-like candidate,True,none,77,,province|Sukhothai|Uthai Thani,CSV has province/name metadata but no geometry column
+experiments/outputs/province_similarity_matrix_weather.csv,.csv,115373,local boundary-like candidate,True,none,77,,province|Sukhothai|Uthai Thani,CSV has province/name metadata but no geometry column
+experiments/outputs/province_similarity_profile_manifest.csv,.csv,2533,local boundary-like candidate,True,none,58,,,CSV readable but no boundary-like schema detected
+experiments/outputs/province_terrain_table_schema.csv,.csv,212,local boundary-like candidate,True,none,0,,province,CSV has province/name metadata but no geometry column
+experiments/outputs/province_terrain_table_template.csv,.csv,1633,local boundary-like candidate,True,none,77,,province,CSV has province/name metadata but no geometry column
+experiments/outputs/province_top5_neighbors.csv,.csv,15748,local boundary-like candidate,True,none,200,,province|neighbor_province,CSV has province/name metadata but no geometry column
+experiments/outputs/province_top5_neighbors_with_bearing.csv,.csv,22895,local boundary-like candidate,True,none,200,,province|neighbor_province|bearing_neighbor_to_province,CSV has province/name metadata but no geometry column
+experiments/outputs/province_top_analog_neighbors.csv,.csv,59041,local boundary-like candidate,True,none,200,,province|analog_province|province_region,CSV has province/name metadata but no geometry column
+experiments/outputs/updated_outbreak_weekly_by_province.csv,.csv,26878,local boundary-like candidate,True,none,200,,province,CSV has province/name metadata but no geometry column
+experiments/outputs/updated_province_mapping_summary.csv,.csv,97,local boundary-like candidate,True,none,1,,province_name_unique|province_thai_unique,CSV has province/name metadata but no geometry column
+updated data/thailand_province_name.csv,.csv,1592,"project province-name metadata, not boundary geometry",True,none,77,,province_name|province_thai,CSV has province/name metadata but no geometry column

@@ -4835,3 +4835,147 @@ Conclusion:
 - Copernicus GLO-30 should be retained as a validation/fallback source.
 - Paid data is unnecessary for the current province-level diagnostic stage.
 - The next implementation step should be terrain table creation and audit, not model training.
+
+## 2026-05-24 Step 9.16B Province Boundary and Name Matching Audit
+
+Goal:
+
+- Audit available province boundary sources before DEM / Google Earth Engine terrain processing.
+- Determine whether a local Thailand province polygon boundary is ready for Step 9.17.
+- Check province-name matching readiness against the project convention.
+- No DEM processing, Google Earth Engine processing, terrain feature creation, or model training.
+
+Context:
+
+- Step 9.16 selected SRTM 30m / SRTMGL1 as the first DEM source.
+- Step 9.17 depends on reliable province boundary polygons.
+- The current risk is boundary availability and province-name matching, not DEM selection.
+
+Script:
+
+- `experiments/audit_province_boundaries.py`
+
+Outputs:
+
+- `experiments/outputs/province_boundary_inventory.csv`
+- `experiments/outputs/province_boundary_name_match_audit.csv`
+- `experiments/outputs/province_boundary_unmatched_project_names.csv`
+- `experiments/outputs/province_boundary_unmatched_boundary_names.csv`
+- `experiments/outputs/province_boundary_data_scout_recommendation.md`
+
+Audit scope:
+
+- Project root
+- `data/`
+- `updated data/`
+- `experiments/`
+- `tools/`
+
+File types searched:
+
+- `.shp`
+- `.shx`
+- `.dbf`
+- `.prj`
+- `.geojson`
+- `.json`
+- `.gpkg`
+- `.kml`
+- `.kmz`
+- boundary-like `.csv` files that may contain geometry/WKT/polygon indicators
+
+Boundary inventory summary:
+
+| audit item | result |
+|---|---:|
+| local candidate files scanned | 29 |
+| GIS polygon/vector boundary files found | 0 |
+| usable local province boundary files | 0 |
+| project province count | 77 |
+| matched project provinces to boundary | 0 |
+| unmatched project provinces | 77 |
+| unmatched boundary names | 0 |
+
+Interpretation:
+
+- No usable local Thailand province polygon boundary exists in the project folders.
+- Several CSV files contain province names, centroids, distances, analog neighbors, or province metadata.
+- These CSV files are useful for project metadata, but they do not contain polygon geometry.
+- `thailand_province_name.csv` contains project province-name metadata, not boundary geometry.
+- Therefore, the project is not ready for Step 9.17 DEM terrain extraction yet.
+
+Name matching interpretation:
+
+- Project province list is available and contains 77 provinces.
+- Because no usable boundary polygon exists, province-name matching cannot be completed.
+- All 77 project provinces are marked as `unmatched_no_local_boundary`.
+- This is not a naming failure yet; it is a boundary-source absence.
+
+Decision:
+
+- Do not start SRTM/GEE terrain extraction yet.
+- First acquire or approve a Thailand province boundary dataset.
+- After a boundary source is acquired, rerun the same boundary/name audit.
+- Step 9.17 can proceed only after polygon geometry and near-complete province-name matching are verified.
+
+Usable boundary criteria:
+
+- polygon or multipolygon geometry,
+- province-level Thailand coverage,
+- 77 province features or equivalent,
+- usable English names or stable province codes with mapping table,
+- known or recoverable CRS,
+- documented source and license,
+- 77/77 project province matching or near-complete matching with documented manual mapping.
+
+Recommended boundary source order:
+
+1. geoBoundaries
+   - Recommended first source if local boundary remains missing.
+   - Reason: reproducible research-oriented administrative boundary workflow.
+
+2. GADM
+   - Strong fallback.
+   - Reason: widely used administrative boundaries.
+   - Caveat: license and redistribution terms must be checked before thesis/project packaging.
+
+3. HDX / Humanitarian Data Exchange
+   - Candidate source.
+   - Reason: may provide humanitarian administrative boundaries.
+   - Caveat: source freshness and provenance must be checked.
+
+4. Thai government GIS / NSO / DOPA / RID / GISTDA
+   - Official-source candidate.
+   - Reason: potentially authoritative Thailand boundary data.
+   - Caveat: access, license, and reproducibility may require manual review.
+
+5. Natural Earth
+   - Not preferred.
+   - Reason: likely too coarse for province-level terrain extraction.
+
+Required approved boundary schema:
+
+- province English name or stable province code,
+- optional Thai province name,
+- polygon or multipolygon geometry,
+- CRS metadata,
+- source name,
+- source version or download date,
+- license/terms note.
+
+Manual name-mapping rule:
+
+- Normalize names conservatively:
+  - lowercase,
+  - strip whitespace,
+  - remove punctuation,
+  - handle common spacing variants.
+- Do not silently force uncertain matches.
+- Uncertain matches must be flagged for manual review.
+- Manual mapping decisions should be saved as a tracked mapping table.
+
+Conclusion:
+
+- Step 9.16B confirms that the project lacks a usable local province boundary polygon.
+- Boundary acquisition is required before terrain/elevation extraction.
+- The next step should be boundary Data Scout / acquisition, not DEM processing.
