@@ -6,6 +6,10 @@ This document consolidates the corrected-label research phase from Step 9.7 thro
 
 The central change in this phase is the replacement of the previous blast disease label source with corrected `rice_blast_outbreak_weekly` labels. From Step 9.7 onward, corrected labels become the official outcome source for model development and evaluation.
 
+## Executive Summary
+
+Phase 2 established corrected-label modeling as the official evidence base for the rice blast forecasting project. The forward-year split improved training realism by adding the 2020 outbreak year to training while preserving 2022 as a held-out test year. DNN `core_no_BUS` remains the stable nationwide default baseline, while province analog history improves Northeast detection but is not yet a universal replacement. BUS is useful as an external mechanistic reference but not as a required national dependency. North-region failures remain unresolved and point toward missing terrain, elevation, and microclimate context. The phase also formalized Feature Agent and Data Scout governance, transforming feature development into a reproducible agent-guided research workflow.
+
 ## 1. Phase Overview
 
 Step 9.7 marks the beginning of the corrected-label era. The project rebuilt the temporal epidemiology dataset using updated data sources and replaced the old blast label source with corrected weekly outbreak labels.
@@ -22,6 +26,15 @@ Important interpretation:
 - However, their model scores should not be treated as final performance claims because they used the older label source.
 
 The corrected-label phase is therefore the more credible basis for final thesis and publication claims.
+
+### Old-Label vs Corrected-Label Era
+
+| phase | label source | status | use in thesis / publication |
+|---|---|---|---|
+| Step 9.2-9.6 | old blast disease label | methodological experiments | workflow development, model-design learning, calibration method development |
+| Step 9.7 onward | corrected `rice_blast_outbreak_weekly` | official corrected-label evidence base | final evidence base for corrected-label modeling claims |
+
+This distinction is essential because old-label and corrected-label metrics are not directly comparable as final performance claims. They used different target definitions.
 
 ## 2. Updated Data Foundation
 
@@ -283,6 +296,9 @@ Scientific interpretation:
 
 - Disease similarity is not identical to physical distance.
 - Epidemiological analogs provide a complementary view of province relationships.
+- Province analogs represent epidemiological similarity rather than physical adjacency.
+- Analog history should therefore be interpreted as a latent outbreak-regime signal, not as evidence of direct pathogen dispersal.
+- In practical terms, two provinces can be analogs because their host, weather, pressure, or outbreak-history profiles are similar, even if they are not direct geographic neighbors.
 
 ## 10. Analog Feature Ablation And Governance
 
@@ -416,20 +432,39 @@ First official Data Scout case:
 
 - province-level terrain/elevation data.
 
+Agent-system contribution:
+
+- This phase transforms the project from a forecasting pipeline into an agent-governed research platform.
+- Feature candidates are no longer added ad hoc.
+- They are proposed, audited, validated, ablated, governed, and escalated to Data Scout when missing evidence is detected.
+- This creates a reproducible bridge between epidemiological reasoning, model evaluation, and data-acquisition decisions.
+
 ## 13. Current Model-Role Summary
 
 | role | model / feature set | interpretation |
 |---|---|---|
-| stable default | DNN no-class-weight `core_no_BUS` | best corrected-label forward F1 baseline before analog governance |
+| stable default | DNN no-class-weight `core_no_BUS` | stable nationwide default baseline |
 | stable interpretable comparator | Random Forest `core_no_BUS` | strong ROC-AUC and explainable feature importance |
 | recall-sensitive candidate | DNN class-weighted `core_no_BUS` | useful when missed outbreaks are costly |
-| regional recall candidate | DNN `core_plus_analog_history` | improves Northeast recall/F1 but increases false positives |
+| regional recall candidate | DNN `core_plus_analog_history` | higher-recall regional candidate, especially Northeast |
 | ranking comparator | RF all-analog | strong ranking metrics, useful for dashboard or prioritization analysis |
 | temporal support model | Hybrid DNN + TCN 2-week | useful temporal evidence but not default |
 | external reference | BUS features | benchmark/dashboard support, not national dependency |
 | missing-data candidate | terrain/elevation | needed for North-focused diagnostic path |
 
-## 14. Current Unresolved Gaps
+## 14. Current Best Evidence Summary
+
+| evidence type | current finding | interpretation |
+|---|---|---|
+| Stable nationwide default | DNN no-class-weight `core_no_BUS` | operationally stable corrected-label baseline |
+| Interpretable comparator | Random Forest `core_no_BUS` and RF analog variants | useful for explainability, ranking, and feature-importance interpretation |
+| Temporal model | Hybrid DNN + TCN 2-week | supportive temporal evidence; not a replacement for tabular baseline |
+| Analog history | improves Northeast recall/F1 | accepted as regional / governance candidate, not direct dispersal evidence |
+| BUS | weak standalone but useful as reference | accepted as external mechanistic reference, not required dependency |
+| North region | unresolved | likely needs terrain, microclimate, or sub-provincial diagnostic features |
+| Terrain/elevation | missing from weather source | official Data Scout missing-data candidate |
+
+## 15. Current Unresolved Gaps
 
 Major unresolved gaps:
 
@@ -447,7 +482,21 @@ Scientific caution:
 - Model behavior is regionally heterogeneous.
 - A single nationwide threshold may hide region-specific risk patterns.
 
-## 15. Next Directions
+### Methodological Limitation: Province-Level Aggregation
+
+The province is a large spatial unit. Weather, host composition, disease reporting, rice production patterns, terrain, and microclimate may vary substantially within a province.
+
+This matters because:
+
+- province-level weather may not represent upland, valley, irrigated, or local humid zones,
+- province-level POV composition may hide local variety clusters,
+- province-level outbreak labels may reflect reporting density as well as biological occurrence,
+- province-level terrain summaries may still miss field-scale microclimate,
+- unresolved failures, especially in North, may reflect sub-provincial heterogeneity rather than model failure alone.
+
+Therefore, terrain/elevation should first be tested as province-level explanatory context, while future work may require sub-provincial or field-level data if North failures persist.
+
+## 16. Next Directions
 
 Recommended next steps:
 
