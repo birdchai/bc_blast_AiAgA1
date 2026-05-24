@@ -3995,3 +3995,162 @@ Next direction:
 - Use validation 2021 only.
 - Evaluate whether analog-history gains survive calibrated policy governance.
 - Continue separate North-focused diagnostics.
+
+## 2026-05-24 Weather Source Terrain / Elevation Metadata Audit
+
+Goal:
+
+- Check whether the updated `weather_hourly` source contains terrain or elevation-related fields.
+- Determine whether pressure fields can be used as a proxy for elevation.
+- Prepare a clean input format for future terrain features.
+- No model training and no merge into the main dataset in this audit.
+
+Script:
+
+- `experiments/audit_weather_terrain_metadata.py`
+
+Weather source:
+
+- `updated data/weather_hourly`
+
+Files scanned:
+
+- 7,392 CSV files
+- years 2015-2022
+- 77 provinces
+- 924 weather files per year
+
+Outputs:
+
+- `experiments/outputs/weather_hourly_schema_file_scan.csv`
+- `experiments/outputs/weather_hourly_unique_columns.csv`
+- `experiments/outputs/weather_hourly_pressure_column_summary.csv`
+- `experiments/outputs/weather_hourly_metadata_sample_values.csv`
+- `experiments/outputs/weather_source_metadata_file_inventory.csv`
+- `experiments/outputs/province_terrain_table_template.csv`
+
+Unique weather columns:
+
+| column | file count | years |
+|---|---:|---|
+| address | 7,392 | 2015-2022 |
+| datetime | 7,392 | 2015-2022 |
+| mint | 7,392 | 2015-2022 |
+| maxt | 7,392 | 2015-2022 |
+| temp | 7,392 | 2015-2022 |
+| dew | 7,392 | 2015-2022 |
+| humidity | 7,392 | 2015-2022 |
+| heatindex | 7,392 | 2015-2022 |
+| wspd | 7,392 | 2015-2022 |
+| wgust | 7,392 | 2015-2022 |
+| wdir | 7,392 | 2015-2022 |
+| windchill | 7,392 | 2015-2022 |
+| precip | 7,392 | 2015-2022 |
+| precipcover | 7,392 | 2015-2022 |
+| snowdepth | 7,392 | 2015-2022 |
+| visibility | 7,392 | 2015-2022 |
+| cloudcover | 7,392 | 2015-2022 |
+| sealevelpressure | 7,392 | 2015-2022 |
+| weathertype | 7,392 | 2015-2022 |
+| latitude | 7,392 | 2015-2022 |
+| longitude | 7,392 | 2015-2022 |
+| resolvedAddress | 7,392 | 2015-2022 |
+| name | 7,392 | 2015-2022 |
+| info | 7,392 | 2015-2022 |
+| conditions | 7,392 | 2015-2022 |
+
+Terrain / elevation columns:
+
+- No direct terrain or elevation fields were found.
+- No columns matched:
+  - `elevation`
+  - `altitude`
+  - `station elevation`
+  - `height above sea level`
+  - `terrain`
+  - `slope`
+  - `DEM`
+
+Weather metadata columns:
+
+- `address`
+- `latitude`
+- `longitude`
+- `resolvedAddress`
+- `name`
+- `info`
+
+Metadata interpretation:
+
+- `address` is province name.
+- `latitude` and `longitude` are province-level coordinates or query coordinates.
+- `name` and `resolvedAddress` usually repeat the coordinate pair.
+- `info` is empty in sampled weather rows.
+- No separate weather-station metadata table was found inside `updated data/weather_hourly`.
+- `updated data/thailand_province_name.csv` provides province naming metadata only, not elevation.
+- BUS files contain rice research center names, but they are separate BUS source files, not weather-hourly station metadata.
+
+Pressure fields:
+
+- Only one pressure column exists:
+  - `sealevelpressure`
+- No `surface_pressure`, `station_pressure`, or `barometric station pressure` field was found.
+
+Sea-level pressure coverage:
+
+| year | files | provinces | mean coverage rate | mean pressure |
+|---:|---:|---:|---:|---:|
+| 2015 | 924 | 77 | 0.3303 | 1010.27 |
+| 2016 | 924 | 77 | 0.3242 | 1009.53 |
+| 2017 | 924 | 77 | 0.3303 | 1009.54 |
+| 2018 | 924 | 77 | 0.3301 | 1009.45 |
+| 2019 | 924 | 77 | 0.3356 | 1009.61 |
+| 2020 | 924 | 77 | 0.3334 | 1009.37 |
+| 2021 | 924 | 77 | 0.6787 | 1009.51 |
+| 2022 | 924 | 77 | 0.7627 | 1009.12 |
+
+Pressure interpretation:
+
+- `sealevelpressure` is pressure adjusted to sea level.
+- Because it is normalized to sea level, it should not be used as a direct proxy for elevation.
+- If station pressure or surface pressure existed, lower station pressure could partially reflect higher elevation after weather-state correction.
+- But the current weather source does not contain station/surface pressure.
+- Therefore, pressure in this source is useful as a weather-state feature, not a terrain/elevation proxy.
+
+Conclusion:
+
+- Updated `weather_hourly` does not contain a direct terrain/elevation feature.
+- It contains coordinates, but not elevation.
+- It contains sea-level pressure, but this is not suitable as an elevation proxy.
+- Terrain must be introduced from an external province-level or raster-derived terrain table.
+
+Recommended future input file:
+
+`province_terrain_table.csv`
+
+Required columns:
+
+| column | meaning |
+|---|---|
+| province | English province name matching project convention |
+| elevation_mean | mean elevation in meters |
+| elevation_min | minimum elevation in meters |
+| elevation_max | maximum elevation in meters |
+| elevation_range | elevation_max - elevation_min |
+| elevation_std | within-province elevation standard deviation |
+| terrain_roughness | terrain ruggedness or roughness index |
+| source | data source, e.g. SRTM, ASTER, DEM, government GIS |
+| notes | processing notes |
+
+Interpretation for research:
+
+- Terrain/elevation is still a plausible explanation for North behavior.
+- Current weather data cannot test that hypothesis directly.
+- A province terrain table should be added as an external explanatory layer before modeling terrain effects.
+- Terrain should be treated as static province metadata, not a temporal weather variable.
+
+Next direction:
+
+- Acquire or prepare province-level terrain/elevation table.
+- Audit terrain coverage and province-name matching.
+- Only after audit, run controlled terrain-feature association and ablation.

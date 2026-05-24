@@ -29,6 +29,7 @@ experiments/*
 !experiments/outputs/
 !experiments/audit_updated_data.py
 !experiments/audit_updated_data_content.py
+!experiments/audit_weather_terrain_metadata.py
 !experiments/compare_updated_core_data.py
 !experiments/compare_updated_blast_labels.py
 !experiments/rebuild_updated_sequence_dataset.py
@@ -89,6 +90,13 @@ experiments/outputs/*
 !experiments/outputs/analog_ablation_region_performance.csv
 !experiments/outputs/analog_ablation_feature_importance.csv
 !experiments/outputs/analog_ablation_feature_manifest.csv
+
+!experiments/outputs/weather_hourly_schema_file_scan.csv
+!experiments/outputs/weather_hourly_unique_columns.csv
+!experiments/outputs/weather_hourly_pressure_column_summary.csv
+!experiments/outputs/weather_hourly_metadata_sample_values.csv
+!experiments/outputs/weather_source_metadata_file_inventory.csv
+!experiments/outputs/province_terrain_table_template.csv
 
 # Keep raw and bulky generated data out of Git.
 data/
