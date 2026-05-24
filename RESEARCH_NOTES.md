@@ -3811,3 +3811,187 @@ Next direction:
   - core_no_BUS + geographic neighbor pressure.
 - Keep train 2017-2020, validation 2021, test 2022.
 - Do not use 2022 labels to learn analog sets.
+
+## 2026-05-24 Step 9.12 Controlled Analog-Feature Ablation
+
+Goal:
+
+- Test whether province analog epidemiology features improve corrected-label forward-year forecasting beyond the existing `core_no_BUS` baseline.
+- Keep the experiment controlled:
+  - no BUS features,
+  - no old labels,
+  - no new model architecture,
+  - no aggressive tuning.
+
+Dataset:
+
+- `experiments/outputs/region_temporal_sequence_dataset_updated_labels_2015_2022.csv`
+
+Split:
+
+- train: 2017-2020
+- validation: 2021
+- test: 2022
+
+Script:
+
+- `experiments/train_analog_feature_ablation.py`
+
+Outputs:
+
+- `experiments/outputs/analog_ablation_metrics.csv`
+- `experiments/outputs/analog_ablation_model_comparison.csv`
+- `experiments/outputs/analog_ablation_region_performance.csv`
+- `experiments/outputs/analog_ablation_feature_importance.csv`
+- `experiments/outputs/analog_ablation_test_predictions.csv`
+- `experiments/outputs/analog_ablation_failure_cases.csv`
+- `experiments/outputs/analog_ablation_feature_manifest.csv`
+
+Temporal-safety note:
+
+- Analog sets were learned from train years 2017-2020 only.
+- Analog weekly features were merged by `province`, `datetime`, `year`, and `week` to avoid ISO week cross-year duplication.
+- 2022 labels were not used to construct analog sets.
+
+Feature sets:
+
+- `core_no_BUS`
+- `core_plus_analog_history`
+  - `analog_prevweek_blast`
+  - `analog_outbreak_frequency_train`
+- `core_plus_analog_pressure`
+  - `analog_prevweek_risk`
+  - `analog_2w_pressure`
+  - `analog_leaf_wet_pressure`
+  - `analog_regional_leaf_wet_pressure`
+  - `analog_host_pressure`
+- `core_plus_all_analog`
+- `core_plus_geographic_pressure_only`
+  - equivalent to `core_no_BUS` under the current feature policy because geographic/regional pressure features are already included in core.
+- `core_plus_analog_and_geographic`
+  - equivalent to `core_plus_all_analog` under the current feature policy.
+
+Models:
+
+- DNN no-class-weight
+- Random Forest
+
+Test 2022 model comparison:
+
+| model | feature set | threshold | precision | recall | F1 | ROC-AUC | PR-AUC | FP | FN |
+|---|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| DNN no class weight | core plus analog history | 0.20 | 0.3421 | 0.4037 | 0.3704 | 0.8029 | 0.2818 | 125 | 96 |
+| DNN no class weight | core no BUS | 0.20 | 0.3923 | 0.3168 | 0.3505 | 0.7818 | 0.2904 | 79 | 110 |
+| Random Forest | core no BUS | 0.50 | 0.3662 | 0.3230 | 0.3432 | 0.7886 | 0.2407 | 90 | 109 |
+| Random Forest | core plus analog pressure | 0.45 | 0.3069 | 0.3602 | 0.3314 | 0.7914 | 0.2471 | 131 | 103 |
+| Random Forest | core plus all analog | 0.40 | 0.2533 | 0.4783 | 0.3312 | 0.8284 | 0.3014 | 227 | 84 |
+| Random Forest | core plus analog history | 0.40 | 0.2317 | 0.4907 | 0.3147 | 0.8326 | 0.2953 | 262 | 82 |
+| DNN no class weight | core plus analog pressure | 0.20 | 0.3333 | 0.3106 | 0.3215 | 0.7703 | 0.2733 | 100 | 111 |
+| DNN no class weight | core plus all analog | 0.10 | 0.2042 | 0.4845 | 0.2873 | 0.7911 | 0.2623 | 304 | 83 |
+
+Interpretation:
+
+- The best F1 model is:
+  - DNN no-class-weight + analog history
+  - F1: 0.3704
+- This improves over the Step 9.9 DNN no-class-weight core baseline:
+  - F1: 0.3505 -> 0.3704
+  - recall: 0.3168 -> 0.4037
+  - false negatives: 110 -> 96
+- The trade-off is more false positives:
+  - FP: 79 -> 125
+- PR-AUC does not improve for DNN analog history:
+  - 0.2904 -> 0.2818
+- Therefore, analog history improves classification threshold behavior, but not ranking quality.
+
+Random Forest interpretation:
+
+- Random Forest benefits strongly in ranking metrics from analog features:
+  - core PR-AUC: 0.2407
+  - all analog PR-AUC: 0.3014
+  - analog history PR-AUC: 0.2953
+  - all analog ROC-AUC: 0.8284
+  - analog history ROC-AUC: 0.8326
+- However, validation-selected thresholds produce many false positives and lower F1 than the DNN analog-history model.
+- This suggests analog features carry strong information, but threshold governance remains important.
+
+Regional performance: DNN no-class-weight
+
+| feature set | region | positives | precision | recall | F1 | FP | FN |
+|---|---|---:|---:|---:|---:|---:|---:|
+| core no BUS | Northeast | 120 | 0.4153 | 0.4083 | 0.4118 | 69 | 71 |
+| core plus analog history | Northeast | 120 | 0.3810 | 0.5333 | 0.4444 | 104 | 56 |
+| core plus all analog | Northeast | 120 | 0.2992 | 0.6083 | 0.4011 | 171 | 47 |
+| core no BUS | North | 18 | 0.0000 | 0.0000 | 0.0000 | 1 | 18 |
+| core plus analog history | North | 18 | 0.0000 | 0.0000 | 0.0000 | 8 | 18 |
+| core plus all analog | North | 18 | 0.0000 | 0.0000 | 0.0000 | 60 | 18 |
+| core no BUS | East | 7 | 0.4000 | 0.2857 | 0.3333 | 3 | 5 |
+| core plus analog history | East | 7 | 0.2000 | 0.1429 | 0.1667 | 4 | 6 |
+
+Regional interpretation:
+
+- Analog history improves Northeast recall and F1:
+  - Northeast F1: 0.4118 -> 0.4444
+  - Northeast recall: 0.4083 -> 0.5333
+- Analog all features increase Northeast recall further:
+  - recall: 0.6083
+  - but false positives rise sharply.
+- North remains unresolved:
+  - all tested DNN analog feature sets still have recall 0 in North.
+  - analog features increase false positives in North without capturing positives.
+- East does not benefit from analog history in this split.
+
+Regional performance: Random Forest
+
+- RF with all analog features improves Northeast recall:
+  - core recall: 0.4000
+  - all analog recall: 0.6000
+- RF all analog also improves Northeast F1:
+  - core F1: 0.4051
+  - all analog F1: 0.4390
+- But North remains recall 0 across RF feature sets.
+
+Feature importance:
+
+Top Random Forest analog signals:
+
+| feature set | analog feature | importance |
+|---|---|---:|
+| core plus analog history | analog_outbreak_frequency_train | 0.1207 |
+| core plus all analog | analog_outbreak_frequency_train | 0.1163 |
+| core plus analog history | analog_prevweek_blast | 0.0771 |
+| core plus all analog | analog_prevweek_blast | 0.0733 |
+| core plus analog pressure | analog_regional_leaf_wet_pressure | 0.0166 |
+| core plus analog pressure | analog_leaf_wet_pressure | 0.0132 |
+| core plus analog pressure | analog_host_pressure | 0.0126 |
+
+Interpretation:
+
+- Analog history features dominate analog pressure features.
+- `analog_outbreak_frequency_train` is the strongest analog signal.
+- `analog_prevweek_blast` is also important.
+- Analog moisture/host pressure features carry weaker but nonzero signal.
+
+Scientific conclusion:
+
+- Province analog epidemiology adds measurable predictive value, especially through outbreak-history analogs.
+- Analog history improves DNN F1 and recall under the corrected-label forward-year split.
+- Analog features strongly improve Random Forest ranking metrics, but threshold behavior needs governance.
+- Analog pressure/moisture features alone are not enough to improve the DNN baseline.
+- Analog features help Northeast more than other regions.
+- North remains unsolved, supporting the hypothesis that North failures require additional regional/field-reporting or sub-regional seasonality explanations rather than simple analog borrowing.
+
+Decision:
+
+- Do not replace the current default model yet.
+- Promote `core_plus_analog_history` to a serious candidate feature set for future governance.
+- Keep `core_no_BUS` as the stable operational baseline.
+- Keep Random Forest + analog features as an interpretable ranking comparator.
+- Do not use all analog features as default because they increase false positives substantially.
+
+Next direction:
+
+- Step 9.13: threshold/calibration governance for DNN `core_plus_analog_history` vs DNN `core_no_BUS`.
+- Use validation 2021 only.
+- Evaluate whether analog-history gains survive calibrated policy governance.
+- Continue separate North-focused diagnostics.

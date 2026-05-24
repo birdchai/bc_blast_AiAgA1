@@ -39,6 +39,7 @@ experiments/*
 !experiments/train_updated_2022_forward_baselines.py
 !experiments/train_temporal_forward_models.py
 !experiments/forward_decision_governance.py
+!experiments/train_analog_feature_ablation.py
 
 # Compact updated-data outputs and governance summaries
 experiments/outputs/*
@@ -82,6 +83,12 @@ experiments/outputs/*
 !experiments/outputs/analog_feature_effects_test_2022.csv
 !experiments/outputs/north_failure_analog_analysis.csv
 !experiments/outputs/analog_feature_manifest.csv
+
+!experiments/outputs/analog_ablation_metrics.csv
+!experiments/outputs/analog_ablation_model_comparison.csv
+!experiments/outputs/analog_ablation_region_performance.csv
+!experiments/outputs/analog_ablation_feature_importance.csv
+!experiments/outputs/analog_ablation_feature_manifest.csv
 
 # Keep raw and bulky generated data out of Git.
 data/
