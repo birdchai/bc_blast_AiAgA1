@@ -5067,3 +5067,157 @@ Conclusion:
 - Feature governance is now explicitly biology-informed.
 - Candidate features must be justified through rice blast mechanisms before they are promoted.
 - The platform is further aligned with computational plant epidemiology rather than metric-only machine learning.
+
+## 2026-05-25 Step 9.16D Model Agent Specification and Model Lifecycle Governance
+
+Goal:
+
+- Formalize a Model Agent system for selecting, training, evaluating, governing, and registering models.
+- Keep model development evidence-based, biology-aware, temporally safe, and operationally interpretable.
+- Prevent blind AutoML / leaderboard chasing.
+- No model training, threshold tuning, data download, or prediction-pipeline modification.
+
+Context:
+
+- Feature Agent and Data Scout Agent governance are now formalized.
+- Feature development is biology-informed, leakage-aware, evidence-governed, and registry-based.
+- Model selection now also needs lifecycle governance.
+
+Document created:
+
+- `MODEL_AGENT_SPEC.md`
+
+Registry outputs:
+
+- `experiments/outputs/model_registry_template.csv`
+- `experiments/outputs/model_registry_current.csv`
+- `experiments/outputs/model_candidate_policy.csv`
+
+Model Agent roles:
+
+| agent | responsibility |
+|---|---|
+| Model Scientist Agent | choose model families based on feature type, hypothesis, and model complexity need |
+| Model Training Agent | train approved models using approved splits and train-only preprocessing |
+| Model Evaluation Agent | evaluate metrics, FP/FN, region behavior, ranking vs threshold behavior, and calibration behavior |
+| Model Governance Agent | assign model operational role and lifecycle status |
+| Model Registry Agent | maintain registry of model family, feature set, split, metrics, threshold, calibration, role, caveats, and last tested step |
+
+Model lifecycle statuses:
+
+- `proposed`
+- `trained`
+- `validated`
+- `evaluated`
+- `calibrated`
+- `governed`
+- `accepted_default`
+- `accepted_regional`
+- `accepted_ranking`
+- `accepted_temporal_support`
+- `accepted_recall_sensitive`
+- `accepted_reference`
+- `candidate_only`
+- `rejected`
+- `future_retest`
+
+Required model metadata:
+
+- `model_name`
+- `model_family`
+- `feature_set`
+- `target`
+- `split`
+- `train_years`
+- `validation_year`
+- `test_year`
+- `preprocessing`
+- `class_weight_policy`
+- `threshold_policy`
+- `calibration_policy`
+- `precision`
+- `recall`
+- `f1`
+- `roc_auc`
+- `pr_auc`
+- `false_positives`
+- `false_negatives`
+- `region_strengths`
+- `region_failures`
+- `biological_plausibility_check`
+- `interpretability_level`
+- `operational_role`
+- `governance_status`
+- `caveats`
+- `last_tested_step`
+
+Current model registry decisions:
+
+| model | feature set | governance status | operational role |
+|---|---|---|---|
+| DNN no-class-weight | `core_no_BUS` | `accepted_default` | stable nationwide default baseline |
+| Random Forest | `core_no_BUS` | `accepted_ranking` | interpretable comparator / ranking reference |
+| DNN class-weighted | `core_no_BUS` | `accepted_recall_sensitive` | surveillance / recall-sensitive candidate |
+| Hybrid DNN + TCN 2-week | temporal `core_no_BUS` | `accepted_temporal_support` | temporal support model, especially Northeast-sensitive evidence |
+| DNN no-class-weight | `core_plus_analog_history` | `accepted_regional` | Northeast monitoring / regional recall candidate |
+| Random Forest | all analog | `accepted_ranking` | interpretable ranking / dashboard prioritization comparator |
+| XGBoost | `core_no_BUS` | `candidate_only` | classical ML comparator |
+| BUS-only rule baseline | BUS reference | `accepted_reference` | external mechanistic reference, not model dependency |
+
+Candidate model policy:
+
+| feature type | candidate models | first-pass recommendation |
+|---|---|---|
+| tabular core features | DNN, Random Forest, XGBoost | DNN no-class-weight and Random Forest |
+| analog history features | DNN, Random Forest | controlled DNN/RF ablation |
+| high-dimensional analog/statistical features | RF, XGBoost, controlled DNN | RF ranking comparator first |
+| temporal sequence features | TCN, GRU, Hybrid DNN+TCN | Hybrid DNN+TCN 2-week |
+| mechanistic reference features | rule baseline, simple logistic, reference-only | reference/rule benchmark |
+| sparse regional problem | simple diagnostics, interpretable tabular models | diagnostic analysis before complex modeling |
+
+Anti-overfitting rules:
+
+- Do not select models based on test-year metrics alone.
+- Use validation year for model selection, thresholds, calibration, and policy.
+- Test year remains held out for final evaluation only.
+- Avoid trying many architectures without hypothesis.
+- Complex models must show meaningful operational improvement, not tiny metric gains.
+- Region-specific gains must be documented separately from nationwide gains.
+
+Biology/epidemiology plausibility checks:
+
+- Model predictions should be inspected against:
+  - leaf wetness / humidity suitability,
+  - temperature suitability,
+  - host susceptibility,
+  - inoculum / neighbor pressure,
+  - temporal accumulation,
+  - wind/spatial context,
+  - analog outbreak history,
+  - region-specific caveats.
+- If a model predicts high risk without plausible disease context, flag for review.
+- If a model misses a region systematically, create diagnostic backlog rather than forcing thresholds.
+
+Model-role decision rules:
+
+- Strong F1 with acceptable FP/FN balance and stable interpretation: `accepted_default`.
+- Best F1 but too many false positives: regional, recall-sensitive, or candidate, not default.
+- High ROC-AUC/PR-AUC with interpretability: `accepted_ranking`.
+- Region-specific improvement only: `accepted_regional`.
+- Temporal insight without best final score: `accepted_temporal_support`.
+- Biologically plausible but coverage-limited: `accepted_reference`.
+- Complex model that does not beat simpler baseline: `candidate_only`, `future_retest`, or `rejected`.
+
+Agent interaction:
+
+- Feature Agent governs feature eligibility.
+- Model Agent chooses models appropriate for governed feature sets.
+- Decision Governance Agent assigns thresholds and operational modes.
+- Data Scout Agent is triggered when model failure indicates missing explanatory data.
+- Report Writer Agent summarizes findings for thesis, proposal, publication, and project memory.
+
+Conclusion:
+
+- Model development is now registry-based and governance-driven.
+- Current model roles are recorded explicitly.
+- Model selection is now evidence-based and operational-role based, not metric-only or AutoML-like.

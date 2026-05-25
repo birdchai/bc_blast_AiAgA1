@@ -123,6 +123,10 @@ experiments/outputs/*
 !experiments/outputs/feature_registry_template.csv
 !experiments/outputs/feature_registry_current.csv
 
+!experiments/outputs/model_registry_template.csv
+!experiments/outputs/model_registry_current.csv
+!experiments/outputs/model_candidate_policy.csv
+
 !experiments/outputs/data_scout_terrain_sources.csv
 !experiments/outputs/province_terrain_table_schema.csv
 

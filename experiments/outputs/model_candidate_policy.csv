@@ -1,0 +1,7 @@
+feature_type,candidate_model_families,recommended_first_pass,governance_caution
+tabular core features,"DNN; Random Forest; XGBoost",DNN no-class-weight and Random Forest,"Prefer stable simple baselines before complex architectures"
+analog history features,"DNN; Random Forest",DNN and Random Forest controlled ablation,"Monitor false positives and regional overfitting; analog is epidemiological similarity not direct dispersal"
+high-dimensional analog/statistical features,"Random Forest; XGBoost; controlled DNN",Random Forest ranking comparator,"Avoid all-feature expansion without feature governance"
+temporal sequence features,"TCN; GRU; Hybrid DNN+TCN",Hybrid DNN+TCN 2-week,"Preserve province-wise sequence integrity and avoid longer memory without evidence"
+mechanistic reference features,"rule baseline; simple logistic; reference-only benchmark",rule baseline,"Do not treat reference features such as BUS as target labels or required dependencies"
+sparse regional problem,"simple diagnostics; interpretable tabular models",diagnostic analysis before modeling,"Avoid complex deep models unless sufficient positives exist"
