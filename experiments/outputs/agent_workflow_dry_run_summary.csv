@@ -1,0 +1,9 @@
+summary_item,value
+dry_run_cases,5
+uses_official_prediction_outputs,True
+uses_test_labels_for_decision,False
+model_training_performed,False
+threshold_tuning_performed,False
+external_data_downloaded,False
+pipeline_modified,False
+agent_execution_mode,sequential deterministic Python simulation

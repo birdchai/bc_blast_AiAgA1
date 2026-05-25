@@ -5417,3 +5417,139 @@ Conclusion:
 
 - The architecture is now explicitly constrained for local research deployment.
 - This supports reproducible agent-orchestrated research without requiring cloud-scale compute.
+
+## 2026-05-25 Step 10.1 Agent Workflow Prototype / Dry Run
+
+Goal:
+
+- Create a lightweight dry-run prototype showing how the Agent-Orchestrated Decision Support Architecture processes province-week prediction records into governed alert outputs and explanation traces.
+- Demonstrate sequential agent orchestration under local runtime constraints.
+- No model training, threshold tuning, external data download, terrain extraction, or official prediction-pipeline modification.
+
+Script:
+
+- `experiments/run_agent_workflow_dry_run.py`
+
+Inputs used:
+
+- `experiments/outputs/updated_2022_test_predictions.csv`
+- `experiments/outputs/analog_decision_calibrated_predictions.csv`
+- `experiments/outputs/forward_calibrated_predictions.csv`
+- `experiments/outputs/model_registry_current.csv`
+- `experiments/outputs/feature_registry_current.csv`
+- `experiments/outputs/regional_routing_policy.csv`
+- `experiments/outputs/decision_mode_registry.csv`
+- `experiments/outputs/alert_output_schema.csv`
+- `experiments/outputs/research_backlog_current.csv`
+
+Outputs:
+
+- `experiments/outputs/agent_workflow_dry_run_examples.csv`
+- `experiments/outputs/sample_alert_records.csv`
+- `experiments/outputs/agent_decision_trace_examples.md`
+- `experiments/outputs/agent_workflow_dry_run_summary.csv`
+
+Local runtime note:
+
+- Agent roles are simulated sequentially.
+- No concurrent LLM agents are used.
+- Deterministic Python handles data transformation.
+- LLM use is conceptual / prompt-governed at this stage.
+- Outputs are compact and auditable.
+
+Dry-run cases:
+
+| case | province | region | route demonstrated |
+|---|---|---|---|
+| Northeast analog active | Ubon Ratchathani | Northeast | DNN core primary + DNN analog history second opinion + RF all analog ranking context |
+| North low confidence | Tak | North | DNN core only with diagnostic backlog caveat |
+| Default non-North | Songkhla | South | DNN core default with sparse-region caveat |
+| Sparse region | Phra Nakhon Si Ayutthaya | Central | sparse-positive caveat and RF comparator |
+| Dashboard/ranking | Buri Ram | Northeast | calibrated alert-tier dashboard + RF all analog ranking comparator |
+
+Dry-run summary:
+
+| summary item | value |
+|---|---|
+| dry-run cases | 5 |
+| official prediction outputs used | True |
+| test labels used for decisions | False |
+| model training performed | False |
+| threshold tuning performed | False |
+| external data downloaded | False |
+| pipeline modified | False |
+| agent execution mode | sequential deterministic Python simulation |
+
+Agent workflow demonstrated:
+
+1. Data Audit Agent
+   - checks required fields,
+   - checks corrected-label phase,
+   - flags missing scores/signals.
+
+2. Feature Agent
+   - maps available signals to feature families:
+     - weather / leaf wetness,
+     - host susceptibility,
+     - spatial / regional pressure,
+     - analog history,
+     - BUS reference.
+
+3. Model Agent
+   - routes by governed model role:
+     - nationwide default,
+     - Northeast analog second opinion,
+     - North low-confidence route,
+     - sparse-region comparator route.
+
+4. Decision Governance Agent
+   - applies existing policy information,
+   - does not tune thresholds,
+   - does not use test labels for decisions.
+
+5. Regional Routing Agent
+   - applies Northeast enhanced monitoring,
+   - applies North diagnostic backlog,
+   - applies sparse-region caveats.
+
+6. Explanation Agent
+   - generates compact explanation fields:
+     - weather signal,
+     - host signal,
+     - spatial signal,
+     - analog signal,
+     - BUS reference signal,
+     - region caveat,
+     - confidence flag.
+
+7. Report Writer Agent
+   - writes final alert records and markdown traces.
+
+Alert output:
+
+- `sample_alert_records.csv` follows `alert_output_schema.csv`.
+- It includes:
+  - primary model and score,
+  - alert tier,
+  - selected policy,
+  - secondary model and score,
+  - model agreement status,
+  - key biological/epidemiological signals,
+  - region caveat,
+  - confidence flag,
+  - recommended action category,
+  - explanation notes.
+
+Interpretation:
+
+- The dry-run shows that the architecture can transform existing prediction outputs and registries into governed decision-support records.
+- North is routed to diagnostic backlog rather than threshold forcing.
+- Northeast can activate analog-history and ranking comparator routes.
+- Sparse-positive regions receive explicit caveats.
+- Labels are not used for decisions.
+
+Next direction:
+
+- Bind the dry-run workflow to future real prediction outputs as a dashboard-ready layer.
+- Optionally create a dashboard mockup using `sample_alert_records.csv`.
+- Keep the local execution pattern sequential and deterministic.

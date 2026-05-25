@@ -44,6 +44,7 @@ experiments/*
 !experiments/train_analog_feature_ablation.py
 !experiments/analog_history_decision_governance.py
 !experiments/analyze_north_failures.py
+!experiments/run_agent_workflow_dry_run.py
 
 # Compact updated-data outputs and governance summaries
 experiments/outputs/*
@@ -135,6 +136,10 @@ experiments/outputs/*
 !experiments/outputs/research_backlog_current.csv
 !experiments/outputs/decision_mode_registry.csv
 !experiments/outputs/local_runtime_constraints.csv
+!experiments/outputs/agent_workflow_dry_run_examples.csv
+!experiments/outputs/sample_alert_records.csv
+!experiments/outputs/agent_decision_trace_examples.md
+!experiments/outputs/agent_workflow_dry_run_summary.csv
 
 !experiments/outputs/data_scout_terrain_sources.csv
 !experiments/outputs/province_terrain_table_schema.csv
