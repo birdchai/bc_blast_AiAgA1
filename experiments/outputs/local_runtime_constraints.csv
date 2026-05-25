@@ -1,0 +1,9 @@
+hardware_constraint,implication,recommended_design_decision
+MSI GS65 Stealth Thin 8RE local research laptop,Compute budget is limited compared with cloud or workstation,Design for reproducible local workflows rather than cloud-scale orchestration
+GTX 1060 6GB GPU,Large concurrent LLMs or large neural architecture searches are impractical,Use one local quantized LLM as shared reasoning core
+RAM 24GB,Multiple large agents or large in-memory datasets may exceed memory,Prefer sequential agent orchestration and compact intermediate outputs
+Local Ollama / quantized LLM workflow,Reasoning can run locally but latency and context are constrained,Keep prompts and agent outputs compact and auditable
+Computation-heavy feature/model analysis,LLM is inefficient for numeric computation,Use Python scripts for data processing modeling audits and metrics
+Persistent project memory needed,LLM context is temporary and limited,Use Markdown documents and CSV registries as durable agent memory
+Research reproducibility requirement,Ad hoc cloud-only workflows reduce reproducibility,Prefer deterministic scripts tracked summaries and documented governance
+Model architecture exploration risk,Local compute makes broad architecture search costly and scientifically risky,Avoid unnecessary architecture search; require hypothesis and governance before testing

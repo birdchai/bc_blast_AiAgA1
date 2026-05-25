@@ -21,6 +21,31 @@ The platform is designed to support:
 
 The system should behave as an agent-governed plant disease decision-support platform, not a single forecasting script.
 
+## Local AI Deployment Constraint
+
+The initial agent system is intended to run on a local research laptop:
+
+- MSI GS65 Stealth Thin 8RE
+- GTX 1060 6GB
+- RAM 24GB
+
+Design guidance:
+
+- Use one local quantized LLM as the shared reasoning core.
+- Avoid multiple concurrent large LLM agents.
+- Prefer sequential agent orchestration.
+- Use Python scripts for computation-heavy tasks.
+- Use Markdown and CSV registries as persistent agent memory.
+- Keep agent outputs compact, auditable, and reproducible.
+- Avoid unnecessary architecture search.
+- Design for local reproducibility, not cloud-scale compute.
+
+Operational implication:
+
+- Agent roles are logical responsibilities, not necessarily separate always-on LLM processes.
+- Heavy computation should remain in deterministic Python scripts.
+- The LLM should coordinate, interpret, document, and govern decisions rather than run large-scale parallel model exploration.
+
 ## Current Governed Evidence
 
 | model / evidence | governed role |

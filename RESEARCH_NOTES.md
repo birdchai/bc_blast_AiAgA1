@@ -5376,3 +5376,44 @@ Conclusion:
 - North remains a diagnostic backlog, not a threshold-tuning target.
 - Terrain/elevation remains a future-data-needed path.
 - The platform is now structured for explainable early warning, thesis development, publication evidence, and future dashboard implementation.
+
+## 2026-05-25 Local AI Deployment Constraint Update
+
+Goal:
+
+- Update the Step 10 decision-support architecture with local runtime constraints.
+- Keep the agent system realistic for the current research laptop.
+- No model training, prediction-pipeline change, LLM benchmarking, or architecture search.
+
+Local hardware target:
+
+- MSI GS65 Stealth Thin 8RE
+- GTX 1060 6GB
+- RAM 24GB
+
+Files updated:
+
+- `AGENT_DECISION_SUPPORT_ARCHITECTURE.md`
+- `experiments/outputs/local_runtime_constraints.csv`
+
+Runtime governance:
+
+- Use one local quantized LLM as a shared reasoning core.
+- Avoid multiple concurrent large LLM agents.
+- Prefer sequential agent orchestration.
+- Use Python scripts for computation-heavy tasks.
+- Use Markdown and CSV registries as persistent agent memory.
+- Keep agent outputs compact, auditable, and reproducible.
+- Avoid unnecessary architecture search.
+- Design for local reproducibility, not cloud-scale compute.
+
+Interpretation:
+
+- Agent roles are logical responsibilities, not necessarily separate always-on LLM processes.
+- The local LLM should coordinate, interpret, document, and govern decisions.
+- Numeric computation, feature engineering, audits, and model metrics should remain in deterministic Python scripts.
+
+Conclusion:
+
+- The architecture is now explicitly constrained for local research deployment.
+- This supports reproducible agent-orchestrated research without requiring cloud-scale compute.

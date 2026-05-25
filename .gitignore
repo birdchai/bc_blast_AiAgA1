@@ -134,6 +134,7 @@ experiments/outputs/*
 !experiments/outputs/regional_routing_policy.csv
 !experiments/outputs/research_backlog_current.csv
 !experiments/outputs/decision_mode_registry.csv
+!experiments/outputs/local_runtime_constraints.csv
 
 !experiments/outputs/data_scout_terrain_sources.csv
 !experiments/outputs/province_terrain_table_schema.csv
