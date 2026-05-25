@@ -5221,3 +5221,158 @@ Conclusion:
 - Model development is now registry-based and governance-driven.
 - Current model roles are recorded explicitly.
 - Model selection is now evidence-based and operational-role based, not metric-only or AutoML-like.
+
+## 2026-05-25 Step 10 Agent-Orchestrated Decision Support Architecture
+
+Goal:
+
+- Design the high-level AI Agent decision-support architecture for the rice blast forecasting platform.
+- Integrate feature governance, model governance, decision governance, regional routing, missing-data escalation, explanation, and research reporting.
+- Keep the system thesis-oriented, publication-ready, and dashboard-ready.
+- No model training, prediction-pipeline modification, external data download, terrain extraction, or threshold tuning.
+
+Architecture document:
+
+- `AGENT_DECISION_SUPPORT_ARCHITECTURE.md`
+
+Registry/schema outputs:
+
+- `experiments/outputs/alert_output_schema.csv`
+- `experiments/outputs/agent_role_registry.csv`
+- `experiments/outputs/agent_workflow_map.csv`
+- `experiments/outputs/decision_support_system_schema.csv`
+- `experiments/outputs/regional_routing_policy.csv`
+- `experiments/outputs/research_backlog_current.csv`
+- `experiments/outputs/decision_mode_registry.csv`
+
+System objective:
+
+- Rice blast early warning.
+- Explainable decision support.
+- Region-aware model routing.
+- Biology-informed feature governance.
+- Evidence-based model governance.
+- Validation-only threshold and calibration governance.
+- Missing-data escalation.
+- Thesis, publication, and dashboard readiness.
+
+Major agents:
+
+| agent | responsibility |
+|---|---|
+| Research Coordinator Agent | orchestrates workflow, tracks research phase and backlog |
+| Data Audit Agent | audits labels, coverage, missingness, leakage, updated data, and split readiness |
+| Feature Agent | governs biology-informed feature eligibility and feature registry |
+| Data Scout Agent | evaluates missing external data sources before acquisition |
+| Model Agent | selects and governs model families appropriate to feature sets |
+| Decision Governance Agent | manages validation-only thresholds, calibration, alert tiers, and decision modes |
+| Regional Routing Agent | routes province/week predictions by region, model role, and caveat |
+| Explanation Agent | summarizes key weather, host, spatial, analog, BUS/reference, and caveat signals |
+| Report Writer Agent | writes research notes, consolidation docs, thesis-ready summaries, and dashboard notes |
+
+Current model routing summary:
+
+| model / evidence | governed role |
+|---|---|
+| DNN no-class-weight + `core_no_BUS` | stable nationwide default baseline |
+| Random Forest + `core_no_BUS` | interpretable comparator / ranking reference |
+| DNN class-weighted + `core_no_BUS` | recall-sensitive surveillance candidate |
+| Hybrid DNN + TCN 2-week | temporal support model |
+| DNN no-class-weight + analog history | Northeast monitoring / regional recall candidate |
+| Random Forest + all analog | interpretable ranking / dashboard prioritization comparator |
+| BUS-only rule baseline | external mechanistic reference |
+| North region | unresolved diagnostic backlog |
+| terrain/elevation | future-data-needed path |
+
+Regional routing:
+
+| region | routing decision |
+|---|---|
+| Nationwide | DNN `core_no_BUS` as primary default; RF `core_no_BUS` as comparator |
+| Northeast | DNN `core_no_BUS` base + DNN analog history second opinion + RF all analog ranking comparator |
+| North | DNN `core_no_BUS` only with low-confidence caveat; do not force threshold lowering; route to diagnostic backlog |
+| East / South / Central / West | DNN `core_no_BUS` default with sparse-positive caveats; RF comparator if ranking support is needed |
+| Dashboard | calibrated alert tiers, model agreement/disagreement, region caveats, and explanation notes |
+
+Decision modes:
+
+- balanced default,
+- high precision field alert,
+- high recall surveillance,
+- calibrated alert tier dashboard,
+- ranking / prioritization mode,
+- diagnostic backlog mode.
+
+Alert output schema:
+
+- `province`
+- `region`
+- `year`
+- `week`
+- `primary_model`
+- `primary_score`
+- `primary_alert_tier`
+- `selected_policy`
+- `secondary_model`
+- `secondary_score`
+- `model_agreement_status`
+- `key_weather_signal`
+- `key_host_signal`
+- `key_spatial_signal`
+- `key_analog_signal`
+- `BUS_reference_signal_optional`
+- `region_caveat`
+- `confidence_flag`
+- `recommended_action_category`
+- `explanation_notes`
+
+Low-confidence rules:
+
+- region systematically missed by governed models,
+- sparse positives,
+- weak biological signal,
+- missing critical external feature,
+- model disagreement,
+- high risk without biological plausibility,
+- low label/data coverage,
+- unresolved diagnostic backlog.
+
+Human-review checkpoints:
+
+- before external data acquisition,
+- before accepting a new core feature,
+- before replacing the default model,
+- before enabling a region-specific model route,
+- before publishing final performance claims,
+- before treating a missing-data hypothesis as confirmed.
+
+Current research backlog:
+
+- North terrain/elevation diagnostic,
+- province boundary acquisition,
+- terrain table preparation,
+- North sub-regional seasonality,
+- reporting density / label observation analysis,
+- future terrain-feature association,
+- future terrain-feature ablation,
+- future region-specific governance,
+- possible sub-provincial data integration.
+
+System workflow:
+
+1. Data Audit Agent checks data, labels, leakage, and split readiness.
+2. Feature Agent governs features through biology-informed registry.
+3. Data Scout Agent activates if required evidence is missing.
+4. Model Agent chooses and governs model families for approved feature sets.
+5. Decision Governance Agent selects thresholds/calibration using validation data only.
+6. Regional Routing Agent applies model roles and caveats by region.
+7. Explanation Agent generates signal-level interpretation and confidence flags.
+8. Report Writer Agent updates research notes, consolidation docs, and thesis-ready summaries.
+
+Conclusion:
+
+- Step 10 frames the system as an agent-orchestrated plant disease decision-support platform.
+- Feature, model, decision, regional, missing-data, explanation, and reporting governance are now integrated.
+- North remains a diagnostic backlog, not a threshold-tuning target.
+- Terrain/elevation remains a future-data-needed path.
+- The platform is now structured for explainable early warning, thesis development, publication evidence, and future dashboard implementation.

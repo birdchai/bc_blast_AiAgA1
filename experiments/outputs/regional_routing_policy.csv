@@ -1,0 +1,9 @@
+region,primary_model,secondary_model,ranking_or_reference_model,policy,confidence_rule,notes
+Nationwide,DNN no-class-weight core_no_BUS,Random Forest core_no_BUS,,balanced default,normal confidence unless data/model caveat applies,Stable nationwide default route
+Northeast,DNN no-class-weight core_no_BUS,DNN no-class-weight analog history,Random Forest all analog,base plus regional recall-sensitive second opinion,monitor model disagreement,Analog history improves Northeast recall/F1 but is not direct dispersal
+North,DNN no-class-weight core_no_BUS,,Random Forest core_no_BUS,default with low-confidence caveat,low confidence / diagnostic backlog,Do not force threshold lowering; terrain/microclimate path required
+East,DNN no-class-weight core_no_BUS,Random Forest core_no_BUS,,balanced default with sparse-positive caveat,medium confidence if positives sparse,Use RF ranking support if needed
+South,DNN no-class-weight core_no_BUS,Random Forest core_no_BUS,,balanced default with sparse-positive caveat,medium confidence if positives sparse,Do not overinterpret regional F1 with low positives
+Central,DNN no-class-weight core_no_BUS,Random Forest core_no_BUS,,balanced default with sparse-positive caveat,medium-low confidence if no positives or sparse positives,False positives can dominate interpretation
+West,DNN no-class-weight core_no_BUS,Random Forest core_no_BUS,,balanced default with sparse-positive caveat,medium-low confidence due sparse positives,Regional metrics unstable
+Dashboard,DNN no-class-weight core_no_BUS,DNN analog history for Northeast; RF comparators where useful,BUS-only rule where covered,calibrated alert tier dashboard,confidence based on model agreement and data caveats,Separate risk communication from binary action decision

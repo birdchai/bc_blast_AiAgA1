@@ -1,0 +1,10 @@
+backlog_item,category,reason,current_status,priority,next_action,requires_human_review
+North terrain/elevation diagnostic,missing explanatory data,North positives remain missed by all governed candidates,future_data_needed,high,Acquire boundary then create terrain table,yes
+Province boundary acquisition,boundary prerequisite,No usable local province polygon boundary found,open,high,Select geoBoundaries or GADM candidate and rerun audit,yes
+Terrain table preparation,terrain feature setup,SRTM/GEE extraction requires boundary approval,pending_boundary,high,Create province_terrain_table.csv after boundary audit,yes
+North sub-regional seasonality,regional diagnostic,Lamphun and Nan show regime shift,open,medium,Analyze sub-regional timing and crop/report patterns,no
+Reporting density / label observation analysis,label governance,Observed outbreak patterns may reflect reporting density,open,medium,Analyze label observation by province/time,no
+Terrain-feature association,future validation,Terrain hypothesis must be tested before modeling,pending_terrain_table,high,Run association analysis after terrain audit,no
+Terrain-feature ablation,future modeling,Terrain must pass association and governance first,pending_association,medium,Run controlled ablation only after approval,yes
+Region-specific governance,future decision policy,Regional heterogeneity remains important,open,medium,Study multi-year regional validation before freezing routes,yes
+Sub-provincial data integration,future data expansion,Province-level aggregation may hide microclimate and field patterns,future_data_needed,medium,Scout sub-provincial data only if province-level terrain insufficient,yes

@@ -1,0 +1,7 @@
+decision_mode,purpose,primary_model_policy,threshold_or_score_policy,intended_use,caveats
+balanced default,Balance precision and recall,DNN core_no_BUS,validation-selected balanced/F1 threshold,Routine decision support,May miss sparse regional outbreaks
+high precision field alert,Reduce false positives,governed candidate model with high precision threshold,validation-selected high precision threshold,Costly field verification contexts,Recall drops and missed outbreaks increase
+high recall surveillance,Reduce missed outbreaks,DNN class-weighted or recall-sensitive route,validation-selected high recall threshold,Broad monitoring and screening,False positives can become operationally high
+calibrated alert tier dashboard,Communicate graded risk,calibrated primary/secondary model scores,low/watch/warning/high alert tiers,Dashboard and extension communication,Calibration aids communication but may not improve F1
+ranking / prioritization mode,Rank provinces/weeks by risk,RF core or RF all analog,score ranking not binary threshold,Resource prioritization and review queue,Ranking does not equal action threshold
+diagnostic backlog mode,Flag unresolved failure contexts,No forced model replacement,low-confidence flag plus case review,North and missing-data cases,Requires research follow-up before operational change

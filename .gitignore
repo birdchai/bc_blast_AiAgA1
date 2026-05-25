@@ -127,6 +127,14 @@ experiments/outputs/*
 !experiments/outputs/model_registry_current.csv
 !experiments/outputs/model_candidate_policy.csv
 
+!experiments/outputs/alert_output_schema.csv
+!experiments/outputs/agent_role_registry.csv
+!experiments/outputs/agent_workflow_map.csv
+!experiments/outputs/decision_support_system_schema.csv
+!experiments/outputs/regional_routing_policy.csv
+!experiments/outputs/research_backlog_current.csv
+!experiments/outputs/decision_mode_registry.csv
+
 !experiments/outputs/data_scout_terrain_sources.csv
 !experiments/outputs/province_terrain_table_schema.csv
 

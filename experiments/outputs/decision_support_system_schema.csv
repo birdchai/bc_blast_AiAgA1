@@ -1,0 +1,8 @@
+component,purpose,input,output,governance_rule
+Feature governance,Approve or reject feature eligibility,feature proposals and validation/ablation evidence,feature registry status,accepted_core requires biology leakage evidence and decision role
+Model governance,Assign model roles and prevent leaderboard chasing,governed feature sets and model evaluations,model registry status,default model must be stable and operationally interpretable
+Decision governance,Select thresholds and alert modes,validation predictions and model scores,decision policies and alert tiers,validation only for threshold/calibration selection
+Regional routing,Apply regional model roles and caveats,province/week prediction context,routed model/policy and confidence flag,region-specific gains must be explicit
+Explanation layer,Provide decision-support explanation,feature signals model agreement caveats,explanation_notes and action category,high risk without biological context is flagged
+Data Scout escalation,Handle missing explanatory data,diagnostic backlog and future_data_needed features,source recommendations and schema,external data requires human approval
+Research reporting,Preserve scientific memory,governed outputs and findings,notes consolidation and thesis summaries,old-label and corrected-label evidence must be separated

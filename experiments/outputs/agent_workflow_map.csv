@@ -1,0 +1,9 @@
+workflow_step,agent,action,input_artifacts,output_artifacts,next_agent
+1,Data Audit Agent,Audit labels coverage missingness leakage and split readiness,updated data sources; corrected labels,audit summaries and split readiness,Feature Agent
+2,Feature Agent,Govern feature eligibility with biological plausibility,data audit outputs; feature registry,accepted/candidate/rejected/future-data-needed feature statuses,Data Scout Agent or Model Agent
+3,Data Scout Agent,Evaluate missing external data sources,future_data_needed features,source recommendations and schemas,Research Coordinator Agent
+4,Model Agent,Select and govern model families,governed feature sets; approved split,model registry and candidate policy,Decision Governance Agent
+5,Decision Governance Agent,Select thresholds calibration and decision modes,validation/test predictions,decision policy registry and alert tiers,Regional Routing Agent
+6,Regional Routing Agent,Apply region-specific model routing and caveats,model roles; regional evidence,regional routing decisions and low-confidence flags,Explanation Agent
+7,Explanation Agent,Generate biological and operational explanations,alert record; feature signals; model agreement,explanation notes and caveats,Report Writer Agent
+8,Report Writer Agent,Write research memory and thesis/dashboard summaries,all governed outputs,research notes and consolidation documents,Research Coordinator Agent
